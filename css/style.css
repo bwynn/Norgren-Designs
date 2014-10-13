@@ -1,0 +1,480 @@
+
+/* Global Elements */
+
+html {
+	width: 100%;
+	}
+	
+body {
+	font-family: 'Lato', helvetica, sans-serif;
+	background: url('../img/stardust.png');
+	max-width: 1280px;
+	}
+	 
+a {
+	font-size: 1.25em;
+	text-decoration: none;
+	}
+
+p {
+	line-height: 1.5;
+	font-size: 1em;
+	letter-spacing: .03em;
+	}
+	
+h2,
+h3 {
+	margin: 2em 0;
+	}
+
+nav li, 
+input, 
+textarea, 
+button,
+section > a,
+img.index-img,
+img.about-img {
+	display: block;
+	}
+
+img,
+.index-wrap {
+	max-width: 100%;
+	}
+	
+.index-wrap {
+	background: url('../img/main_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+	position: relative;
+	top: -30px;
+	z-index: -1;
+	}
+
+.wrap {
+	max-width: 700px;
+	}
+	
+.wrap,
+button,
+form {
+	margin: 10% auto;
+	}
+
+body,
+section,
+nav ul,
+img.index-img,
+img.about-img {
+	margin: 0 auto;
+	}
+	
+p#phone,
+form > h1,
+h1.banner-header {
+	margin: 0;
+	}
+	
+header,
+div.index-wrap > section {
+	position: relative;
+	}
+	
+footer p:before, 
+footer p:after,
+img.about-img {
+	border-radius: 50%;
+	}
+
+nav a,  
+nav ul, 
+footer p,
+section > h1,
+section > h2,
+section > a, 
+form > h1,
+section > h3,
+div.index-wrap > section > p  {
+	text-align: center;
+	}
+	
+nav li, 
+footer {
+	clear: both;
+	}
+	
+/* ----------------------------------
+			Color Assignments 
+	--------------------------------- */
+		
+body,
+a,
+h1.text-logo {
+	color: #fff;
+	}
+
+.active, 
+a:hover {
+	color: #37805E;
+	}
+	
+header,
+button, 
+section > a {
+	background: #1BCC7A;
+	}
+	
+footer p:before, 
+footer p:after {
+	background: #fff;
+	}
+	
+input, 
+textarea,
+form {
+	background: #f4f5f4;
+	}
+	
+input[type^="text"],
+input[type^="text"]:focus,
+textarea,
+textarea:focus {
+	background: #f2f2f2;
+	color: #37805E;
+	}
+	
+label,
+form > h1 {
+	color: #37805E;
+	}
+		
+button:hover,
+button:active,
+section > a:hover {
+	background: #22FF98;
+	color: #37805E;
+	}
+	
+/* ----------------------------------
+			Header Elements 
+	--------------------------------- */
+
+header {
+	height: 320px;
+	border-bottom: 3px solid #37805E;
+	z-index: 3;
+	}
+	
+nav h1 {
+	display: none;
+	} 
+	
+nav ul {
+	padding: 0;
+	width: 45%;
+	}
+	
+nav li {
+	padding: 5px 0;
+	}
+
+/* ---------------------------------
+			Footer Elements 
+	-------------------------------- */
+
+/* bullet points for footer */
+footer p:before, footer p:after {
+	display: inline-block;
+	}
+	
+footer p:before, 
+footer p:after {
+	content: "";
+	width: 7px;
+	height: 7px;
+	margin: 2px 10px;
+	}
+	
+/* ---------------------------------
+				Index Page
+	-------------------------------- */
+
+img.index-img {
+	height: 200px;
+	width: 200px;
+	}
+	
+div.index-wrap > section {
+	top: 100px;
+	}
+	
+h1.banner-header {
+	font-size: 3em;
+	}
+	
+/* ---------------------------------
+				About Page
+	-------------------------------- */
+	
+img.about-img {
+	margin-bottom: 2em;
+	border: 5px solid #37805E;
+	width: 200px;
+	height: 200px;
+	}
+
+article {
+	background: hsla(255, 3%, 10%, .6);
+	padding: 5%;
+	}
+
+article > h1 {
+	margin: .5rem 0;
+	}
+	
+/* ---------------------------------
+			Contact Page 
+	-------------------------------- */
+
+section {
+	max-width: 300px;
+	}
+	
+input, 
+textarea {
+	padding: 2% 2%;
+	width: 95%;
+	border: 1px solid#999;
+	margin: 10px 0;
+	box-shadow:inset 1px 1px 15px -5px #9a9a9a;
+	}
+	
+input, 
+textarea,
+button,
+article,
+section > a,
+form {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	}
+	
+form {
+	width: 300px;
+	padding: 20px 20px 5px;
+	box-sizing: border-box;
+	margin-bottom: 2%;
+	}
+	
+label, 
+button {
+	font-size: 1.25em;
+	}
+	
+button {
+	padding: 5% 41.4% 5%;
+	margin-top: 15px;
+	border: 1px solid #000;
+}
+
+button:hover,
+button:active {
+	border: 1px solid #999;
+	box-shadow: inset 0 0 2px #37805E;
+	}
+
+section > a, 
+button,
+button:hover,
+button:active {
+	border-bottom: 3px solid #37805E;
+	}
+	
+#phone:before {
+	content: "\260E";
+	padding-right: 5px;
+	}
+	
+a[href*="facebook"],
+a[href*="twitter"] {
+	float: left;
+	margin: 2% 2% 10%;
+	height: 50px;
+	width: 50px;
+	}
+	
+a[href*="facebook"] {
+	background: url('../img/fb.png');
+	margin-left: 30%;
+	}
+
+a[href*="facebook"]:hover {
+	background: url('../img/fb_hover.png');
+	}
+	
+a[href*="twitter"] {
+	background: url('../img/twitter.png');
+	}
+	
+a[href*="twitter"]:hover {
+	background: url('../img/twitter_hover.png');
+	}
+	
+a[href*="facebook"],
+a[href*="facebook"]:hover,
+a[href*="twitter"],
+a[href*="twitter"]:hover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+	
+a[href*="facebook"],
+a[href*="facebook"]:hover,
+a[href*="twitter"],
+a[href*="twitter"]:hover {
+	border: none;
+	}
+	
+/* ================================================
+			Responsive Queries
+	=============================================== */
+	
+@media only screen and (min-width: 768px) {
+	
+header,
+img.index-img {
+	height: 100px;
+	}
+	
+img.index-img {
+	float: left;
+	width: 100px;
+	margin-left: 1%;
+	}
+
+img.about-img {
+	height: 300px;
+	width: 300px;
+	}
+	
+nav > a > h1 {
+	font-size: 2em;
+	}
+
+nav li {
+	display: inline-block;
+	margin-left: 7%;
+	padding: 10% 0;
+	}
+	
+nav ul {
+	float: right;
+	width: 40%;
+	}
+	
+nav h1 {
+	display: block;
+	margin: 0;
+	padding: 20px;
+	text-shadow: 1px 1px 1px #159F5F;
+	font-size: 2.5em;
+	float: left;
+	}
+	
+.index-wrap {
+	background-position: 0 -100px;
+	}
+	
+div.index-wrap > section {
+	top: 55%;
+	max-width: 500px;
+	}
+	
+}
+
+@media only screen and (min-width: 1000px) {
+	
+.wrap {
+	max-width: 980px;
+	margin-top: 5%;
+	}
+	
+nav li {
+	padding: 7% 0;
+	}
+	
+img.about-img,
+.desktop-left {
+	float: left;
+	}
+	
+/* About page */
+
+img.about-img {
+	margin: 3%;
+	}
+
+article {
+	padding: 8%;
+	}
+	
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* Contact Page */
+
+.desktop-left {
+	margin: 0 0 5% 10%;
+	}
+.desktop-right {
+	float: right;
+	margin-right: 15%;
+	}
+	
+div.desktop-right > section {
+	width: 400px;
+	}
+	
+section > a {
+	padding: 0 15%;
+	}
+	
+div.index-wrap > section {
+	top: 25%;
+	}
+	
+.index-wrap {
+	background-position: 0 -130px;
+	}
+
+a[href*="facebook"],
+a[href*="twitter"] {
+	padding: 0;
+	margin: 0 5%;
+	}
+
+a[href*="facebook"] {
+	margin-left: 28%;
+	}
+	
+}
+
+@media only screen and (min-width: 1200px) {
+	.index-wrap {
+	background-position: 0 -310px;
+	}
+	div.index-wrap > section {
+	top: 60%;
+	}
+}
+	
+
