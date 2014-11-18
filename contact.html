@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Norgren || Designs</title>
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,39 +13,34 @@
 <body>
 	<header>
         <nav>
-        	<a href="index.html"><img src="img/logo.png" class="index-img">
-            <h1 class="text-logo">Norgren Designs</h1></a>
+        	<div id="logo-wrap">
+                <a href="index.html">
+                <!-- <img src="img/logo.png" class="index-img small"> -->
+                <img src="img/logo_grey.png" class="index-img big">
+                <h1 class="text-logo">Norgren Designs</h1></a>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
+            <span class="nav-line"></span>
         </nav>    
     </header>
-    
-    	<div class="wrap">
-    		<div class="desktop-left">
-                <form action="process.php" method="post">
-                    <h1>Contact Me</h1>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="user_name" />
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="user_email" />
-                    <label for="comment">Message:</label>
-                    <textarea id="comment" name="user_comment"></textarea>
-                    <button type="submit" id="send">Send</button>
-                </form>
-            </div>
-            <div class="desktop-right">
-                <section id="contact">
-                    <h2>or call me at:</h2>
-                    <a href="tel:650-833-9349"><p id="phone">650-833-9349</p></a>
-                    <h3>or find me online:</h3>
-                    <a href="http://www.facebook.com" target="_blank"></a>
-                    <a href="http://www.twitter.com" target="_blank"></a>
-                </section>
-        	</div>
-    	</div>
+    	<div class="wrap-bg">
+            <div class="center main-pad wrap">
+                    <form action="process.php" method="post" class="center">
+                        <h1>Contact Me</h1>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" />
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="user_email" />
+                        <label for="comment">Message:</label>
+                        <textarea id="comment" name="user_comment"></textarea>
+                        <button type="submit" id="send">Send</button>
+                    </form>
+            </div><!-- end wrap -->
+        </div><!-- end index wrap -->
     
     <footer>
     	<p>&copy; 2014 Norgren Designs</p>
