@@ -34,7 +34,6 @@ nav li,
 input, 
 textarea, 
 button,
-section > a,
 img.index-img,
 img.about-img {
 	display: block;
@@ -63,17 +62,9 @@ img,
 .wrap {
 	max-width: 700px;
 	}
-	
-.mrg-top {
-	margin: 70px auto;
-	}
 
 .main-pad {
 	padding: 70px 0;
-	}
-	
-.center {
-	margin: 0 auto;
 	}
 
 button {
@@ -83,9 +74,7 @@ button {
 body,
 section,
 nav ul,
-img.index-img,
-img.about-img,
-#logo-wrap {
+.center {
 	margin: 0 auto;
 	}
 	
@@ -105,14 +94,11 @@ footer p:after {
 	border-radius: 50%;
 	}
 
+/* .txt-center class created to assign to: nav ul, footer p, form > h1 */
 nav a,  
-nav ul, 
 footer p,
-section > h1,
-section > h2,
-section > a, 
 form > h1,
-section > h3  {
+.txt-center  {
 	text-align: center;
 	}
 	
@@ -120,38 +106,33 @@ nav li,
 footer {
 	clear: both;
 	}
-
-img.index-img.big {
-	display: none;
-	}
 	
 /* ----------------------------------
 			Color Assignments 
 	--------------------------------- */
-		
-body {
-	color: #fff;
-	}
-	
-h1.text-logo,
-footer {
-	color: #377F5E;
-	}
-	
-a {
-	color: #555;
-	}
-
-.active, 
-a:hover {
-	color: #377F5E;
-	}
-
 html,
 header,
 footer, 
 section > a {
 	background: #fafbfa;
+	}
+	
+label,
+form > h1,
+body,
+a {
+	color: #fafbfa;
+	}		
+	
+h1.text-logo,
+footer,
+.active, 
+a:hover {
+	color: #377F5E;
+	}
+	
+a {
+	color: #555;
 	}
 	
 footer p:before, 
@@ -180,15 +161,9 @@ button {
 	color: #37805E;
 	}
 	
-	
 footer p:before, 
 footer p:after {
 	background: #44952B;
-	}
-	
-label,
-form > h1 {
-	color: #fafbfa;
 	}
 	
 /* ----------------------------------
@@ -196,19 +171,19 @@ form > h1 {
 	--------------------------------- */
 
 header {
-	height: 320px;
+	height: 340px;
 	z-index: 3;
 	border-bottom: 1px solid #999;
 	}
 	
 nav h1 {
-	font-family: 'Sorts Mill Goudy', serif;
-	font-size: .9em;
+	font-family: "Sorts Mill Goudy",serif;
+	font-size: 0.75em;
 	position: relative;
 	top: -40px;
-	left: 39%;
+	left: 40%;
 	float: left;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	}
 	
 .text-logo {
@@ -354,18 +329,43 @@ section > a {
 	margin: 0 auto;
 	clear: both;
 	position: relative;
-	top: -15px;
+	top: -146px;
 	z-index: -2;
 	}
 
 /* ================================================
 			Responsive Queries
 	=============================================== */
+	
+@media only screen and (min-width: 380px) {
+	nav h1 {
+		letter-spacing: 3px;
+		font-size: .9em;
+		float: initial;
+		position: initial;
+		}
+	.index-img {
+		margin-right: 0;
+		}
+	.nav-line {
+		top: -104px;
+		}
+	}
+	
 @media only screen and (min-width: 500px) {
 	nav h1 {
 		font-size: 1.1em;
-		left: 41%;
+		left: 44%;
 		top: -46px;
+		}
+	.index-img {
+		margin-right: 12%;
+		}
+	}
+
+@media only screen and (min-width: 600px) {
+	.index-img {
+		margin-right: 24%;
 		}
 	}
 	
@@ -373,10 +373,6 @@ section > a {
 
 img.index-img.small {
 	display: none;
-	}
-	
-img.index-img.big {
-	display: block;
 	}
 	 
 #logo-wrap {
@@ -394,10 +390,6 @@ img.index-img,
 #logo-wrap {
 	float: left;
 	}
-	
-img.index-img {
-	margin-left: 5%;
-	}
 
 img.about-img {
 	height: 300px;
@@ -414,24 +406,23 @@ nav li {
 	padding: 9% 0;
 	}
 	
-nav li:last-child {
-	margin-right: 20%;
-	}
-	
 nav ul {
 	float: right;
-	width: 40%;
+	width: 45%;
 	}
 	
 nav h1 {
-	display: block;
 	margin: 0;
 	float: left;
+	position: relative;
 	top: 91px;
-	left: -114px;
-	font-size: 1.4em;
+	left: -299px;
+	font-size: 1.2em;
 	}
-	
+
+.nav-line {
+	top: -15px;
+	}
 
 .content-section,
 div.index-wrap > section {
@@ -441,10 +432,35 @@ div.index-wrap > section {
 } 
 
 @media only screen and (min-width: 1000px) {
-	nav li {
-		padding: 11.2% 0;
-		}
+	
+nav li:last-child {
+	margin-right: 20%;
 	}
+	
+img.index-img {
+	margin-left: 5%;
+	}
+	
+nav li {
+	padding: 11.2% 0;
+	}
+.nav-line {
+	top: -38px;
+	}
+
+nav h1 {
+	left: -360px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+.nav-line {
+		top: -57px;
+		}
+nav h1 {
+	left: -400px;
+	}
+}
 	
 
 	
