@@ -1,466 +1,189 @@
+/* -------------------------------------------------------------------  
+				Norgren Designs v2.0
+   -------------------------------------------------------------------  */
+   
+/* Rebuild of Norgren Designs. With final design agreed on, this version is 
+a mobile first build intended as the production version. See github @therealbwynn
+for updates/commits and reference. */
 
-/* Global Elements */
+/* Title: Norgren Designs */
+/* Author: Brian Wynn */
+/* URL: www.norgrendesigns.com */
+
+
+/* Author's Note:
+Norgren Designs was built as a mobile-first website. All styles are oriented based off of a 
+mobile oriented design in a portrait layout. Media queries are added as the viewport size
+increases. */
+
+
+/* ------------------  Global Elements   -----------------------------  */ 
 
 html {
 	width: 100%;
 	}
-
-html {
-	height: 100%;
-	}
 	
-body {
-	font-family: 'Lato', helvetica, sans-serif;
-	max-width: 1280px;
-	}
-	 
-a {
-	font-size: 1.25em;
-	text-decoration: none;
-	}
-
-p {
-	line-height: 1.5;
-	font-size: 1em;
-	letter-spacing: .03em;
-	}
-	
-h2,
-h3 {
-	margin: 2em 0;
-	}
-
-nav li, 
-input, 
-textarea, 
-button,
-img.index-img,
-img.about-img {
+a,
+#logo-wrap > a > img,
+label,
+input,
+textarea,
+button {
 	display: block;
 	}
-
-img,
-.index-wrap {
-	max-width: 100%;
-	}
 	
-.wrap-bg {
-	background: url('../img/banner-header.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center; 
-	}
-	
-.index-wrap {
-	float: left;
-	width: 100%;
-	position: relative;
-	z-index: -1;
-	padding-bottom: 50px; 
-	}
-
-.wrap {
-	max-width: 700px;
-	}
-
-.main-pad {
-	padding: 70px 0;
-	}
-
-button {
-	margin: 10% auto;
-	}
-
-body,
+#logo-wrap,
+#logo-wrap > a > img,
 section,
-nav ul,
-.center {
+form,
+input,
+textarea {
 	margin: 0 auto;
 	}
 	
-p#phone,
-form > h1,
-nav h1 {
-	margin: 0;
-	}
-	
-header,
-div.index-wrap > section {
-	position: relative;
-	}
-	
-footer p:before, 
-footer p:after {
-	border-radius: 50%;
-	}
-
-/* .txt-center class created to assign to: nav ul, footer p, form > h1 */
-nav a,  
-footer p,
-form > h1,
-.txt-center  {
+h1,
+li,
+footer > p {
 	text-align: center;
 	}
 	
-nav li, 
-footer {
-	clear: both;
+nav {
+	height: inherit;
 	}
 	
-/* ----------------------------------
-			Color Assignments 
-	--------------------------------- */
+h1,
+p,
+ul {
+	margin: 0;
+	}
+	
+ul {
+	padding: 0;
+	}
+	
+a {
+	text-decoration: none;
+	}
+	
+footer p:before,
+footer p:after {
+	display: inline-block;
+	}
+	
+body {
+	font-family: 'Lato', sans-serif;
+	}
+
+	
+/* ================================================================= 
+						  Page Styles 
+   ================================================================= */
+   
+/* --------------------   Colors  ---------------------------------- */
+
 html,
 header,
-footer, 
-section > a {
+footer {
 	background: #fafbfa;
 	}
 	
-label,
-form > h1,
-body,
-a {
-	color: #fafbfa;
-	}		
-	
-h1.text-logo,
-footer,
-.active, 
+nav h1, 
+footer p,
+.active,
 a:hover {
 	color: #377F5E;
 	}
-	
+
 a {
 	color: #555;
 	}
-	
-footer p:before, 
-footer p:after {
-	background: #fff;
-	}
-	
-input, 
-textarea {
-	background: #f4f5f4;
-	}
 
-.wrap > form {
-	background: hsla(120, 5%, 30%, 0.5);
-	}
-	
-input[type^="text"],
-input[type^="text"]:focus,
-textarea,
-textarea:focus {
-	background: #f2f2f2;
-	color: #37805E;
-	}
-	
-button {
-	color: #fafbfa;
-	}
-	
-footer p:before, 
-footer p:after {
-	background: #44952B;
-	}
-	
-/* ----------------------------------
-			Header Elements 
-	--------------------------------- */
+/* --------------------   Header Section  -------------------------- */
 
 header {
-	height: 340px;
-	z-index: 3;
+	height: 300px;
 	border-bottom: 1px solid #999;
 	}
 	
-nav h1 {
-	font-family: "Sorts Mill Goudy",serif;
-	font-size: 0.75em;
-	position: relative;
-	letter-spacing: 2px;
-	}
-	
-.text-logo {
-	text-transform: uppercase;
-	}
-	
-nav ul {
-	position: relative;
-	padding: 0;
-	width: 100%;
-	}
-	
-nav li {
-	padding: 5px 0;
-	}
-	
 #logo-wrap {
-	width: 100%;
+	width: 320px;
 	}
 	
-img.index-img {
-	position: relative;
+#logo-wrap > a > img {
+	height: 150px;
 	}
+	
+nav h1 {
+	font-family: 'Sorts Mill Goudy', serif;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	}
+	
+nav > ul {
+	margin-top: 18px;
+	}
+	
+nav > ul > li {
+	padding: 4px;
+	}
+	
+/* Body */
 
-/* ---------------------------------
-			Footer Elements 
-	-------------------------------- */
+.wrap-bg {
+	background: url('../img/banner-header.jpg');
+	}
 	
+section {
+	width: 95%;
+	}
+	
+/* Footer */
 footer {
-	width: 100%;
-	padding: 10px 0;
+	height: 75px;
 	border-top: 1px solid #999;
 	}
-
-/* bullet points for footer */
-footer p:before, footer p:after {
-	display: inline-block;
-	}
 	
-footer p:before, 
+footer p {
+	padding-top: 2em;
+	}
+
+footer p:before,
 footer p:after {
 	content: "";
-	width: 7px;
 	height: 7px;
+	width: 7px;
+	background: #377F5E;
+	border-radius: 50%;
 	margin: 2px 10px;
 	}
 	
-/* ---------------------------------
-				Index Page
-	-------------------------------- */
-.content-section, 
-div.index-wrap > section {
-	background: hsla(120, 5%, 30%, 0.5);
-	margin: 0 auto;
-	padding: 20px;
-	/* top: 30px;  */
-	}
-	
-h1.banner-header {
-	font-size: 2em;
-	margin: .3em 0;
-	}
-	
-img.index-img {
-	max-height: 200px;
-	}
-	
-/* ---------------------------------
-				About Page
-	-------------------------------- */
-	
-img.about-img {
-	margin-bottom: 2em;
-	border: 5px solid #37805E;
-	width: 200px;
-	height: 200px;
-	}
-
-article {
-	background: hsla(255, 3%, 10%, .6);
-	padding: 5%;
-	}
-
-article > h1 {
-	margin: .5rem 0;
-	}
-	
-/* ---------------------------------
-			Contact Page 
-	-------------------------------- */
-
-section {
-	max-width: 300px;
-	}
-	
-input, 
-textarea {
-	padding: 2% 2%;
-	width: 95%;
-	border: 1px solid#999;
-	margin: 10px 0;
-	box-shadow:inset 1px 1px 15px -5px #9a9a9a;
-	}
+/* -----------------------------------------------------------
+					Contact Page
+	---------------------------------------------------------- */
 	
 form {
-	width: 300px;
-	padding: 20px 20px 5px;
-	box-sizing: border-box;
-	margin-bottom: 2%;
+	width: 80%;
 	}
 	
-label, 
+textarea,
 button {
-	font-size: 1.25em;
+	border: none;
+	}
+	
+label {
+	padding: .6em 1.2em;
+	}
+	
+form > h1 {
+	padding: .8em 0;
 	}
 	
 button {
-	background: #37805E;
-	padding: 5% 41.4% 5%;
-	margin-top: 15px;
-	-webkit-transition: background-color 0.3s ease-in;
-	-moz-transition: background-color 0.3s ease-in;
-	transition: background-color 0.3s ease-in;
-}
-
-button:hover,
-button:active,
-section > a:hover {
-	background: #fafbfa;
-	color: #37805E;
+	width: 70%;
+	height: 30px;
+	margin: 2em auto;
 	}
-
-button,
-button:hover,
-button:active {
-	border: 1px solid #0C5935;
-	}
-
-section > a {
-	border-bottom: 3px solid #37805E;
-	}
-	
-.nav-line {
-	width: 96%;
-	border-bottom: 1px solid #9a9b9a;
-	display: none;
-	margin: 0 auto;
-	clear: both;
-	position: relative;
-	top: -146px;
-	z-index: -2;
-	}
-
-/* ================================================
-			Responsive Queries
-	=============================================== */
-	
-@media only screen and (min-width: 380px) {
-	nav h1 {
-		letter-spacing: 3px;
-		font-size: .9em;
-		float: initial;
-		position: initial;
-		}
-	/*.index-img {
-		margin-right: 0;
-		} */
-	.nav-line {
-		display: block;
-		top: -104px;
-		}
-	}
-	
-@media only screen and (min-width: 500px) {
-	nav h1 {
-		font-size: 1.1em;
-		left: 44%;
-		top: -46px;
-		}
-	/*.index-img {
-		margin-right: 12%;
-		} */
-	}
-
-@media only screen and (min-width: 600px) {
-	/*.index-img {
-		margin-right: 24%;
-		} */
-	}
-	
-@media only screen and (min-width: 768px) {
-
-img.index-img.small {
-	display: none;
-	}
-	 
-#logo-wrap {
-	height: 140px;
-	width: 50%;
-	margin: 0;
-	}
-	
-header,
-img.index-img {
-	height: 140px;
-	}
-	
-img.index-img,
-#logo-wrap {
-	float: left;
-	}
-
-img.about-img {
-	height: 300px;
-	width: 300px;
-	}
-
-img.index-img {
-	left: 5%;
-	}
-	
-nav > a > h1 {
-	font-size: 2em;
-	}
-
-nav li {
-	display: inline-block;
-	margin-left: 12%;
-	padding: 11.2% 0;
-	}
-	
-nav ul {
-	float: right;
-	width: 50%;
-	}
-	
-nav h1 {
-	margin: 0;
-	float: left;
-	position: relative;
-	top: -49px;
-	left: 134px;
-	font-size: 1.2em;
-	}
-
-.nav-line {
-	top: -15px;
-	}
-
-
-.content-section,
-div.index-wrap > section {
-	max-width: 500px;
-	}
-	
-} 
-
-@media only screen and (min-width: 1000px) {
-	
-nav {
-	max-height: 100%;
-	}
-	
-nav li:last-child {
-	margin-right: 20%;
-	}
-
-nav h1 {
-	left: 35px;
-	}
-
-}
-
-@media only screen and (min-width: 1200px) {
-		
-nav h1 {
-	left: 40px;
-	}
-}
 	
 
 	
-
