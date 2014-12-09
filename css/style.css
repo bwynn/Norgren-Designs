@@ -37,7 +37,8 @@ button {
 section,
 form,
 input,
-textarea {
+textarea,
+.wrap-bg {
 	margin: 0 auto;
 	}
 	
@@ -53,7 +54,8 @@ nav {
 	
 h1,
 p,
-ul {
+ul,
+form > h1 {
 	margin: 0;
 	}
 	
@@ -132,6 +134,10 @@ nav > ul > li {
 
 .wrap-bg {
 	background: url('../img/banner-header.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 400px;
 	}
 	
 section {
@@ -163,8 +169,13 @@ footer p:after {
 	---------------------------------------------------------- */
 	
 form {
-	width: 80%;
-	}
+	width: 300px;
+	padding: 20px 20px 5px;
+	box-sizing: border-box;
+	background: hsla(120, 5%, 30%, 0.5);
+	position: relative;
+	top: 3%;
+}
 	
 textarea,
 button {
@@ -172,17 +183,23 @@ button {
 	}
 	
 label {
-	padding: .6em 1.2em;
-	}
-	
-form > h1 {
-	padding: .8em 0;
+	padding: 2%;
 	}
 	
 button {
-	width: 70%;
 	height: 30px;
 	margin: 2em auto;
+	}
+	
+label,
+button {
+	font-size: 1.25em;
+	}
+	
+input[type^="text"],
+textarea,
+button {
+	width: 95%;
 	}
 	
 
