@@ -11,6 +11,12 @@ var showAlert = function() {
 // attaches showAlert function when button is clicked
 btn.addEventListener("click", showAlert);
 
+$(document).ready(function() {
+	$("nav > li > a").on("click", "a", function(){
+	
+		});
+	});
+
 
 	
 	
