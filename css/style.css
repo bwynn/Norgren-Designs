@@ -19,7 +19,8 @@ increases. */
 
 /* ------------------  Global Elements   -----------------------------  */ 
 
-html {
+html,
+section {
 	width: 100%;
 	}
 	
@@ -43,7 +44,7 @@ textarea,
 	}
 	
 h1,
-li,
+nav > li,
 footer > p {
 	text-align: center;
 	}
@@ -67,6 +68,10 @@ a {
 	text-decoration: none;
 	}
 	
+p {
+	font-size: 1.1em;
+	}
+	
 footer p:before,
 footer p:after {
 	display: inline-block;
@@ -74,6 +79,36 @@ footer p:after {
 	
 body {
 	font-family: 'Lato', sans-serif;
+	}
+
+section,
+form {
+	position: relative;
+	}
+
+section {
+	width: 95%;
+	max-width: 500px;
+	background: hsla(120, 5%, 30%, 0.5);
+	top: 8%;
+	}
+	
+h1,
+h2,
+h3,
+label {
+	padding: 2%;
+	}
+	
+p {
+	padding: 3%;
+	}
+	
+a,
+button {
+	-webkit-transition: background-color 0.3s ease-in;
+	-moz-transition: background-color 0.3s ease-in;
+	transition: background-color 0.3s ease-in;
 	}
 
 	
@@ -88,6 +123,10 @@ header,
 footer {
 	background: #fafbfa;
 	}
+
+html {
+	color: white;
+	}
 	
 nav h1, 
 footer p,
@@ -99,11 +138,11 @@ a:hover {
 a {
 	color: #555;
 	}
-
+	
 /* --------------------   Header Section  -------------------------- */
 
 header {
-	height: 300px;
+	height: 320px;
 	border-bottom: 1px solid #999;
 	}
 	
@@ -127,7 +166,7 @@ nav > ul {
 	}
 	
 nav > ul > li {
-	padding: 4px;
+	padding: 5px;
 	}
 	
 /* Body */
@@ -138,10 +177,6 @@ nav > ul > li {
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 400px;
-	}
-	
-section {
-	width: 95%;
 	}
 	
 /* Footer */
@@ -173,7 +208,6 @@ form {
 	padding: 20px 20px 5px;
 	box-sizing: border-box;
 	background: hsla(120, 5%, 30%, 0.5);
-	position: relative;
 	top: 3%;
 }
 	
@@ -182,13 +216,21 @@ button {
 	border: none;
 	}
 	
-label {
-	padding: 2%;
+button {
+	height: 50px;
+	margin: 1.2em auto;
+	color: #222;
 	}
 	
-button {
-	height: 30px;
-	margin: 2em auto;
+button:hover {
+	background: #377F5E;
+	color: white;
+	}
+	
+button,
+button:hover,
+button:active {
+	border: 1px solid #0C5935;
 	}
 	
 label,
@@ -202,5 +244,33 @@ button {
 	width: 95%;
 	}
 	
+@media only screen and (min-width: 768px) {
+	
+form {
+	width: 400px;
+	}
+	
+button {
+	height: 40px;
+	}
+	
+header {
+	height: 190px;
+	}
 
+#logo-wrap {
+	margin: 0;
+	float:left;
+	}
+	
+nav > ul {
+	float: right;
+	width: 58%;
+	}
+	
+nav > ul > li {
+	display: inline-block;
+	}
+
+	}
 	
