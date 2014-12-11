@@ -24,35 +24,43 @@ section {
 	width: 100%;
 	}
 	
+body {
+	max-width: 1440px;
+	}
+	
 a,
 #logo-wrap > a > img,
 label,
 input,
 textarea,
-button {
+button,
+span {
 	display: block;
 	}
-	
+
+body,
 #logo-wrap,
 #logo-wrap > a > img,
 section,
 form,
 input,
 textarea,
-.wrap-bg {
+.wrap-bg,
+.nav-line {
 	margin: 0 auto;
 	}
 	
 h1,
-nav > li,
-footer > p {
+footer > p,
+ul {
 	text-align: center;
 	}
 	
 nav {
 	height: inherit;
 	}
-	
+
+body,	
 h1,
 p,
 ul,
@@ -82,7 +90,9 @@ body {
 	}
 
 section,
-form {
+form,
+.nav-line,
+#logo-wrap > a > img {
 	position: relative;
 	}
 
@@ -90,7 +100,8 @@ section {
 	width: 95%;
 	max-width: 500px;
 	background: hsla(120, 5%, 30%, 0.5);
-	top: 8%;
+	top: 3%;
+	height: 375px;
 	}
 	
 h1,
@@ -152,6 +163,7 @@ header {
 	
 #logo-wrap > a > img {
 	height: 150px;
+	z-index: 2;
 	}
 	
 nav h1 {
@@ -169,6 +181,11 @@ nav > ul > li {
 	padding: 5px;
 	}
 	
+.nav-line {
+	border: .5px solid #555;
+	width: 50%;
+	}
+	
 /* Body */
 
 .wrap-bg {
@@ -176,17 +193,17 @@ nav > ul > li {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 400px;
+	padding: 70px 0;
 	}
 	
 /* Footer */
 footer {
-	height: 75px;
+	height: 100px;
 	border-top: 1px solid #999;
 	}
 	
-footer p {
-	padding-top: 2em;
+footer > p {
+	padding: 5%;
 	}
 
 footer p:before,
@@ -208,7 +225,7 @@ form {
 	padding: 20px 20px 5px;
 	box-sizing: border-box;
 	background: hsla(120, 5%, 30%, 0.5);
-	top: 8%;
+	top: 3%;
 }
 	
 textarea,
@@ -219,12 +236,13 @@ button {
 button {
 	height: 50px;
 	margin: 1.2em auto;
-	color: #222;
+	background: #377F5E;
 	}
 	
 button:hover {
-	background: #377F5E;
-	color: white;
+	color: #377F5E;
+	background: #fafbfa;
+	cursor: pointer;
 	}
 	
 button,
@@ -255,22 +273,75 @@ button {
 	}
 	
 header {
-	height: 190px;
+	height: 150px;
 	}
 
 #logo-wrap {
 	margin: 0;
 	float:left;
+	width: 50%;
+	}
+	
+#logo-wrap > a > img {
+	float: left;
+	}
+	
+nav > ul,
+#logo-wrap {
+	height: inherit;
 	}
 	
 nav > ul {
 	float: right;
-	width: 58%;
+	width: 45%;
+	text-align: right;
+	margin-top: 0;
+	}
+	
+nav > ul > li,
+nav h1 {
+	display: inline-block;
 	}
 	
 nav > ul > li {
-	display: inline-block;
+	padding-top: 100px;
+	padding-right: 10%;
+	font-size: 1.4em;
+	}
+	
+nav h1 {
+	padding: 100px 0 0 0;
+	margin-left: -25px;
+	}
+	
+.nav-line {
+	width: 98%;
+	top: 132px;
+	z-index: 1;
 	}
 
 	}
 	
+@media only screen and (min-width: 1000px) {
+.wrap-bg {
+	background-position: 0px -150px;	
+	}
+}
+
+@media only screen and (min-width: 1100px) {
+.wrap-bg {
+	background-position: 0px -215px;	
+	}
+}
+
+@media only screen and (min-width: 1100px) {
+.wrap-bg {
+	background-position: 0px -215px;	
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+.wrap-bg {
+	background-position: 0px -300px;	
+	}
+}
