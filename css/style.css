@@ -122,6 +122,10 @@ button {
 	transition: background-color 0.3s ease-in;
 	}
 
+form,
+section {
+	padding: 20px 20px 5px;
+	}
 	
 /* ================================================================= 
 						  Page Styles 
@@ -135,7 +139,8 @@ footer {
 	background: #fafbfa;
 	}
 
-html {
+html,
+button {
 	color: white;
 	}
 	
@@ -183,7 +188,8 @@ nav > ul > li {
 	
 .nav-line {
 	border: .5px solid #555;
-	width: 50%;
+	width: 80%;
+	top: -100px;
 	}
 	
 /* Body */
@@ -198,12 +204,12 @@ nav > ul > li {
 	
 /* Footer */
 footer {
-	height: 100px;
+	height: 74px;
 	border-top: 1px solid #999;
 	}
 	
 footer > p {
-	padding: 5%;
+	padding: 2%;
 	}
 
 footer p:before,
@@ -222,7 +228,6 @@ footer p:after {
 	
 form {
 	width: 300px;
-	padding: 20px 20px 5px;
 	box-sizing: border-box;
 	background: hsla(120, 5%, 30%, 0.5);
 	top: 3%;
@@ -260,6 +265,15 @@ input[type^="text"],
 textarea,
 button {
 	width: 95%;
+	}
+	
+input[type^="text"],
+textarea {
+	font-size: 1.1em;
+	}
+	
+input[type^="text"] {
+	height: 22px;
 	}
 	
 @media only screen and (min-width: 768px) {
