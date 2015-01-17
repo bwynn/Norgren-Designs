@@ -1,8 +1,8 @@
-/* -------------------------------------------------------------------  
+/* -------------------------------------------------------------------
 				Norgren Designs v2.0
    -------------------------------------------------------------------  */
-   
-/* Rebuild of Norgren Designs. With final design agreed on, this version is 
+
+/* Rebuild of Norgren Designs. With final design agreed on, this version is
 a mobile first build intended as the production version. See github @therealbwynn
 for updates/commits and reference. */
 
@@ -12,22 +12,22 @@ for updates/commits and reference. */
 
 
 /* Author's Note:
-Norgren Designs was built as a mobile-first website. All styles are oriented based off of a 
+Norgren Designs was built as a mobile-first website. All styles are oriented based off of a
 mobile oriented design in a portrait layout. Media queries are added as the viewport size
 increases. */
 
 
-/* ------------------  Global Elements   -----------------------------  */ 
+/* ------------------  Global Elements   -----------------------------  */
 
 html,
 section {
 	width: 100%;
 	}
-	
+
 body {
 	max-width: 1440px;
 	}
-	
+
 a,
 #logo-wrap > a > img,
 label,
@@ -38,53 +38,49 @@ span {
 	display: block;
 	}
 
-body,
-#logo-wrap,
-#logo-wrap > a > img,
 section,
 form,
 input,
 textarea,
-.wrap-bg,
-.nav-line {
+.center {
 	margin: 0 auto;
 	}
-	
+
 h1,
 footer > p,
 ul {
 	text-align: center;
 	}
-	
+
 nav {
 	height: inherit;
 	}
 
-body,	
+body,
 h1,
 p,
 ul,
 form > h1 {
 	margin: 0;
 	}
-	
+
 ul {
 	padding: 0;
 	}
-	
+
 a {
 	text-decoration: none;
 	}
-	
+
 p {
 	font-size: 1.1em;
 	}
-	
+
 footer p:before,
 footer p:after {
 	display: inline-block;
 	}
-	
+
 body {
 	font-family: 'Lato', sans-serif;
 	}
@@ -103,18 +99,18 @@ section {
 	top: 3%;
 	height: 375px;
 	}
-	
+
 h1,
 h2,
 h3,
 label {
 	padding: 2%;
 	}
-	
+
 p {
 	padding: 3%;
 	}
-	
+
 a,
 button {
 	-webkit-transition: background-color 0.3s ease-in;
@@ -126,11 +122,11 @@ form,
 section {
 	padding: 20px 20px 5px;
 	}
-	
-/* ================================================================= 
-						  Page Styles 
+
+/* =================================================================
+						  Page Styles
    ================================================================= */
-   
+
 /* --------------------   Colors  ---------------------------------- */
 
 html,
@@ -143,8 +139,8 @@ html,
 button {
 	color: white;
 	}
-	
-nav h1, 
+
+nav h1,
 footer p,
 .active,
 a:hover {
@@ -154,44 +150,48 @@ a:hover {
 a {
 	color: #555;
 	}
-	
+
 /* --------------------   Header Section  -------------------------- */
 
 header {
 	height: 320px;
 	border-bottom: 1px solid #999;
 	}
-	
+
 #logo-wrap {
 	width: 320px;
 	}
-	
+
 #logo-wrap > a > img {
 	height: 150px;
 	z-index: 2;
 	}
-	
+
 nav h1 {
 	font-family: 'Sorts Mill Goudy', serif;
 	text-transform: uppercase;
 	font-size: 1.5em;
 	letter-spacing: 1px;
 	}
-	
+
 nav > ul {
 	margin-top: 18px;
 	}
-	
+
 nav > ul > li {
 	padding: 5px;
 	}
-	
+
 .nav-line {
-	border: .5px solid #555;
+	border: .5px solid #000;
 	width: 80%;
 	top: -100px;
 	}
-	
+
+#logo-wrap > a {
+  height: 100%;
+}
+
 /* Body */
 
 .wrap-bg {
@@ -201,13 +201,13 @@ nav > ul > li {
 	background-position: center;
 	padding: 70px 0;
 	}
-	
+
 /* Footer */
 footer {
 	height: 74px;
 	border-top: 1px solid #999;
 	}
-	
+
 footer > p {
 	padding: 2%;
 	}
@@ -221,71 +221,71 @@ footer p:after {
 	border-radius: 50%;
 	margin: 2px 10px;
 	}
-	
+
 /* -----------------------------------------------------------
 					Contact Page
 	---------------------------------------------------------- */
-	
+
 form {
 	width: 300px;
 	box-sizing: border-box;
 	background: hsla(120, 5%, 30%, 0.5);
 	top: 3%;
 }
-	
+
 textarea,
 button {
 	border: none;
 	}
-	
+
 button {
 	height: 50px;
 	margin: 1.2em auto;
 	background: #377F5E;
 	}
-	
+
 button:hover {
 	color: #377F5E;
 	background: #fafbfa;
 	cursor: pointer;
 	}
-	
+
 button,
 button:hover,
 button:active {
 	border: 1px solid #0C5935;
 	}
-	
+
 label,
 button {
 	font-size: 1.25em;
 	}
-	
+
 input[type^="text"],
 textarea,
 button {
 	width: 95%;
 	}
-	
+
 input[type^="text"],
 textarea {
 	font-size: 1.1em;
 	}
-	
+
 input[type^="text"] {
 	height: 22px;
 	}
-	
+
 @media only screen and (min-width: 768px) {
-	
+
 form {
 	width: 400px;
 	}
-	
+
 button {
 	height: 40px;
 	}
-	
+
 header {
 	height: 150px;
 	}
@@ -295,39 +295,39 @@ header {
 	float:left;
 	width: 50%;
 	}
-	
+
 #logo-wrap > a > img {
 	float: left;
 	}
-	
+
 nav > ul,
 #logo-wrap {
 	height: inherit;
 	}
-	
+
 nav > ul {
 	float: right;
 	width: 45%;
 	text-align: right;
 	margin-top: 0;
 	}
-	
+
 nav > ul > li,
 nav h1 {
 	display: inline-block;
 	}
-	
+
 nav > ul > li {
 	padding-top: 100px;
 	padding-right: 10%;
 	font-size: 1.4em;
 	}
-	
+
 nav h1 {
 	padding: 100px 0 0 0;
 	margin-left: -25px;
 	}
-	
+
 .nav-line {
 	width: 98%;
 	top: 132px;
@@ -335,27 +335,27 @@ nav h1 {
 	}
 
 	}
-	
+
 @media only screen and (min-width: 1000px) {
 .wrap-bg {
-	background-position: 0px -150px;	
+	background-position: 0px -150px;
 	}
 }
 
 @media only screen and (min-width: 1100px) {
 .wrap-bg {
-	background-position: 0px -215px;	
+	background-position: 0px -215px;
 	}
 }
 
 @media only screen and (min-width: 1100px) {
 .wrap-bg {
-	background-position: 0px -215px;	
+	background-position: 0px -215px;
 	}
 }
 
 @media only screen and (min-width: 1280px) {
 .wrap-bg {
-	background-position: 0px -300px;	
+	background-position: 0px -300px;
 	}
 }
