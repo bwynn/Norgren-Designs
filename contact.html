@@ -27,7 +27,7 @@
         </nav>
     </header>
     	<div class="wrap-bg center">
-                    <form action="process.php" method="post">
+                    <form action="#" method="post" id="contact-form">
                         <h1>Contact Me</h1>
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="user_name" />
@@ -37,6 +37,10 @@
                         <textarea id="comment" name="user_comment"></textarea>
                         <button type="submit" id="send">Send</button>
                     </form>
+                    <div class="confirm">
+                      <span class="valid-email">alert goes here</span>
+                      <span class="valid-comment"></span>
+                    </div>
         </div><!-- end index wrap -->
     <footer>
     	<p>&copy; 2014 Norgren Designs</p>

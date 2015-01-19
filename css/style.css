@@ -183,7 +183,7 @@ nav > ul > li {
 	}
 
 .nav-line {
-	border: .5px solid #000;
+	border: 1px solid #333;
 	width: 80%;
 	top: -100px;
 	}
@@ -274,6 +274,14 @@ textarea {
 
 input[type^="text"] {
 	height: 22px;
+	}
+.confirm {
+	display: block;
+	background: black;
+	color: white;
+	float: left;
+	position: relative;
+	padding: 5px;
 	}
 
 @media only screen and (min-width: 768px) {
