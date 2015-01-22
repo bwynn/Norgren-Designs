@@ -13,24 +13,23 @@ function confirm() {
 }
 
 //Validation
-var contactForm = document.getElementById('contact-form');				// gets contact-form form element
-
-function contactValidate() {
-	var reply = document.getElementById('reply');										// gets value of form																		// gets label.length value
-	if (this.value.length < 3) {
-		reply.innerHTML = 'This field must be at least 3 characters.';			// sets error message
-	} else {
-		reply.innerHTML = '';
+var validate = function() {					// create an anonymous function to get automatically called
+	function contactValidate() {
+		var reply = document.getElementById('reply');										// gets value of form																		// gets label.length value
+		if (this.value.length < 3) {
+			reply.innerHTML = 'This field must be at least 3 characters.';			// sets error message
+		} else {
+			reply.innerHTML = '';
+		}
 	}
-}
 
-//get input element
-var input = document.querySelector('input');
-//get textarea element
-var textarea = document.querySelector('textarea');
-// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
-input.addEventListener('blur', contactValidate, false);
-textarea.addEventListener('blur', contactValidate, false);
-
+	//get input element
+	var input = document.querySelector('input');
+	//get textarea element
+	var textarea = document.getElementById('comment');
+	// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
+	input.addEventListener('blur', contactValidate, false);
+	textarea.addEventListener('blur', contactValidate, false);
+}();
 
 confirm();
