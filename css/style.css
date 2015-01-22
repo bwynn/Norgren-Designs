@@ -270,6 +270,7 @@ button {
 input[type^="text"],
 textarea {
 	font-size: 1.1em;
+	color: black;
 	}
 
 input[type^="text"] {
