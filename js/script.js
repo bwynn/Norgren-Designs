@@ -14,13 +14,17 @@ function confirm() {
 
 //Validation
 var validate = function() {					// create an anonymous function to get automatically called
+
 	function contactValidate() {
-		var reply = document.getElementById('reply');										// gets value of form																		// gets label.length value
-		if (this.value.length < 3) {
-			reply.innerHTML = 'This field must be at least 3 characters.';			// sets error message
+		var elNote = document.createElement('div');												// creates div
+		elNote.setAttribute('id', 'reply');																// assigns id
+		elNote.setAttribute('class', 'warning');													// assigns class for styling
+		if (this.value.length < 3) {																			// gets label.length value
+			elNote.innerHTML = '<p>This field must be at least 3 characters.</p>';			// sets error message
 		} else {
-			reply.innerHTML = '';
+			elNote.innerHTML = '';
 		}
+		this.parentNode.appendChild(elNote);															// attaches message to bottom of form
 	}
 
 	//get input element
