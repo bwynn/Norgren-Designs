@@ -284,6 +284,9 @@ input[type^="text"] {
 	position: relative;
 	padding: 5px;
 	}
+#contact-form p {
+	padding: 0;
+}
 
 @media only screen and (min-width: 768px) {
 

@@ -9,7 +9,7 @@ function confirm() {
 		alert("Thank you for your inquiry. We'll get back to you shortly.");
 		}
 	// attaches showAlert function when button is clicked
-	btn.addEventListener("click", showAlert);
+	btn.addEventListener("click", showAlert );
 }
 
 //Validation
@@ -27,13 +27,21 @@ var validate = function() {					// create an anonymous function to get automatic
 		this.parentNode.appendChild(elNote);															// attaches message to bottom of form
 	}
 
-	//get input element
-	var input = document.querySelector('input');
-	//get textarea element
-	var textarea = document.getElementById('comment');
-	// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
-	input.addEventListener('blur', contactValidate, false);
-	textarea.addEventListener('blur', contactValidate, false);
+	var inputCheck = function() {
+		var elements = document.getElementsByTagName('input');
+		for (var i = 0; i < elements.length; i++) {
+			var input = elements[i];
+			input.addEventListener('blur', contactValidate, false);
+		}
+	}();
+
+		//get input element
+		//var input = document.querySelector('input');
+		//get textarea element
+		var textarea = document.getElementById('comment');
+		// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
+		textarea.addEventListener('blur', contactValidate, false);
+
 }();
 
 confirm();
