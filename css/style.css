@@ -42,7 +42,10 @@ section,
 form,
 input,
 textarea,
-.center {
+.center,
+.nav-line,
+#logo-wrap,
+#logo-wrap > a > img {
 	margin: 0 auto;
 	}
 
@@ -338,6 +341,7 @@ nav > ul > li {
 nav h1 {
 	padding: 100px 0 0 0;
 	margin-left: -25px;
+	font-size: 22px;
 	}
 
 .nav-line {

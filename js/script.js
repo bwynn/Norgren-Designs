@@ -1,19 +1,16 @@
 // JavaScript Document
 
-//User confirmation
-function confirm() {
-	// targets button with ID attribute of "send"
-	var btn = document.getElementById("send");
-	// user notification of successful query submission
-	function showAlert() {
+function confirm() {																								//User confirmation
+	var btn = document.getElementById("send");												// targets button with ID attribute of "send"
+
+	function showAlert() {																						// user notification of successful query submission
 		alert("Thank you for your inquiry. We'll get back to you shortly.");
 		}
-	// attaches showAlert function when button is clicked
-	btn.addEventListener("click", showAlert );
+	btn.addEventListener("click", showAlert );												// attaches showAlert function when button is clicked
 }
 
 //Validation
-var validate = function() {					// create an anonymous function to get automatically called
+var validate = function() {																					// create an anonymous function to get automatically called
 
 	function contactValidate() {
 		var elNote = document.createElement('div');												// creates div
@@ -22,7 +19,7 @@ var validate = function() {					// create an anonymous function to get automatic
 		if (this.value.length < 3) {																			// gets label.length value
 			elNote.innerHTML = '<p>This field must be at least 3 characters.</p>';			// sets error message
 		} else {
-			elNote.innerHTML = '';
+			elNote.remove;
 		}
 		this.parentNode.appendChild(elNote);															// attaches message to bottom of form
 	}
@@ -35,12 +32,8 @@ var validate = function() {					// create an anonymous function to get automatic
 		}
 	}();
 
-		//get input element
-		//var input = document.querySelector('input');
-		//get textarea element
 		var textarea = document.getElementById('comment');
-		// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
-		textarea.addEventListener('blur', contactValidate, false);
+		textarea.addEventListener('blur', contactValidate, false);				// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
 
 }();
 
