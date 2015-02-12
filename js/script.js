@@ -1,8 +1,7 @@
 // JavaScript Document
 
-function confirm() {																								//User confirmation
+/*function confirm() {																								//User confirmation
 	var btn = document.getElementById("send");												// targets button with ID attribute of "send"
-
 	function showAlert() {																						// user notification of successful query submission
 		alert("Thank you for your inquiry. We'll get back to you shortly.");
 		}
@@ -11,19 +10,19 @@ function confirm() {																								//User confirmation
 
 //Validation
 var validate = function() {																					// create an anonymous function to get automatically called
-
 	function contactValidate() {
 		var elNote = document.createElement('div');												// creates div
 		elNote.setAttribute('id', 'reply');																// assigns id
 		elNote.setAttribute('class', 'warning');													// assigns class for styling
+		var msg = '<p>This field must be at least 3 characters.</p>';			// sets error message
 		if (this.value.length < 3) {																			// gets label.length value
-			elNote.innerHTML = '<p>This field must be at least 3 characters.</p>';			// sets error message
+			elNote.remove(msg.length.value);									//removes msg if existing
+			elNote.innerHTML = msg;
 		} else {
-			elNote.remove;
+			elNote.innerHTML = '';
 		}
 		this.parentNode.appendChild(elNote);															// attaches message to bottom of form
 	}
-
 	var inputCheck = function() {
 		var elements = document.getElementsByTagName('input');
 		for (var i = 0; i < elements.length; i++) {
@@ -37,4 +36,15 @@ var validate = function() {																					// create an anonymous function 
 
 }();
 
-confirm();
+confirm();*/
+
+var $contactForm = $('#contact-form');
+
+$contactForm.on('submit', function(e) {
+	// if  
+	// prevent default behavior
+	// email doesnt contain @ or '.' characters
+	// message is returned to user
+	// else
+	// no message to user
+});

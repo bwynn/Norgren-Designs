@@ -31,15 +31,15 @@
                         <h1>Contact Me</h1>
                         <div id="nameWrap">
                           <label for="name">Name:</label>
-                          <input type="text" id="name" name="user_name" /></br>
+                          <input type="text" id="name" name="name" placeholder='Enter your name' pattern='[a-zA-Z]+' min='2' required></br>
                         </div>
                         <div id="emailWrap">
                           <label for="email">Email:</label>
-                          <input type="text" id="email" name="user_email" /></br>
+                          <input type="text" id="email" name="email" placeholder='example@gmail.com' required></br>
                         </div>
                         <div id="commentWrap">
                           <label for="comment">Message:</label>
-                          <textarea id="comment" name="user_comment"></textarea></br>
+                          <textarea id="comment" name="user_comment" required></textarea></br>
                         </div>
                         <button type="submit" id="send">Send</button>
                     </form>
