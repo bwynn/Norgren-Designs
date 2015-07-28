@@ -6,28 +6,28 @@
     <title>Norgren || Designs</title>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="center">
-	<header>
+  <header id="globalHeader">
+        <div id="logo-wrap" class="center">
+            <a href="index.html" class="homeBtn">
+              <figure id="headerIcon" class="logo"></figure>
+              <h1>Norgren Designs</h1>
+            </a>
+        </div>
         <nav>
-        	<div id="logo-wrap" class="center">
-                <a href="index.html">
-                <img src="img/logo_grey.png" class="center">
-                <h1>Norgren Designs</h1></a>
-            </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <span class="nav-line center"></span>
         </nav>
     </header>
     	<div class="wrap-bg center">
-                    <form action="#" method="post" id="contact-form">
+                    <form action="process.php" method="post" id="contact-form">
                         <h1>Contact Me</h1>
                         <div id="nameWrap">
                           <label for="name">Name:</label>
@@ -45,7 +45,7 @@
                     </form>
         </div><!-- end index wrap -->
     <footer>
-    	<p>&copy; 2014 Norgren Designs</p>
+    	<p>&copy; 2015 Norgren Designs</p>
     </footer>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
