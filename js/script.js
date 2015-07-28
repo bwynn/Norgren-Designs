@@ -1,50 +1,12 @@
-// JavaScript Document
+var stringMap = {
+	home_p1: "Norgren Designs was founded by Erik Norgren as a platform to bring creative ideas to life. Inspired by organic form and function, Norgren Designs takes pride in its ability to create elegant solutions to the strictest design constraints and toughest functional challenges. Clients rely on our experience and knowledge to help design products that meet their goals quickly and efficiently. Let Norgren Designs help you with your next mechanical engineering design project.",
+	home_p2: "Our design philosophy – An uncommon perspective. Engineering is often perceived as a dry, technical, numbers game, transforming ideas into products through mathematical tools and methods. Norgren Designs understands that wiz-bang 3D modeling, FEA, and other technical engineering practices are tools that can easily be wasted without a solid foundation on which to apply them. We value the highly creative stage in the design process that is often overlooked and undervalued. We excel at this creative stage by leveraging experience and intuition to quickly arrive at an optimal starting point. Any design can be optimized in a technical sense, but not every optimized design is an optimal solution. We focus on the creative stage up front to set your project up for success later. Our motto: Creativity, Quantified.",
+	about: "Erik comes from a family with multiple generations of creative engineers - engineering is in his blood. He has a Masters in Mechanical Engineering from the University of Colorado, Boulder, and 15+ years' experience designing mechatronic systems from the ground up. Robotics and mechanism design are his specialties. He has a proven ability to create successful products from primitive concepts. He enjoys rock climbing and hiking in his spare time.",
+	collaborators: "I am continuously making progress on a handful of in-house development projects alongside client-based projects. Think think-tank meets technical competency. I am looking for creative minds to augment my mechanical engineering technical expertise. If you have an innate ability to do what you do, are self-motivated, and want to test your abilities in a new setting, I am interested in hearing from you."
+};
 
-/*function confirm() {																								//User confirmation
-	var btn = document.getElementById("send");												// targets button with ID attribute of "send"
-	function showAlert() {																						// user notification of successful query submission
-		alert("Thank you for your inquiry. We'll get back to you shortly.");
-		}
-	btn.addEventListener("click", showAlert );												// attaches showAlert function when button is clicked
+var elemMap = {
+	homeContentP1: $("#homePageContent p:first"),
+	homeContentP2: $("#homePageContent p:last"),
+	aboutContent: $("#aboutPageContent p")
 }
-
-//Validation
-var validate = function() {																					// create an anonymous function to get automatically called
-	function contactValidate() {
-		var elNote = document.createElement('div');												// creates div
-		elNote.setAttribute('id', 'reply');																// assigns id
-		elNote.setAttribute('class', 'warning');													// assigns class for styling
-		var msg = '<p>This field must be at least 3 characters.</p>';			// sets error message
-		if (this.value.length < 3) {																			// gets label.length value
-			elNote.remove(msg.length.value);									//removes msg if existing
-			elNote.innerHTML = msg;
-		} else {
-			elNote.innerHTML = '';
-		}
-		this.parentNode.appendChild(elNote);															// attaches message to bottom of form
-	}
-	var inputCheck = function() {
-		var elements = document.getElementsByTagName('input');
-		for (var i = 0; i < elements.length; i++) {
-			var input = elements[i];
-			input.addEventListener('blur', contactValidate, false);
-		}
-	}();
-
-		var textarea = document.getElementById('comment');
-		textarea.addEventListener('blur', contactValidate, false);				// adds event listener to when input loses focus, checks 'blur' with contactValidate() function and if the argument returns false
-
-}();
-
-confirm();*/
-
-var $contactForm = $('#contact-form');
-
-$contactForm.on('submit', function(e) {
-	// if  
-	// prevent default behavior
-	// email doesnt contain @ or '.' characters
-	// message is returned to user
-	// else
-	// no message to user
-});

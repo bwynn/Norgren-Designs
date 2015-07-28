@@ -26,6 +26,8 @@ section {
 
 body {
 	max-width: 1440px;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
 	}
 
 a,
@@ -75,17 +77,9 @@ a {
 	text-decoration: none;
 	}
 
-p {
-	font-size: 1.1em;
-	}
-
 footer p:before,
 footer p:after {
 	display: inline-block;
-	}
-
-body {
-	font-family: 'Lato', sans-serif;
 	}
 
 section,
@@ -123,7 +117,7 @@ button {
 
 form,
 section {
-	padding: 20px 20px 5px;
+	padding: 1.1em 1.1em;
 	}
 
 /* =================================================================
@@ -202,7 +196,7 @@ nav > ul > li {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	padding: 70px 0;
+	padding: 3.5em;
 	}
 
 /* Footer */
