@@ -35,30 +35,60 @@ body {
 	font-size: 18px;
 }
 
-.center,
+ul {
+	list-style-type: none;
+}
+
 .nav-line,
 #logo-wrap {
 	margin: 0 auto;
 	}
+
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
 	height: 3em;
-	/* adding in these declarations to help see dividers while developing.*/
-	border-bottom: 2px solid #444;
 	overflow: hidden;
 }
 
 div#logo-wrap, header#globalHeader > nav {
 	height: inherit;
-	width: 49%;
 }
 
-div#logo-wrap, header#globalHeader > nav, figure#headerIcon, div#logo-wrap h1 {
+div#logo-wrap, header#globalHeader > nav, figure#headerIcon, div#logo-wrap h1, header#globalHeader > nav > ul > li {
 	display: inline-block;
+}
+
+div#logo-wrap {
+	width: 66%;
+}
+
+header#globalHeader > nav {
+	width: 33%;
+}
+
+header#globalHeader > nav > ul {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-top: 1.5em;
+}
+
+header#globalHeader > nav > ul > li {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+header#globalHeader > nav > ul > li > a {
+	display: block;
+	text-align: center;
 }
 
 div#logo-wrap, figure#headerIcon, div#logo-wrap h1 {
 	float: left;
+}
+
+div#logo-wrap h1 {
+	margin-top: .2em;
 }
 
 figure#headerIcon {
@@ -74,6 +104,30 @@ figure#headerIcon {
 
 
 /* ------------------  Content Elements ------------------------------  */
+#contentSection {
+	background-color: #999;
+	overflow: hidden;
+}
+
+#contentSection, #homePageContent {
+	height: 80%;
+}
+
+#homePageContent {
+	width: 60%;
+	margin: 0 auto;
+	position: relative;
+	top: 10%;
+	background-color: #fff;
+	opacity: .9;
+	box-shadow: 2px 2px 10px #666;
+}
+
+#homePageContent h1 {
+	text-align: center;
+	padding: 1em 0;
+}
+
 /* ------------------  Footer Elements -------------------------------  */
 footer {
 	position: absolute;
@@ -82,4 +136,5 @@ footer {
 
 footer p {
 	text-align: center;
+	margin-bottom: .6em;
 }
