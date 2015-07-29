@@ -18,9 +18,6 @@ increases. */
 	margin: 0;
 	padding: 0;
 }
-html, body {
-	height: 100%;
-}
 
 html, body, footer {
 	width: 100%;
@@ -45,10 +42,6 @@ a:hover {
 
 ul {
 	list-style-type: none;
-}
-
-#nd {
-	height: 100%;
 }
 
 .nav-line,
@@ -122,13 +115,10 @@ figure#headerIcon {
 	overflow: hidden;
 }
 
-#contentSection, #homePageContent {
-	height: 80%;
-}
-
 #homePageContent {
-	width: 60%;
-	margin: 0 auto;
+	min-height: 450px;
+	width: 70%;
+	margin: 3em auto;
 	position: relative;
 	top: 10%;
 	background-color: #fff;
@@ -138,7 +128,7 @@ figure#headerIcon {
 
 #homePageContent h1 {
 	text-align: center;
-	padding: 1em 0;
+	padding: 1em;
 }
 
 #homePageContent p {
@@ -147,16 +137,12 @@ figure#headerIcon {
 }
 
 #homePageContent p:last-child {
-	padding-top: 1em;
+	padding: 2em;
 }
 
 /* ------------------  Footer Elements -------------------------------  */
-footer {
-	position: absolute;
-	bottom: 0;
-}
 
 footer p {
 	text-align: center;
-	margin-bottom: .6em;
+	padding: 1em;
 }
