@@ -2,10 +2,6 @@
 				Norgren Designs v2.0
    -------------------------------------------------------------------  */
 
-/* Rebuild of Norgren Designs. With final design agreed on, this version is
-a mobile first build intended as the production version. See github @therealbwynn
-for updates/commits and reference. */
-
 /* Title: Norgren Designs */
 /* Author: Brian Wynn */
 /* URL: www.norgrendesigns.com */
@@ -33,6 +29,14 @@ html, body, footer {
 body {
 	font-family: "Lato", Helvetica, sans-serif;
 	font-size: 18px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 ul {
@@ -100,6 +104,7 @@ figure#headerIcon {
 .logo {
 	height: 100%;
 	width: 3em;
+	margin: 0 .5em;
 }
 
 
@@ -126,6 +131,10 @@ figure#headerIcon {
 #homePageContent h1 {
 	text-align: center;
 	padding: 1em 0;
+}
+
+#homePageContent p {
+	padding: .2em 2em;
 }
 
 /* ------------------  Footer Elements -------------------------------  */
