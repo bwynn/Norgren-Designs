@@ -31,6 +31,10 @@ body {
 	font-size: 18px;
 }
 
+p {
+	line-height: 1.4;
+}
+
 a {
 	text-decoration: none;
 }
@@ -41,6 +45,10 @@ a:hover {
 
 ul {
 	list-style-type: none;
+}
+
+#nd {
+	height: 100%;
 }
 
 .nav-line,
@@ -135,6 +143,11 @@ figure#headerIcon {
 
 #homePageContent p {
 	padding: .2em 2em;
+	font-size: .9em;
+}
+
+#homePageContent p:last-child {
+	padding-top: 1em;
 }
 
 /* ------------------  Footer Elements -------------------------------  */
