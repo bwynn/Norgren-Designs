@@ -51,19 +51,21 @@ var nd = {
 	}
 };
 
-var homeContent = function() {
-	var title = $("#homePageContent h1");
-	var p1 = $("#homePageContent p:first");
-	var p2 = $("#homePageContent p:last");
-
-	title.text(nd.homePageModule.contentMap.title);
-	p1.text(nd.homePageModule.contentMap.home_p1);
-	p2.text(nd.homePageModule.contentMap.home_p2);
-}
+var content = function(arg1, arg2, arg3) {
+	arg1.text(nd.homePageModule.contentMap.title);
+	arg2.text(nd.homePageModule.contentMap.home_p1);
+	arg3.text(nd.homePageModule.contentMap.home_p2);
+};
 
 var init = function() {
+	// init config map
 	$("#nd").html(nd.shell.configMap.cont);
-	homeContent();
+
+	// set home page content
+	var title = $("#homePageContent h1"),
+			p1 = $("#homePageContent p:first"),
+			p2 = $("#homePageContent p:last");
+	content(title, p1, p2);
 };
 
 init();

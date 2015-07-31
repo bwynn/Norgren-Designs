@@ -111,7 +111,9 @@ figure#headerIcon {
 
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
-	background-color: #999;
+	background-image: url("../img/banner-header.jpg");
+	background-size: cover;
+	width: 100%;
 	overflow: hidden;
 }
 
