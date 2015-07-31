@@ -14,9 +14,9 @@ var nd = {
 					+ "</div>"
 					+ "<nav>"
 						+ "<ul>"
-							+ "<li><a href='index.html'>Home</a></li>"
-							+ "<li><a href='about.html'>About</a></li>"
-							+ "<li><a href='contact.html'>Contact</a></li>"
+							+ "<li><a href='#' class='active'>Home</a></li>"
+							+ "<li><a href='#'>About</a></li>"
+							+ "<li><a href='#'>Contact</a></li>"
 						+ "</ul>"
 				   + "</nav>"
 				+ "</header>"
@@ -51,21 +51,77 @@ var nd = {
 	}
 };
 
+var contentID = [
+	"homePageContent",
+	"aboutPageContent",
+	"contactPageContent"
+];
+
+// constructor function for page content
 var content = function(arg1, arg2, arg3) {
 	arg1.text(nd.homePageModule.contentMap.title);
 	arg2.text(nd.homePageModule.contentMap.home_p1);
 	arg3.text(nd.homePageModule.contentMap.home_p2);
 };
 
-var init = function() {
-	// init config map
-	$("#nd").html(nd.shell.configMap.cont);
-
+var homeContent = function() {
 	// set home page content
 	var title = $("#homePageContent h1"),
 			p1 = $("#homePageContent p:first"),
 			p2 = $("#homePageContent p:last");
-	content(title, p1, p2);
+	return content(title, p1, p2);
+};
+
+var aboutContent = function() {
+	var title = $("aboutPageContent h1"),
+			about = $("#aboutPageContent p:first"),
+			collaborators = $("#aboutPageContent p:last");
+	return content( title, about, collaborators );
+};
+
+var contentLogic = function() {
+	var nav = $("#globalHeader > nav > ul > li > a"),
+			content = $("#contentSection").find("section");
+
+			if (content.attr( "id" ) === contentID[0]) {
+				return homeContent();
+			}
+			else if (content.attr( "id" ) === contentID[1]) {
+				return aboutContent();
+			}
+			else if (content.attr( "id" ) === contentID[2]) {
+				return aboutContent(); // return this until contact logic is in place
+			}
+};
+
+var activeSwitch = function() {
+	var $navLink = $("#globalHeader > nav > ul > li > a");
+
+	$navLink.on("click", function(e) {
+		var content = $("#contentSection").find("section");
+		e.preventDefault();
+		// remove active class
+		$navLink.removeClass("active");
+		$(this).addClass("active");
+
+		if (e.target == $navLink[0]) {
+			return content.attr("id", contentID[0]);
+		}
+		else if (e.target == $navLink[1]) {
+			return content.attr("id", contentID[1]);
+		}
+		else if (e.target == $navLink[2]) {
+			return content.attr("id", contentID[2]);
+		}
+		else { return false; }
+	});
+};
+
+var init = function() {
+	// init config map
+	$("#nd").html(nd.shell.configMap.cont);
+	homeContent();
+	activeSwitch();
 };
 
 init();
