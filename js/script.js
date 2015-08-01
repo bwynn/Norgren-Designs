@@ -31,6 +31,20 @@ var nd = {
 				+ "<footer>"
 		    	+ "<p>&copy; 2015 Norgren Designs</p>"
 		    + "</footer>",
+			form: String()
+				+ '<form id="contactForm">'
+					+ '<label for="name">Name</label>'
+					+ '<input type="text" id="name" placeholder="Name"/>'
+					+ '<label for="msg">Leave us a brief message</label>'
+					+ '<textarea id="msg"></textarea>'
+					+ '<button type="submit">Submit</button>'
+				+ '</form>',
+			content: String()
+				+ "<section id=''>"
+					+ "<h1></h1>"
+					+ "<p></p>"
+					+ "<p></p>"
+				+ "</section>",
 				initial_position: 5 + "%",
 				final_position: 10 + "%"
 		}
@@ -73,6 +87,7 @@ var homeContent = function() {
 	var title = $("#homePageContent h1"),
 			p1 = $("#homePageContent p:first"),
 			p2 = $("#homePageContent p:last");
+
 	return content(title, p1, p2, nd.homePageModule.contentMap.title, nd.homePageModule.contentMap.home_p1, nd.homePageModule.contentMap.home_p2 );
 };
 
@@ -80,12 +95,18 @@ var aboutContent = function() {
 	var title = $("aboutPageContent h1"),
 			about = $("#aboutPageContent p:first"),
 			collaborators = $("#aboutPageContent p:last");
+
 	return content( title, about, collaborators, nd.aboutModule.contentMap.title, nd.aboutModule.contentMap.about_p, nd.aboutModule.contentMap.collaborators_p );
 };
 
+var contactContent = function() {
+	var contentSection = $("div#contentSection section");
+	
+	return contentSection.html( nd.shell.configMap.form );
+};
+
 var contentLogic = function() {
-	var nav = $("#globalHeader > nav > ul > li > a"),
-			content = $("#contentSection").find("section");
+	var content = $("#contentSection").find("section");
 
 			if (content.attr( "id" ) === contentID[0]) {
 				return homeContent();
@@ -94,7 +115,7 @@ var contentLogic = function() {
 				return aboutContent();
 			}
 			else if (content.attr( "id" ) === contentID[2]) {
-				return aboutContent(); // return this until contact logic is in place
+				return contactContent();
 			}
 };
 
