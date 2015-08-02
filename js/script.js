@@ -101,7 +101,7 @@ var aboutContent = function() {
 
 var contactContent = function() {
 	var contentSection = $("div#contentSection section");
-	
+
 	return contentSection.html( nd.shell.configMap.form );
 };
 
