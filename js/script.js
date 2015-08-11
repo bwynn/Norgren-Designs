@@ -40,11 +40,9 @@ var nd = {
 					+ '<button type="submit">Submit</button>'
 				+ '</form>',
 			content: String()
-				+ "<section id=''>"
 					+ "<h1></h1>"
 					+ "<p></p>"
-					+ "<p></p>"
-				+ "</section>",
+					+ "<p></p>",
 				initial_position: 5 + "%",
 				final_position: 10 + "%"
 		}
@@ -62,10 +60,13 @@ var nd = {
 	aboutModule: {
 		// content map object holds all of the content being generated on the page.
 		contentMap: {
-			title: "About",
+			new_title: "About",
 			about_p: "Erik comes from a family with multiple generations of creative engineers - engineering is in his blood. He has a Masters in Mechanical Engineering from the University of Colorado, Boulder, and 15+ years' experience designing mechatronic systems from the ground up. Robotics and mechanism design are his specialties. He has a proven ability to create successful products from primitive concepts. He enjoys rock climbing and hiking in his spare time.",
 			collaborators_p: "I am continuously making progress on a handful of in-house development projects alongside client-based projects. Think think-tank meets technical competency. I am looking for creative minds to augment my mechanical engineering technical expertise. If you have an innate ability to do what you do, are self-motivated, and want to test your abilities in a new setting, I am interested in hearing from you."
 		}
+	},
+	stateMap: {
+		content: null
 	}
 };
 
@@ -96,7 +97,7 @@ var aboutContent = function() {
 			about = $("#aboutPageContent p:first"),
 			collaborators = $("#aboutPageContent p:last");
 
-	return content( title, about, collaborators, nd.aboutModule.contentMap.title, nd.aboutModule.contentMap.about_p, nd.aboutModule.contentMap.collaborators_p );
+	return content( title, about, collaborators, nd.aboutModule.contentMap.new_title, nd.aboutModule.contentMap.about_p, nd.aboutModule.contentMap.collaborators_p );
 };
 
 var contactContent = function() {
@@ -105,13 +106,21 @@ var contactContent = function() {
 	return contentSection.html( nd.shell.configMap.form );
 };
 
+var setContainer = function() {
+	var contentSection = $("div#contentSection section");
+	contentSection.empty();
+	return contentSection.html( nd.shell.configMap.content );
+};
+
 var contentLogic = function() {
 	var content = $("#contentSection").find("section");
 
 			if (content.attr( "id" ) === contentID[0]) {
+				setContainer();
 				return homeContent();
 			}
 			else if (content.attr( "id" ) === contentID[1]) {
+				setContainer();
 				return aboutContent();
 			}
 			else if (content.attr( "id" ) === contentID[2]) {
