@@ -50,7 +50,7 @@ var nd = {
 							 '<p>Position at Norgren Design</p>' +
 						 '</div>' +
 					 '</section>' +
-					 '<button id="showContactContainer">Contact</button>' +
+					 '<button id="showContactContainer">Contact Erik</button>' +
 					 '<div id="contactContainer">' +
 						 '<form action="#" method="post" id="contact-form">' +
 							 '<h1>Contact Me</h1>' +
@@ -144,6 +144,14 @@ var idSwitcher = function( event, linkItem, cont ) {
 	else { console.log('something went wrong'); }
 };
 // End model method /idSwitcher/
+
+// Begin model method /activeSwitcher/
+var activeSwitcher = function( elem, inst ) {
+	// remove active class
+	elem.removeClass("active");
+	inst.addClass("active");
+};
+// End model method /activeSwitcher/
 // ------------------------ END MODEL ------------------------------------------
 
 // ------------------------ UTILITY METHODS ------------------------------------
@@ -221,10 +229,7 @@ var activeSwitch = function() {
 	$navLink.on("click", function(e) {
 		var content = $("#contentSection").find("section");
 		e.preventDefault();
-		// remove active class
-		$navLink.removeClass("active");
-		$(this).addClass("active");
-
+		activeSwitcher( $navLink, $(this) );
 		idSwitcher( e, $navLink, content );
 	});
 };

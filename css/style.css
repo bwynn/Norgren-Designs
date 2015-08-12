@@ -63,6 +63,10 @@ button:focus {
 	outline: none;
 }
 
+.active {
+	color: #999;
+}
+
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
 	height: 3em;
