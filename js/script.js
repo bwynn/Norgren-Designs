@@ -19,7 +19,17 @@ var nd = {
 							+ "<li><a href='#'>About</a></li>"
 							+ "<li><a href='#'>Contact</a></li>"
 						+ "</ul>"
-				   + "</nav>"
+				  + "</nav>"
+					+ "<div id='mobileNav'>"
+						+ "<button id='mobileNavBtn'></button>"
+						+ "<nav>"
+							+ "<ul>"
+								+ "<li><a href='#'>Home</a></li>"
+								+ "<li><a href='#'>About</a></li>"
+								+ "<li><a href='#'>Contact</a></li>"
+							+ "</ul>"
+						+ "</nav>"
+					+ "</div>"
 				+ "</header>"
 				+ "<div id='contentSection'>"
 		      + "<section id='homePageContent'>"
@@ -32,13 +42,32 @@ var nd = {
 		    	+ "<p>&copy; 2015 Norgren Designs</p>"
 		    + "</footer>",
 			form: String()
-				+ '<form id="contactForm">'
-					+ '<label for="name">Name</label>'
-					+ '<input type="text" id="name" placeholder="Name"/>'
-					+ '<label for="msg">Leave us a brief message</label>'
-					+ '<textarea id="msg"></textarea>'
-					+ '<button type="submit">Submit</button>'
-				+ '</form>',
+					+ '<section id="companyProfile">'
+						+ '<div class="profileBox">'
+							+ '<figure class="portrait"></figure>'
+							+	'<h3>Name</h3>'
+							+ '<p>Position at Norgren Design</p>'
+						+ '</div>'
+					+ '</section>'
+					+ '<button id="showContactContainer">Contact</button>'
+					+ '<div id="contactContainer">'
+						+ '<form action="#" method="post" id="contact-form">'
+							+ '<h1>Contact Me</h1>'
+							+ '<div id="nameWrap">'
+								+ '<label for="name">Name:</label>'
+								+ '<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>'
+							+ '</div>'
+							+ '<div id="emailWrap">'
+								+ '<label for="email">Email:</label>'
+								+ '<input type="text" id="email" name="email" placeholder="example@gmail.com" required>'
+							+ '</div>'
+							+ '<div id="commentWrap">'
+								+ '<label for="comment">Message:</label>'
+								+ '<textarea id="comment" name="user_comment" required></textarea>'
+							+ '</div>'
+							+ '<button type="submit" id="send">Send</button>'
+						+ '</form>'
+					+ '</div>',
 			content: String()
 					+ "<h1></h1>"
 					+ "<p></p>"
