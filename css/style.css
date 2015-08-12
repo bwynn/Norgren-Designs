@@ -26,6 +26,7 @@ html, body, footer {
 body {
 	font-family: "Lato", Helvetica, sans-serif;
 	font-size: 18px;
+	background-color: #FCFCF8;
 }
 
 p {
@@ -66,6 +67,7 @@ button:focus {
 header#globalHeader {
 	height: 3em;
 	overflow: hidden;
+	border-bottom: .1em solid #377F5E;
 }
 
 div#logo-wrap, header#globalHeader > nav {
@@ -135,21 +137,27 @@ button#mobileNavBtn {
 	height: 4em;
 	width: 4em;
 	margin: .45em;
-	background-color: #333;
-	border: .2em solid #FCFCF8;
-	border-radius: .3em;
+	background-color: inherit;
+	border: .2em solid #377F5E;;
+	border-radius: .5em;
 	cursor: pointer;
 }
 
 #mobileNav > nav {
 	display: none;
-	position: relative;
+	position: absolute;
+	width: 100%;
 	top: 3em;
 	background-color: #377F5E;
+	box-shadow: .5em .5em .5em rgba(0, 0, 0, .5);
 }
 
 #mobileNav > nav > ul > li {
 	padding: .6em;
+}
+
+#mobileNav > nav > ul > li:first-of-type {
+	padding-top: 1.2em;
 }
 
 #mobileNav > nav > ul > li > a {

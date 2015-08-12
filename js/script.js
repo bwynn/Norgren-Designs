@@ -17,8 +17,8 @@ var nd = {
 					 "<nav>" +
 						 "<ul>" +
 							 "<li><a href='#' class='active'>Home</a></li>" +
-							 "<li><a href='#'>About</a></li>" +
-							 "<li><a href='#'>Contact</a></li>" +
+							 "<li><a href='#'>About Erik</a></li>" +
+							 "<li><a href='#'>Company</a></li>" +
 						 "</ul>" +
 				   "</nav>" +
 					 "<div id='mobileNav'>" +
@@ -126,6 +126,24 @@ var contentLogic = function() {
 			}
 };
 // end model method /contentLogic/
+
+// Begin model method /idSwitcher/
+var idSwitcher = function( event, linkItem, cont ) {
+	if (event.target === linkItem[0] ) {
+		cont.attr("id", contentID[0]);
+		return contentLogic();
+	}
+	else if (event.target === linkItem[1] ) {
+		cont.attr("id", contentID[1]);
+		return contentLogic();
+	}
+	else if (event.target === linkItem[2] ) {
+		cont.attr("id", contentID[2]);
+		return contentLogic();
+	}
+	else { console.log('something went wrong'); }
+};
+// End model method /idSwitcher/
 // ------------------------ END MODEL ------------------------------------------
 
 // ------------------------ UTILITY METHODS ------------------------------------
@@ -176,7 +194,7 @@ var contactContent = function() {
 };
 // End DOM method /contactContent/
 
-// Begin /setContainer/
+// Begin DOM method /setContainer/
 // Purpose: empties out the content section container of all elements and
 // resets the contents of the container to the default configuration
 var setContainer = function() {
@@ -184,35 +202,53 @@ var setContainer = function() {
 	contentSection.empty();
 	return contentSection.html( nd.shell.configMap.content );
 };
-// End /setContainer/
+// End DOM method /setContainer/
+
+// Begin DOM method /toggleNav/
+var toggleNav = function() {
+	cont = $("#mobileNav > nav");
+	cont.slideToggle(500, "linear");
+}
+// End DOM method /toggleNav/
 
 // ------------------------ END DOM METHODS ------------------------------------
 
 // ------------------------ EVENT HANDLERS -------------------------------------
+// Begin event activeSwitch
 var activeSwitch = function() {
 	var $navLink = $("#globalHeader > nav > ul > li > a");
 
 	$navLink.on("click", function(e) {
+		var content = $("#contentSection").find("section");
 		e.preventDefault();
 		// remove active class
 		$navLink.removeClass("active");
 		$(this).addClass("active");
-		var content = $("#contentSection").find("section");
-		if (e.target === $navLink[0] ) {
-			content.attr("id", contentID[0]);
-			return contentLogic();
-		}
-		else if (e.target === $navLink[1] ) {
-			content.attr("id", contentID[1]);
-			return contentLogic();
-		}
-		else if (e.target === $navLink[2] ) {
-			content.attr("id", contentID[2]);
-			return contentLogic();
-		}
-		else { console.log('something went wrong'); }
+
+		idSwitcher( e, $navLink, content );
 	});
 };
+// End event /activeSwitch/
+
+// Begin event /toggleMobileNav/
+var toggleMobileNav = function() {
+	var btn = $("button#mobileNavBtn");
+	btn.on("click", function() {
+		toggleNav();
+	});
+};
+// End event /toggleMobileNav/
+
+// Begin event /mobileNavLinks/
+var mobileNavLinks = function() {
+	var link = $("#mobileNav > nav > ul > li > a"),
+	 		content = $("#contentSection").find("section");
+	link.on("click", function(e) {
+		idSwitcher( e, link, content );
+		toggleNav();
+	});
+};
+// End event /mobileNavLinks/
 // ------------------------ END EVENT HANDLERS ---------------------------------
 
 // ------------------------ PUBLIC METHODS -------------------------------------
@@ -221,6 +257,8 @@ var init = function() {
 	$("#nd").html(nd.shell.configMap.cont);
 	homeContent();
 	activeSwitch();
+	toggleMobileNav();
+	mobileNavLinks();
 };
 
 init();
