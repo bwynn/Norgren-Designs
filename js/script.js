@@ -1,3 +1,4 @@
+// ------------------------ MODULE SCOPE VARIABLES -----------------------------
 // creating the Norgren Designs object, which will house shell and all
 // modules for the page
 var nd = {
@@ -5,73 +6,73 @@ var nd = {
 		// load dom content
 	 	configMap: {
 			// create cont object which populates the #nd element
-			cont: String()
-				+ "<header id='globalHeader'>"
-					+ "<div id='logo-wrap' class='center'>"
-						+ "<a href='index.html' class='homeBtn'>"
-							+ "<figure id='headerIcon' class='logo'></figure>"
-							+ "<h1>Norgren Designs</h1>"
-						+ "</a>"
-					+ "</div>"
-					+ "<nav>"
-						+ "<ul>"
-							+ "<li><a href='#' class='active'>Home</a></li>"
-							+ "<li><a href='#'>About</a></li>"
-							+ "<li><a href='#'>Contact</a></li>"
-						+ "</ul>"
-				  + "</nav>"
-					+ "<div id='mobileNav'>"
-						+ "<button id='mobileNavBtn'></button>"
-						+ "<nav>"
-							+ "<ul>"
-								+ "<li><a href='#'>Home</a></li>"
-								+ "<li><a href='#'>About</a></li>"
-								+ "<li><a href='#'>Contact</a></li>"
-							+ "</ul>"
-						+ "</nav>"
-					+ "</div>"
-				+ "</header>"
-				+ "<div id='contentSection'>"
-		      + "<section id='homePageContent'>"
-		        + "<h1></h1>"
-		        + "<p></p>"
-		        + "<p></p>"
-		      + "</section>"
-		    + "</div>"
-				+ "<footer>"
-		    	+ "<p>&copy; 2015 Norgren Designs</p>"
-		    + "</footer>",
-			form: String()
-					+ '<section id="companyProfile">'
-						+ '<div class="profileBox">'
-							+ '<figure class="portrait"></figure>'
-							+	'<h3>Name</h3>'
-							+ '<p>Position at Norgren Design</p>'
-						+ '</div>'
-					+ '</section>'
-					+ '<button id="showContactContainer">Contact</button>'
-					+ '<div id="contactContainer">'
-						+ '<form action="#" method="post" id="contact-form">'
-							+ '<h1>Contact Me</h1>'
-							+ '<div id="nameWrap">'
-								+ '<label for="name">Name:</label>'
-								+ '<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>'
-							+ '</div>'
-							+ '<div id="emailWrap">'
-								+ '<label for="email">Email:</label>'
-								+ '<input type="text" id="email" name="email" placeholder="example@gmail.com" required>'
-							+ '</div>'
-							+ '<div id="commentWrap">'
-								+ '<label for="comment">Message:</label>'
-								+ '<textarea id="comment" name="user_comment" required></textarea>'
-							+ '</div>'
-							+ '<button type="submit" id="send">Send</button>'
-						+ '</form>'
-					+ '</div>',
-			content: String()
-					+ "<h1></h1>"
-					+ "<p></p>"
-					+ "<p></p>",
+			cont: String() +
+				"<header id='globalHeader'>" +
+					 "<div id='logo-wrap' class='center'>" +
+						"<a href='index.html' class='homeBtn'>" +
+							 "<figure id='headerIcon' class='logo'></figure>" +
+							 "<h1>Norgren Designs</h1>" +
+						 "</a>" +
+					 "</div>" +
+					 "<nav>" +
+						 "<ul>" +
+							 "<li><a href='#' class='active'>Home</a></li>" +
+							 "<li><a href='#'>About</a></li>" +
+							 "<li><a href='#'>Contact</a></li>" +
+						 "</ul>" +
+				   "</nav>" +
+					 "<div id='mobileNav'>" +
+						 "<button id='mobileNavBtn'></button>" +
+						 "<nav>" +
+							 "<ul>" +
+								 "<li><a href='#'>Home</a></li>" +
+								 "<li><a href='#'>About</a></li>" +
+								 "<li><a href='#'>Contact</a></li>" +
+							 "</ul>" +
+						 "</nav>" +
+					 "</div>" +
+				 "</header>" +
+				 "<div id='contentSection'>" +
+		       "<section id='homePageContent'>" +
+		         "<h1></h1>" +
+		         "<p></p>" +
+		         "<p></p>" +
+		       "</section>" +
+		     "</div>" +
+				 "<footer>" +
+		    	 "<p>&copy; 2015 Norgren Designs</p>" +
+		     "</footer>",
+			form: String() +
+					 '<section id="companyProfile">' +
+						 '<div class="profileBox">' +
+							 '<figure class="portrait"></figure>' +
+							 '<h3>Name</h3>' +
+							 '<p>Position at Norgren Design</p>' +
+						 '</div>' +
+					 '</section>' +
+					 '<button id="showContactContainer">Contact</button>' +
+					 '<div id="contactContainer">' +
+						 '<form action="#" method="post" id="contact-form">' +
+							 '<h1>Contact Me</h1>' +
+							 '<div id="nameWrap">' +
+								 '<label for="name">Name:</label>' +
+								 '<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>' +
+							 '</div>' +
+							 '<div id="emailWrap">' +
+								 '<label for="email">Email:</label>' +
+								 '<input type="text" id="email" name="email" placeholder="example@gmail.com" required>' +
+							 '</div>' +
+							 '<div id="commentWrap">' +
+								 '<label for="comment">Message:</label>' +
+								 '<textarea id="comment" name="user_comment" required></textarea>' +
+							 '</div>' +
+							 '<button type="submit" id="send">Send</button>' +
+						 '</form>' +
+					 '</div>',
+			content: String() +
+					 "<h1></h1>" +
+					 "<p></p>" +
+					 "<p></p>",
 				initial_position: 5 + "%",
 				final_position: 10 + "%"
 		}
@@ -97,7 +98,7 @@ var nd = {
 	stateMap: {
 		content: null
 	}
-};
+}; // end nd object
 
 var contentID = [
 	"homePageContent",
@@ -105,45 +106,13 @@ var contentID = [
 	"contactPageContent"
 ];
 
-// constructor function for page content
-var content = function(arg1, arg2, arg3, arg4, arg5, arg6) {
-	arg1.text(arg4);
-	arg2.text(arg5);
-	arg3.text(arg6);
-};
+// ------------------------ END MODULE SCOPE VARIABLES -------------------------
 
-var homeContent = function() {
-	// set home page content
-	var title = $("#homePageContent h1"),
-			p1 = $("#homePageContent p:first"),
-			p2 = $("#homePageContent p:last");
-
-	return content(title, p1, p2, nd.homePageModule.contentMap.title, nd.homePageModule.contentMap.home_p1, nd.homePageModule.contentMap.home_p2 );
-};
-
-var aboutContent = function() {
-	var title = $("aboutPageContent h1"),
-			about = $("#aboutPageContent p:first"),
-			collaborators = $("#aboutPageContent p:last");
-
-	return content( title, about, collaborators, nd.aboutModule.contentMap.new_title, nd.aboutModule.contentMap.about_p, nd.aboutModule.contentMap.collaborators_p );
-};
-
-var contactContent = function() {
-	var contentSection = $("div#contentSection section");
-
-	return contentSection.html( nd.shell.configMap.form );
-};
-
-var setContainer = function() {
-	var contentSection = $("div#contentSection section");
-	contentSection.empty();
-	return contentSection.html( nd.shell.configMap.content );
-};
-
+// ------------------------ BEGIN MODEL ----------------------------------------
+// begin model method /contentLogic/
+// Determines the page content based on the container id
 var contentLogic = function() {
 	var content = $("#contentSection").find("section");
-
 			if (content.attr( "id" ) === contentID[0]) {
 				setContainer();
 				return homeContent();
@@ -156,33 +125,97 @@ var contentLogic = function() {
 				return contactContent();
 			}
 };
+// end model method /contentLogic/
+// ------------------------ END MODEL ------------------------------------------
 
+// ------------------------ UTILITY METHODS ------------------------------------
+// ------------------------ END UTILITY METHODS --------------------------------
+
+// ------------------------ DOM METHODS ----------------------------------------
+// Begin DOM method /content/
+// Purpose: Builds the two main content windows of the site, the home and about
+// pages.
+// Arguments: Takes 6 objects as arguments, to construct the content sections
+var content = function(arg1, arg2, arg3, arg4, arg5, arg6) {
+	arg1.text(arg4);
+	arg2.text(arg5);
+	arg3.text(arg6);
+};
+// End DOM method /content/
+
+// Begin DOM method /homeContent/
+// Purpose: Builds the content of the home page using the content builder
+// method
+var homeContent = function() {
+	var title = $("#homePageContent h1"),
+			p1 = $("#homePageContent p:first"),
+			p2 = $("#homePageContent p:last");
+
+	return content(title, p1, p2, nd.homePageModule.contentMap.title, nd.homePageModule.contentMap.home_p1, nd.homePageModule.contentMap.home_p2 );
+};
+// End DOM method /homeContent/
+
+// Begin DOM method /aboutContent/
+// Purpose: Builds the about page content using the content method and passing
+// in objects defined within the nd object
+var aboutContent = function() {
+	var title = $("aboutPageContent h1"),
+			about = $("#aboutPageContent p:first"),
+			collaborators = $("#aboutPageContent p:last");
+
+	return content( title, about, collaborators, nd.aboutModule.contentMap.new_title, nd.aboutModule.contentMap.about_p, nd.aboutModule.contentMap.collaborators_p );
+};
+// End DOM method /aboutContent/
+
+// Begin DOM method /contactContent/
+// Purpose: Builds the content of the contact and profiles containers
+var contactContent = function() {
+	var contentSection = $("div#contentSection section");
+
+	return contentSection.html( nd.shell.configMap.form );
+};
+// End DOM method /contactContent/
+
+// Begin /setContainer/
+// Purpose: empties out the content section container of all elements and
+// resets the contents of the container to the default configuration
+var setContainer = function() {
+	var contentSection = $("div#contentSection section");
+	contentSection.empty();
+	return contentSection.html( nd.shell.configMap.content );
+};
+// End /setContainer/
+
+// ------------------------ END DOM METHODS ------------------------------------
+
+// ------------------------ EVENT HANDLERS -------------------------------------
 var activeSwitch = function() {
 	var $navLink = $("#globalHeader > nav > ul > li > a");
 
 	$navLink.on("click", function(e) {
-		var content = $("#contentSection").find("section");
 		e.preventDefault();
 		// remove active class
 		$navLink.removeClass("active");
 		$(this).addClass("active");
-
-		if (e.target == $navLink[0]) {
+		var content = $("#contentSection").find("section");
+		if (e.target === $navLink[0] ) {
 			content.attr("id", contentID[0]);
 			return contentLogic();
 		}
-		else if (e.target == $navLink[1]) {
+		else if (e.target === $navLink[1] ) {
 			content.attr("id", contentID[1]);
 			return contentLogic();
 		}
-		else if (e.target == $navLink[2]) {
+		else if (e.target === $navLink[2] ) {
 			content.attr("id", contentID[2]);
 			return contentLogic();
 		}
-		else { return false; }
+		else { console.log('something went wrong'); }
 	});
 };
+// ------------------------ END EVENT HANDLERS ---------------------------------
 
+// ------------------------ PUBLIC METHODS -------------------------------------
 var init = function() {
 	// init config map
 	$("#nd").html(nd.shell.configMap.cont);
@@ -191,3 +224,4 @@ var init = function() {
 };
 
 init();
+// ------------------------ END PUBLIC METHODS ---------------------------------
