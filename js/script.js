@@ -16,18 +16,18 @@ var nd = {
 					 "</div>" +
 					 "<nav>" +
 						 "<ul>" +
-							 "<li><a href='#' class='active'>Home</a></li>" +
-							 "<li><a href='#'>About Erik</a></li>" +
-							 "<li><a href='#'>Company</a></li>" +
+							 "<li><a href='/home' class='active'>Home</a></li>" +
+							 "<li><a href='/about'>About Erik</a></li>" +
+							 "<li><a href='/company'>Company</a></li>" +
 						 "</ul>" +
 				   "</nav>" +
 					 "<div id='mobileNav'>" +
 						 "<button id='mobileNavBtn'></button>" +
 						 "<nav>" +
 							 "<ul>" +
-								 "<li><a href='#'>Home</a></li>" +
-								 "<li><a href='#'>About</a></li>" +
-								 "<li><a href='#'>Contact</a></li>" +
+								 "<li><a href='/home'>Home</a></li>" +
+								 "<li><a href='/about'>About</a></li>" +
+								 "<li><a href='/company'>Contact</a></li>" +
 							 "</ul>" +
 						 "</nav>" +
 					 "</div>" +
@@ -52,6 +52,7 @@ var nd = {
 					 '</section>' +
 					 '<button id="showContactContainer">Contact Erik</button>' +
 					 '<div id="contactContainer">' +
+					 	 '<button id="closeContainer">X</button>' +
 						 '<form action="#" method="post" id="contact-form">' +
 							 '<h1>Contact Me</h1>' +
 							 '<div id="nameWrap">' +
@@ -122,7 +123,10 @@ var contentLogic = function() {
 				return aboutContent();
 			}
 			else if (content.attr( "id" ) === contentID[2]) {
-				return contactContent();
+				contactContent();
+				// initialize the contact container function after the dom content has been generated
+				showContactContainer();
+				hideContactContainer();
 			}
 };
 // end model method /contentLogic/
@@ -214,10 +218,18 @@ var setContainer = function() {
 
 // Begin DOM method /toggleNav/
 var toggleNav = function() {
-	cont = $("#mobileNav > nav");
+	var cont = $("#mobileNav > nav");
 	cont.slideToggle(500, "linear");
-}
+};
 // End DOM method /toggleNav/
+
+// Begin DOM method /setContactForm/
+var toggleContactForm = function( obj1, obj2, obj3 ) {
+	obj1.hide();
+	obj2.hide();
+	obj3.show();
+};
+// End DOM method /setContactForm/
 
 // ------------------------ END DOM METHODS ------------------------------------
 
@@ -249,11 +261,37 @@ var mobileNavLinks = function() {
 	var link = $("#mobileNav > nav > ul > li > a"),
 	 		content = $("#contentSection").find("section");
 	link.on("click", function(e) {
+		e.preventDefault();
 		idSwitcher( e, link, content );
 		toggleNav();
 	});
 };
 // End event /mobileNavLinks/
+
+// Begin event /showContactContainer/
+// this method will is called through the contentLogic method.
+var showContactContainer = function() {
+	var btn = $("#showContactContainer");
+	btn.on("click", function() {
+		var profile = $("#companyProfile"),
+				contactForm = $("#contactContainer");
+		toggleContactForm( $(this), profile, contactForm );
+		$("#closeContainer").show();
+	});
+};
+// End event /showContactContainer/
+
+// Begin event /hideContactContainer/
+var hideContactContainer = function() {
+	var btn = $("#closeContainer");
+	btn.on("click", function() {
+		var profile = $("#companyProfile"),
+				contactForm = $("#contactContainer");
+		toggleContactForm( $(this), contactForm, profile );
+		$("#showContactContainer").show();
+	});
+};
+// End event /hideContactContainer/
 // ------------------------ END EVENT HANDLERS ---------------------------------
 
 // ------------------------ PUBLIC METHODS -------------------------------------

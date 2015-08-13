@@ -63,6 +63,16 @@ button:focus {
 	outline: none;
 }
 
+label {
+	display: block;
+	margin: .5em 0;
+}
+
+form {
+	width: 60%;
+	margin: 0 auto;
+}
+
 .active {
 	color: #999;
 }
@@ -279,6 +289,21 @@ button#showContactContainer:hover {
 	z-index: 2;
 	top: 0;
 	left: 0;
+}
+
+#contact-form input[type="text"],
+#contact-form textarea {
+	width: 100%;
+	border-radius: 3px;
+	font-size: 1.1em;
+	border: 1px solid #999;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="text"]:active,
+#contact-form textarea:focus,
+#contact-form textarea:active {
+	outline: none;
 }
 
 /* ------------------  Footer Elements -------------------------------  */
