@@ -152,9 +152,15 @@ button#mobileNavBtn {
 	width: 4em;
 	margin: .45em;
 	background-color: inherit;
-	border: .2em solid #377F5E;;
+	border: .2em solid #377F5E;
 	border-radius: .5em;
 	cursor: pointer;
+	position: relative;
+}
+
+.menu-bar {
+	fill: green;
+	height: 10px;
 }
 
 #mobileNav > nav {
@@ -208,11 +214,19 @@ button#mobileNavBtn {
 	box-shadow: 2px 2px 10px #666;
 }
 
+#contactPageContent {
+	padding-bottom: 1em;
+}
+
 #homePageContent h1,
 #aboutPageContent h1,
 #contactPageContent h1 {
 	text-align: center;
 	padding: 1em;
+}
+
+#contactPageContent h1 {
+	padding-top: 0;
 }
 
 #homePageContent p,
@@ -234,14 +248,17 @@ section#companyProfile {
 	width: 100%;
 	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-wrap: wrap;
-	flex-wrap: wrap;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-align-items: stretch;
+	align-items: stretch;
 }
 
 .profileBox {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
-	max-width: 24%;
+	width: 20%;
+	max-width: 27%;
 	background: #377F5E;
 	color: #fff;
 	margin: 1em;
@@ -262,7 +279,6 @@ button#showContactContainer {
 	margin: 0 auto;
 	font-size: 1.5em;
 	padding: .2em .5em;
-	margin-top: 1.5em;
 	border-radius: .1em;
 	border: .05em solid #377F5E;
 	color: #377F5E;
@@ -297,6 +313,7 @@ button#showContactContainer:hover {
 	border-radius: 3px;
 	font-size: 1.1em;
 	border: 1px solid #999;
+	padding: .1em;
 }
 
 #contact-form input[type="text"]:focus,
@@ -304,6 +321,28 @@ button#showContactContainer:hover {
 #contact-form textarea:focus,
 #contact-form textarea:active {
 	outline: none;
+}
+
+button#closeContainer {
+	background-color: inherit;
+	color: #999;
+}
+
+button#closeContainer,
+button#send {
+	font-size: 1.2em;
+	border: none;
+	cursor: pointer;
+	margin: .5em;
+}
+
+button#closeContainer:hover {
+	color: #333;
+}
+
+button#send {
+	padding: .3em .5em;
+	margin-left: 0;
 }
 
 /* ------------------  Footer Elements -------------------------------  */
@@ -337,6 +376,7 @@ footer p {
 	}
 
 	.profileBox {
-		max-width: 45%;
+		width: 30%;
+		max-width: 100%;
 	}
 }
