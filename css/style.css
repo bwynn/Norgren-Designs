@@ -242,6 +242,13 @@ button#mobileNavBtn {
 	padding: 2em;
 }
 
+#aboutPageContent,
+#companyPageContent,
+#contactPageContent {
+	display: none;
+}
+
+
 /* ------------------  Company Page ----------------------------------- */
 section#companyProfile {
 	height: 100%;
