@@ -114,6 +114,13 @@ var pageContent = {
 	}
 };
 
+var contentID = [
+	"homePageContent",
+	"aboutPageContent",
+	"companyPageContent",
+	"contactPageContent"
+];
+
 // ------------------------ END MODULE SCOPE VARIABLES -------------------------
 // ------------------------ BEGIN MODEL ----------------------------------------
 // ------------------------ END MODEL ------------------------------------------
@@ -152,16 +159,57 @@ var activeSwitcher = function( elems, obj ) {
 	obj.addClass("active")
 };
 
+var contentLogic = function() {
+	var content = $("#contentSection").find("section");
+			content.hide();
+			if (content.attr( "id" ) === contentID[0]) {
+				console.log("show home");
+			}
+			else if (content.attr( "id" ) === contentID[1]) {
+				console.log("show about");
+			}
+			else if (content.attr( "id" ) === contentID[2]) {
+				console.log("show company");
+			}
+			else if (content.attr( "id" ) === contentID[3]) {
+				console.log("show contact");
+			}
+};
+// end model method /contentLogic/
+
+// Begin model method /idSwitcher/
+var idSwitcher = function( event, linkItem, cont ) {
+	if (event.target === linkItem[0] ) {
+		cont.attr("id", contentID[0]);
+		return contentLogic();
+	}
+	else if (event.target === linkItem[1] ) {
+		cont.attr("id", contentID[1]);
+		return contentLogic();
+	}
+	else if (event.target === linkItem[2] ) {
+		cont.attr("id", contentID[2]);
+		return contentLogic();
+	}
+	else if (event.target === linkItem[3]) {
+		cont.attr("id", contentID[3]);
+		return contentLogic();
+	}
+	else { console.log('something went wrong'); }
+};
+
 // ------------------------ END DOM METHODS ------------------------------------
 
 // ------------------------ EVENT HANDLERS -------------------------------------
 
 var navBtn = function() {
-	var $navLink = $("nav > ul > li > a");
+	var $navLink = $("nav > ul > li > a"),
+			content = $("#contentSection").find("section");
 	$navLink.on("click", function( e ) {
 		e.preventDefault();
 		console.log(e.target);
 		activeSwitcher( $navLink, $(this) );
+		idSwitcher( e, $navLink, content);
 	});
 };
 
