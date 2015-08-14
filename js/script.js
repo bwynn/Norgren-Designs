@@ -47,61 +47,62 @@ var nd = {
 		         "<p></p>" +
 		         "<p></p>" +
 		       "</section>" +
+					 "<section id='aboutPageContent'>" +
+						 "<h1></h1>" +
+						 "<p></p>" +
+						 "<p></p>" +
+ 						"</section>" +
+						"<section id='companyPageContent'>" +
+								'<section id="companyProfile">' +
+								 '<div class="profileBox">' +
+									 '<figure class="portrait"></figure>' +
+									 '<h3>Name</h3>' +
+									 '<p>Position at Norgren Design</p>' +
+								 '</div>' +
+								 '<div class="profileBox">' +
+									 '<figure class="portrait"></figure>' +
+									 '<h3>Name</h3>' +
+									 '<p>Position at Norgren Design</p>' +
+								 '</div>' +
+								 '<div class="profileBox">' +
+									 '<figure class="portrait"></figure>' +
+									 '<h3>Name</h3>' +
+									 '<p>Position at Norgren Design</p>' +
+								 '</div>' +
+								 '<div class="profileBox">' +
+									 '<figure class="portrait"></figure>' +
+									 '<h3>Name</h3>' +
+									 '<p>Position at Norgren Design</p>' +
+								 '</div>' +
+								 '<article class="openings">' +
+										'<p>Some content to go in the openings section</p>' +
+								 '</article>' +
+							 '</section>' +
+  					"</section>" +
+						"<section id='contactPageContent'>" +
+							'<div id="contactContainer">' +
+								'<form action="#" method="post" id="contact-form">' +
+									'<h1>Contact Me</h1>' +
+									'<div id="nameWrap">' +
+										'<label for="name">Name:</label>' +
+										'<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>' +
+									'</div>' +
+									'<div id="emailWrap">' +
+										'<label for="email">Email:</label>' +
+										'<input type="text" id="email" name="email" placeholder="example@gmail.com" required>' +
+									'</div>' +
+									'<div id="commentWrap">' +
+										'<label for="comment">Message:</label>' +
+										'<textarea id="comment" name="user_comment" required></textarea>' +
+									'</div>' +
+									'<button type="submit" id="send">Send</button>' +
+								'</form>' +
+							'</div>' +
+  					"</section>" +
 		     "</div>" +
 				 "<footer>" +
 		    	 "<p>&copy; 2015 Norgren Designs</p>" +
-		     "</footer>",
-			form: String() +
-					'<div id="contactContainer">' +
-						'<form action="#" method="post" id="contact-form">' +
-							'<h1>Contact Me</h1>' +
-							'<div id="nameWrap">' +
-								'<label for="name">Name:</label>' +
-								'<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>' +
-							'</div>' +
-							'<div id="emailWrap">' +
-								'<label for="email">Email:</label>' +
-								'<input type="text" id="email" name="email" placeholder="example@gmail.com" required>' +
-							'</div>' +
-							'<div id="commentWrap">' +
-								'<label for="comment">Message:</label>' +
-								'<textarea id="comment" name="user_comment" required></textarea>' +
-							'</div>' +
-							'<button type="submit" id="send">Send</button>' +
-						'</form>' +
-					'</div>',
-			company: String() +
-					 '<section id="companyProfile">' +
-						 '<div class="profileBox">' +
-							 '<figure class="portrait"></figure>' +
-							 '<h3>Name</h3>' +
-							 '<p>Position at Norgren Design</p>' +
-						 '</div>' +
-						 '<div class="profileBox">' +
-							 '<figure class="portrait"></figure>' +
-							 '<h3>Name</h3>' +
-							 '<p>Position at Norgren Design</p>' +
-						 '</div>' +
-						 '<div class="profileBox">' +
-							 '<figure class="portrait"></figure>' +
-							 '<h3>Name</h3>' +
-							 '<p>Position at Norgren Design</p>' +
-						 '</div>' +
-						 '<div class="profileBox">' +
-							 '<figure class="portrait"></figure>' +
-							 '<h3>Name</h3>' +
-							 '<p>Position at Norgren Design</p>' +
-						 '</div>' +
-						 '<article class="openings">' +
-						 		'<p>Some content to go in the openings section</p>' +
-						 '</article>' +
-					 '</section>',
-			content: String() +
-					 "<h1></h1>" +
-					 "<p></p>" +
-					 "<p></p>",
-				initial_position: 5 + "%",
-				final_position: 10 + "%"
+		     "</footer>"
 		}
 	},
 	// this object contains the content for the home page
