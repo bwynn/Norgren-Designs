@@ -19,6 +19,7 @@ var nd = {
 							 "<li><a href='/home/' class='active'>Home</a></li>" +
 							 "<li><a href='/about/'>About Erik</a></li>" +
 							 "<li><a href='/company/'>Company</a></li>" +
+							 "<li><a href='/contact/'>Contact</a></li>" +
 						 "</ul>" +
 				   "</nav>" +
 					 "<div id='mobileNav'>" +
@@ -35,6 +36,7 @@ var nd = {
 								 "<li><a href='/home/'>Home</a></li>" +
 								 "<li><a href='/about/'>About Erik</a></li>" +
 								 "<li><a href='/company/'>Company</a></li>" +
+								 "<li><a href='/contact/'>Contact</a></li>" +
 							 "</ul>" +
 						 "</nav>" +
 					 "</div>" +
@@ -50,6 +52,25 @@ var nd = {
 		    	 "<p>&copy; 2015 Norgren Designs</p>" +
 		     "</footer>",
 			form: String() +
+					'<div id="contactContainer">' +
+						'<form action="#" method="post" id="contact-form">' +
+							'<h1>Contact Me</h1>' +
+							'<div id="nameWrap">' +
+								'<label for="name">Name:</label>' +
+								'<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>' +
+							'</div>' +
+							'<div id="emailWrap">' +
+								'<label for="email">Email:</label>' +
+								'<input type="text" id="email" name="email" placeholder="example@gmail.com" required>' +
+							'</div>' +
+							'<div id="commentWrap">' +
+								'<label for="comment">Message:</label>' +
+								'<textarea id="comment" name="user_comment" required></textarea>' +
+							'</div>' +
+							'<button type="submit" id="send">Send</button>' +
+						'</form>' +
+					'</div>',
+			company: String() +
 					 '<section id="companyProfile">' +
 						 '<div class="profileBox">' +
 							 '<figure class="portrait"></figure>' +
@@ -71,27 +92,10 @@ var nd = {
 							 '<h3>Name</h3>' +
 							 '<p>Position at Norgren Design</p>' +
 						 '</div>' +
-					 '</section>' +
-					 '<button id="showContactContainer">Contact Erik</button>' +
-					 '<div id="contactContainer">' +
-					 	 '<button id="closeContainer">X</button>' +
-						 '<form action="#" method="post" id="contact-form">' +
-							 '<h1>Contact Me</h1>' +
-							 '<div id="nameWrap">' +
-								 '<label for="name">Name:</label>' +
-								 '<input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>' +
-							 '</div>' +
-							 '<div id="emailWrap">' +
-								 '<label for="email">Email:</label>' +
-								 '<input type="text" id="email" name="email" placeholder="example@gmail.com" required>' +
-							 '</div>' +
-							 '<div id="commentWrap">' +
-								 '<label for="comment">Message:</label>' +
-								 '<textarea id="comment" name="user_comment" required></textarea>' +
-							 '</div>' +
-							 '<button type="submit" id="send">Send</button>' +
-						 '</form>' +
-					 '</div>',
+						 '<article class="openings">' +
+						 		'<p>Some content to go in the openings section</p>' +
+						 '</article>' +
+					 '</section>',
 			content: String() +
 					 "<h1></h1>" +
 					 "<p></p>" +
@@ -126,6 +130,7 @@ var nd = {
 var contentID = [
 	"homePageContent",
 	"aboutPageContent",
+	"companyPageContent",
 	"contactPageContent"
 ];
 
@@ -145,10 +150,10 @@ var contentLogic = function() {
 				return aboutContent();
 			}
 			else if (content.attr( "id" ) === contentID[2]) {
+				companyContent();
+			}
+			else if (content.attr( "id" ) === contentID[3]) {
 				contactContent();
-				// initialize the contact container function after the dom content has been generated
-				showContactContainer();
-				hideContactContainer();
 			}
 };
 // end model method /contentLogic/
@@ -165,6 +170,10 @@ var idSwitcher = function( event, linkItem, cont ) {
 	}
 	else if (event.target === linkItem[2] ) {
 		cont.attr("id", contentID[2]);
+		return contentLogic();
+	}
+	else if (event.target === linkItem[3]) {
+		cont.attr("id", contentID[3]);
 		return contentLogic();
 	}
 	else { console.log('something went wrong'); }
@@ -221,12 +230,18 @@ var aboutContent = function() {
 
 // Begin DOM method /contactContent/
 // Purpose: Builds the content of the contact and profiles containers
+var companyContent = function() {
+	var contentSection = $("div#contentSection section");
+
+	return contentSection.html( nd.shell.configMap.company );
+};
+// End DOM method /contactContent/
+
 var contactContent = function() {
 	var contentSection = $("div#contentSection section");
 
 	return contentSection.html( nd.shell.configMap.form );
 };
-// End DOM method /contactContent/
 
 // Begin DOM method /setContainer/
 // Purpose: empties out the content section container of all elements and
@@ -289,31 +304,6 @@ var mobileNavLinks = function() {
 	});
 };
 // End event /mobileNavLinks/
-
-// Begin event /showContactContainer/
-// this method will is called through the contentLogic method.
-var showContactContainer = function() {
-	var btn = $("#showContactContainer");
-	btn.on("click", function() {
-		var profile = $("#companyProfile"),
-				contactForm = $("#contactContainer");
-		toggleContactForm( $(this), profile, contactForm );
-		$("#closeContainer").show();
-	});
-};
-// End event /showContactContainer/
-
-// Begin event /hideContactContainer/
-var hideContactContainer = function() {
-	var btn = $("#closeContainer");
-	btn.on("click", function() {
-		var profile = $("#companyProfile"),
-				contactForm = $("#contactContainer");
-		toggleContactForm( $(this), contactForm, profile );
-		$("#showContactContainer").show();
-	});
-};
-// End event /hideContactContainer/
 // ------------------------ END EVENT HANDLERS ---------------------------------
 
 // ------------------------ PUBLIC METHODS -------------------------------------

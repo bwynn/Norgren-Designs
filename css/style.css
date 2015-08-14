@@ -209,7 +209,7 @@ button#mobileNavBtn {
 	margin: 3em auto;
 	position: relative;
 	top: 10%;
-	background-color: #fff;
+	background-color: #FCFCF8;
 	opacity: .9;
 	box-shadow: 2px 2px 10px #666;
 }
@@ -242,7 +242,7 @@ button#mobileNavBtn {
 	padding: 2em;
 }
 
-/* ------------------  Contact Page ----------------------------------- */
+/* ------------------  Company Page ----------------------------------- */
 section#companyProfile {
 	height: 100%;
 	width: 100%;
@@ -258,6 +258,7 @@ section#companyProfile {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
 	width: 20%;
+	min-height: 14em;
 	max-width: 27%;
 	background: #377F5E;
 	color: #fff;
@@ -270,36 +271,21 @@ figure.portrait {
 }
 
 .profileBox h3,
-#contactPageContent div.profileBox p {
+#companyPageContent div.profileBox p {
 	padding: .3em;
 }
 
-button#showContactContainer {
-	display: block;
-	margin: 0 auto;
-	font-size: 1.5em;
-	padding: .2em .5em;
-	border-radius: .1em;
-	border: .05em solid #377F5E;
-	color: #377F5E;
-	background-color: #fff;
-	cursor: pointer;
-	-webkit-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
-}
-
-button#showContactContainer:hover {
-	background-color: #377F5E;
-	color: #FCFCF8;
-	border-color: #224F3B;
-	text-shadow: .05em .05em #224F3B;
+#companyPageContent article {
+    background-color: #FCFCF8;
+    opacity: .9;
+    display: block;
+    flex-grow: 1;
+    padding: 2em;
 }
 
 
 /* ------------------  Contact Container ---------------------------------- */
 #contactContainer {
-	display: none;
 	width: 100%;
 	position: absolute;
 	z-index: 2;
