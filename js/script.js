@@ -22,14 +22,14 @@ var nd = {
 						 "<button id='mobileNavBtn'>" +
 						 '<svg version="1.1" id="menu-bar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"' +
 						 	 'viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">' +
-						 '<path fill="#377F5E" d="M36.5,11.7h-33C2.7,11.7,2,11,2,10.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,11,37.3,11.7,36.5,11.7z"/>' +
-						 '<path fill="#377F5E" d="M36.5,21.7h-33C2.7,21.7,2,21,2,20.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,21,37.3,21.7,36.5,21.7z"/>' +
-						 '<path fill="#377F5E" d="M36.5,31.7h-33C2.7,31.7,2,31,2,30.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,31,37.3,31.7,36.5,31.7z"/>' +
+						 '<path class="bar" fill="#377F5E" d="M36.5,11.7h-33C2.7,11.7,2,11,2,10.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,11,37.3,11.7,36.5,11.7z"/>' +
+						 '<path class="bar" fill="#377F5E" d="M36.5,21.7h-33C2.7,21.7,2,21,2,20.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,21,37.3,21.7,36.5,21.7z"/>' +
+						 '<path class="bar" fill="#377F5E" d="M36.5,31.7h-33C2.7,31.7,2,31,2,30.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,31,37.3,31.7,36.5,31.7z"/>' +
 						 '</svg>' +
 						 "</button>" +
 						 "<nav>" +
 							 "<ul>" +
-								 "<li><a href='#'>Home</a></li>" +
+								 "<li><a href='#' class='active'>Home</a></li>" +
 								 "<li><a href='#'>About Erik</a></li>" +
 								 "<li><a href='#'>Company</a></li>" +
 								 "<li><a href='#'>Contact</a></li>" +
@@ -38,7 +38,7 @@ var nd = {
 					 "</div>" +
 				 "</header>" +
 				 "<div id='contentSection'>" +
-		       "<section id='homePageContent'>" +
+		       "<section id='homePageContent' class='show'>" +
 		         "<h1></h1>" +
 		         "<p></p>" +
 		         "<p></p>" +
@@ -55,23 +55,7 @@ var nd = {
 									 '<h3>Name</h3>' +
 									 '<p>Position at Norgren Design</p>' +
 								 '</div>' +
-								 '<div class="profileBox">' +
-									 '<figure class="portrait"></figure>' +
-									 '<h3>Name</h3>' +
-									 '<p>Position at Norgren Design</p>' +
-								 '</div>' +
-								 '<div class="profileBox">' +
-									 '<figure class="portrait"></figure>' +
-									 '<h3>Name</h3>' +
-									 '<p>Position at Norgren Design</p>' +
-								 '</div>' +
-								 '<div class="profileBox">' +
-									 '<figure class="portrait"></figure>' +
-									 '<h3>Name</h3>' +
-									 '<p>Position at Norgren Design</p>' +
-								 '</div>' +
 								 '<article class="openings">' +
-										'<p>Some content to go in the openings section</p>' +
 								 '</article>' +
 							 '</section>' +
   					"</section>" +
@@ -111,15 +95,20 @@ var pageContent = {
 		new_title: "About",
 		about_p: "Erik comes from a family with multiple generations of creative engineers - engineering is in his blood. He has a Masters in Mechanical Engineering from the University of Colorado, Boulder, and 15+ years' experience designing mechatronic systems from the ground up. Robotics and mechanism design are his specialties. He has a proven ability to create successful products from primitive concepts. He enjoys rock climbing and hiking in his spare time.",
 		collaborators_p: "I am continuously making progress on a handful of in-house development projects alongside client-based projects. Think think-tank meets technical competency. I am looking for creative minds to augment my mechanical engineering technical expertise. If you have an innate ability to do what you do, are self-motivated, and want to test your abilities in a new setting, I am interested in hearing from you."
+	},
+	company : {
+		pos_avail: [
+			"Seeking an Electrical Engineer",
+			"Embedded systems firmware development",
+			"Control theory",
+			"Digital Signal Processing (DSP)",
+			"Brushless motor control",
+			"Battery management",
+			"PCB layout",
+			"Product Development"
+		]
 	}
 };
-
-var contentID = [
-	"homePageContent",
-	"aboutPageContent",
-	"companyPageContent",
-	"contactPageContent"
-];
 
 // ------------------------ END MODULE SCOPE VARIABLES -------------------------
 // ------------------------ BEGIN MODEL ----------------------------------------
@@ -132,6 +121,13 @@ var buildPageContent = function( obj, str ) {
 // ------------------------ END UTILITY METHODS --------------------------------
 
 // ------------------------ DOM METHODS ----------------------------------------
+// Begin DOM method /toggleNav/
+var toggleNav = function() {
+	var cont = $("#mobileNav > nav");
+	cont.slideToggle(500, "linear");
+};
+// End DOM method /toggleNav/
+
 // Begin DOM method /homeScreenContent/
 var homeScreenContent = function() {
 	var h1 = $("#homePageContent h1"),
@@ -156,60 +152,60 @@ var aboutScreenContent = function() {
 
 var activeSwitcher = function( elems, obj ) {
 	elems.removeClass("active");
-	obj.addClass("active")
+	obj.addClass("active");
 };
 
-var contentLogic = function() {
-	var content = $("#contentSection").find("section");
-			content.hide();
-			if (content.attr( "id" ) === contentID[0]) {
-				console.log("show home");
-			}
-			else if (content.attr( "id" ) === contentID[1]) {
-				console.log("show about");
-			}
-			else if (content.attr( "id" ) === contentID[2]) {
-				console.log("show company");
-			}
-			else if (content.attr( "id" ) === contentID[3]) {
-				console.log("show contact");
-			}
-};
-// end model method /contentLogic/
+var showContainer = function( btn, container ) {
+	var i;
 
-// Begin model method /idSwitcher/
-var idSwitcher = function( event, linkItem, cont ) {
-	if (event.target === linkItem[0] ) {
-		cont.attr("id", contentID[0]);
-		return contentLogic();
+	container.removeClass("show");
+	for (i = 0; i < btn.length; i++) {
+		if (btn[i].classList.contains("active")) {
+			container[i].classList.add("show");
+		}
 	}
-	else if (event.target === linkItem[1] ) {
-		cont.attr("id", contentID[1]);
-		return contentLogic();
-	}
-	else if (event.target === linkItem[2] ) {
-		cont.attr("id", contentID[2]);
-		return contentLogic();
-	}
-	else if (event.target === linkItem[3]) {
-		cont.attr("id", contentID[3]);
-		return contentLogic();
-	}
-	else { console.log('something went wrong'); }
 };
+
+var openingsSection = function() {
+		var article = $("#companyProfile .openings"), i;
+
+		for (i = 0; i < pageContent.company.pos_avail.length; i++) {
+			article.append("<p>" + pageContent.company.pos_avail[i] + "</p>");
+		}
+};
+
 
 // ------------------------ END DOM METHODS ------------------------------------
 
 // ------------------------ EVENT HANDLERS -------------------------------------
 
 var navBtn = function() {
-	var $navLink = $("nav > ul > li > a"),
-			content = $("#contentSection").find("section");
-	$navLink.on("click", function( e ) {
+	var anchor = $("#globalHeader > nav > ul > li > a"),
+			section = $("#contentSection > section");
+
+	anchor.on("click", function( e ) {
 		e.preventDefault();
-		console.log(e.target);
-		activeSwitcher( $navLink, $(this) );
-		idSwitcher( e, $navLink, content);
+		activeSwitcher( anchor, $(this) );
+		showContainer( anchor, section );
+	});
+};
+
+// Begin event /toggleMobileNav/
+var toggleMobileNav = function() {
+	var btn = $("button#mobileNavBtn");
+	btn.on("click", function() {
+		toggleNav();
+	});
+};
+// End event /toggleMobileNav/
+
+var mobileNav = function() {
+	var mobileNavLink = $("#mobileNav > nav > ul > li > a"),
+			section = $("#contentSection > section");
+	mobileNavLink.on("click", function() {
+		activeSwitcher( mobileNavLink, $(this));
+		showContainer( mobileNavLink, section );
+		toggleNav();
 	});
 };
 
@@ -222,6 +218,9 @@ var init = function() {
 	homeScreenContent();
 	aboutScreenContent();
 	navBtn();
+	toggleMobileNav();
+	mobileNav();
+	openingsSection();
 };
 
 init();
