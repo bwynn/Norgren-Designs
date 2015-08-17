@@ -21,12 +21,15 @@ increases. */
 
 html, body, footer {
 	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll
 }
 
 body {
 	font-family: "Lato", Helvetica, sans-serif;
 	font-size: 18px;
 	background-color: #FCFCF8;
+	color: #222;
 }
 
 p {
@@ -156,6 +159,15 @@ button#mobileNavBtn {
 	border-radius: .5em;
 	cursor: pointer;
 	position: relative;
+	transition: .5s background ease;
+}
+
+button#mobileNavBtn:hover {
+	background-color: #377F5E;
+}
+
+button#mobileNavBtn:hover > svg > path.bar {
+	fill: #fff;
 }
 
 .menu-bar {
@@ -197,8 +209,21 @@ button#mobileNavBtn {
 #contentSection {
 	background-image: url("../img/banner-header.jpg");
 	background-size: cover;
+	background-position: center;
 	width: 100%;
 	overflow: hidden;
+}
+
+#contentSection > section {
+	display: none;
+	position: relative;
+	top: 10%;
+	left: 0;
+	transition: 1.5s ease;
+}
+
+#contentSection > section.show {
+	display: block;
 }
 
 #homePageContent,
@@ -207,11 +232,13 @@ button#mobileNavBtn {
 	min-height: 450px;
 	width: 70%;
 	margin: 3em auto;
-	position: relative;
-	top: 10%;
 	background-color: #FCFCF8;
 	opacity: .9;
 	box-shadow: 2px 2px 10px #666;
+}
+
+#companyPageContent {
+	margin: 0 auto;
 }
 
 #contactPageContent {
@@ -223,10 +250,6 @@ button#mobileNavBtn {
 #contactPageContent h1 {
 	text-align: center;
 	padding: 1em;
-}
-
-#contactPageContent h1 {
-	padding-top: 0;
 }
 
 #homePageContent p,
@@ -241,6 +264,7 @@ button#mobileNavBtn {
 #contactPageContent p:last-child {
 	padding: 2em;
 }
+
 
 /* ------------------  Company Page ----------------------------------- */
 section#companyProfile {
@@ -280,7 +304,8 @@ figure.portrait {
     opacity: .9;
     display: block;
     flex-grow: 1;
-    padding: 2em;
+    padding: 1em;
+		margin: 1em;
 }
 
 
@@ -359,6 +384,9 @@ footer p {
 
 	#contentSection > section {
 		width: 95%;
+		-webkit-transition: 1.5s background ease-in-out;
+		-ms-transition: 1.5s background ease-in-out;
+		transition: 1.5s background ease-in-out;
 	}
 
 	.profileBox {
