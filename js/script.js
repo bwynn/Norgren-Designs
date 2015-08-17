@@ -52,8 +52,10 @@ var nd = {
 								'<section id="companyProfile">' +
 								 '<div class="profileBox">' +
 									 '<figure class="portrait"></figure>' +
-									 '<h3>Name</h3>' +
-									 '<p>Position at Norgren Design</p>' +
+									 '<div class="profile-info">' +
+									 	'<h3>Name</h3>' +
+									 	'<p>Position at Norgren Design</p>' +
+									 '</div>' +
 								 '</div>' +
 								 '<article class="openings">' +
 								 '</article>' +

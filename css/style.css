@@ -278,7 +278,7 @@ section#companyProfile {
 	align-items: stretch;
 }
 
-.profileBox {
+section#companyProfile .profileBox {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
 	width: 20%;
@@ -289,9 +289,12 @@ section#companyProfile {
 	margin: 1em;
 }
 
-figure.portrait {
+section#companyProfile figure.portrait {
 	background-color: goldenrod;
-	height: 150px;
+	min-height: 12em;
+	width: 100%;
+	position: relative;
+	z-index: 1;
 }
 
 .profileBox h3,
@@ -306,6 +309,11 @@ figure.portrait {
     flex-grow: 1;
     padding: 1em;
 		margin: 1em;
+}
+
+#companyPageContent article p:first-child {
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 
@@ -389,7 +397,7 @@ footer p {
 		transition: 1.5s background ease-in-out;
 	}
 
-	.profileBox {
+section#companyProfile .profileBox {
 		width: 30%;
 		max-width: 100%;
 	}
