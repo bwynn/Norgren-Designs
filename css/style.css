@@ -29,6 +29,7 @@ body {
 	font-family: "Lato", Helvetica, sans-serif;
 	font-size: 18px;
 	background-color: #FCFCF8;
+	color: #222;
 }
 
 p {
@@ -218,17 +219,11 @@ button#mobileNavBtn:hover > svg > path.bar {
 	position: relative;
 	top: 10%;
 	left: 0;
+	transition: 1.5s ease;
 }
 
-#contentSection > section.show  {
+#contentSection > section.show {
 	display: block;
-}
-
-#contentSection > section#homePageContent,
-#contentSection > section#aboutPageContent,
-#contentSection > section#companyPageContent,
-#contentSection > section#contactPageContent {
-	transition: 1.5s ease-in-out;
 }
 
 #homePageContent,
