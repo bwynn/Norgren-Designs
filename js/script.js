@@ -63,7 +63,7 @@ var nd = {
   					"</section>" +
 						"<section id='contactPageContent'>" +
 							'<div id="contactContainer">' +
-								'<form action="#" method="post" id="contact-form">' +
+								'<form action="process.php" method="post" id="contact-form">' +
 									'<h1>Contact Me</h1>' +
 									'<div id="nameWrap">' +
 										'<label for="name">Name:</label>' +
@@ -71,7 +71,7 @@ var nd = {
 									'</div>' +
 									'<div id="emailWrap">' +
 										'<label for="email">Email:</label>' +
-										'<input type="text" id="email" name="email" placeholder="example@gmail.com" required>' +
+										'<input type="email" id="email" name="email" placeholder="example@gmail.com" required>' +
 									'</div>' +
 									'<div id="commentWrap">' +
 										'<label for="comment">Message:</label>' +
