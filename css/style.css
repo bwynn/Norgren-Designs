@@ -113,6 +113,11 @@ header#globalHeader > nav > ul {
 header#globalHeader > nav > ul > li {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
+	border-right: 1px solid #377F5E;
+}
+
+header#globalHeader > nav > ul > li:last-child {
+	border: none;
 }
 
 header#globalHeader > nav > ul > li > a {
