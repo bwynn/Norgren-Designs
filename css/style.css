@@ -30,6 +30,8 @@ body {
 	font-size: 18px;
 	background-color: #FCFCF8;
 	color: #222;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
 p {
@@ -96,11 +98,12 @@ div#logo-wrap, header#globalHeader > nav, figure#headerIcon, div#logo-wrap h1, h
 }
 
 div#logo-wrap {
-	width: 66%;
+	width: 60%;
 }
 
 header#globalHeader > nav {
-	width: 33%;
+	width: 39%;
+	float: right;
 }
 
 header#globalHeader > nav > ul {
@@ -341,6 +344,10 @@ section#companyProfile figure.portrait {
 	padding: .1em;
 }
 
+#contact-form textarea {
+	min-height: 3em;
+}
+
 #contact-form input[type="text"]:focus,
 #contact-form input[type="text"]:active,
 #contact-form input[type="email"]:focus,
@@ -368,6 +375,8 @@ button#closeContainer:hover {
 }
 
 button#send {
+	background-color: #377F5E;
+	color: white;
 	padding: .3em .5em;
 	margin-left: 0;
 	-webkit-transition: .3s ease-in-out;
@@ -376,8 +385,7 @@ button#send {
 }
 
 button#send:hover {
-	background-color: #444;
-	color: white;
+	background-color: green;
 }
 
 /* ------------------  Footer Elements -------------------------------  */
@@ -389,6 +397,10 @@ footer p {
 
 /* ------------------- Media Queries --------------------------------- */
 @media only screen and (max-width: 767px) {
+	form {
+		width: 85%;
+	}
+
 	header#globalHeader > nav {
 		display: none;
 	}
@@ -413,8 +425,14 @@ footer p {
 		transition: 1.5s background ease-in-out;
 	}
 
-section#companyProfile .profileBox {
+	section#companyProfile .profileBox {
 		width: 30%;
 		max-width: 100%;
+	}
+
+	button#send {
+		display: block;
+		margin: 1em auto;
+		width: 60%;
 	}
 }
