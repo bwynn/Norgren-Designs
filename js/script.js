@@ -53,8 +53,8 @@ var nd = {
 								 '<div class="profileBox">' +
 									 '<figure class="portrait"></figure>' +
 									 '<div class="profile-info">' +
-									 	'<h3>Name</h3>' +
-									 	'<p>Position at Norgren Design</p>' +
+									 	'<h3>Erik Norgren</h3>' +
+									 	'<p>Founder & CEO, Norgren Design</p>' +
 									 '</div>' +
 								 '</div>' +
 								 '<article class="openings">' +
@@ -97,18 +97,6 @@ var pageContent = {
 		new_title: "About",
 		about_p: "Erik comes from a family with multiple generations of creative engineers - engineering is in his blood. He has a Masters in Mechanical Engineering from the University of Colorado, Boulder, and 15+ years' experience designing mechatronic systems from the ground up. Robotics and mechanism design are his specialties. He has a proven ability to create successful products from primitive concepts. He enjoys rock climbing and hiking in his spare time.",
 		collaborators_p: "I am continuously making progress on a handful of in-house development projects alongside client-based projects. Think think-tank meets technical competency. I am looking for creative minds to augment my mechanical engineering technical expertise. If you have an innate ability to do what you do, are self-motivated, and want to test your abilities in a new setting, I am interested in hearing from you."
-	},
-	company : {
-		pos_avail: [
-			"Seeking an Electrical Engineer",
-			"Embedded systems firmware development",
-			"Control theory",
-			"Digital Signal Processing (DSP)",
-			"Brushless motor control",
-			"Battery management",
-			"PCB layout",
-			"Product Development"
-		]
 	}
 };
 
@@ -163,17 +151,9 @@ var showContainer = function( btn, container ) {
 	container.removeClass("show");
 	for (i = 0; i < btn.length; i++) {
 		if (btn[i].classList.contains("active")) {
-			container[i].classList.add("show");
+				container[i].classList.add("show");
 		}
 	}
-};
-
-var openingsSection = function() {
-		var article = $("#companyProfile .openings"), i;
-
-		for (i = 0; i < pageContent.company.pos_avail.length; i++) {
-			article.append("<p>" + pageContent.company.pos_avail[i] + "</p>");
-		}
 };
 
 
@@ -222,7 +202,6 @@ var init = function() {
 	navBtn();
 	toggleMobileNav();
 	mobileNav();
-	openingsSection();
 };
 
 init();
