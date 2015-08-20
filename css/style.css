@@ -460,6 +460,18 @@ footer p {
 		max-width: 100%;
 	}
 
+	#homePageContent h1,
+	#aboutPageContent h1,
+	#contactPageContent h1 {
+		font-size: 1.3em;
+	}
+
+	#homePageContent p,
+	#aboutPageContent p,
+	#contactPageContent p {
+		font-size: 1;
+	}
+
 	button#send {
 		display: block;
 		margin: 1em auto;
