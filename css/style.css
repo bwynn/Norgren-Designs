@@ -147,6 +147,8 @@ figure#headerIcon {
 	margin: 0 .5em;
 }
 
+/* Mobile Nav Elements */
+
 #mobileNav {
 	position: absolute;
 	top: 0;
@@ -222,17 +224,25 @@ button#mobileNavBtn:hover > svg > path.bar {
 	overflow: hidden;
 }
 
-#contentSection > section {
+#contentSection > section#homePageContent,
+#contentSection > section#aboutPageContent,
+#contentSection > section#contactPageContent,
+#contentSection > section#companyPageContent {
 	display: none;
 	position: relative;
-	top: 10%;
+	top: -10%;
 	left: 0;
 	transition: 1.5s ease;
 }
 
-#contentSection > section.show {
+#contentSection > section#homePageContent.show,
+#contentSection > section#aboutPageContent.show,
+#contentSection > section#contactPageContent.show,
+#contentSection > section#companyPageContent.show {
 	transition: 1.5s ease;
+	top: 10%;
 	display: block;
+	transition: .2s ease;
 }
 
 #homePageContent,

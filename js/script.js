@@ -149,7 +149,7 @@ var activeSwitcher = function( elems, obj ) {
 var showContainer = function( btn, container ) {
 	var i;
 
-	container.removeClass("show");
+	container.removeClass("show");	
 	for (i = 0; i < btn.length; i++) {
 		if (btn[i].classList.contains("active")) {
 				container[i].classList.add("show");
@@ -187,7 +187,7 @@ var mobileNav = function() {
 			section = $("#contentSection > section");
 	mobileNavLink.on("click", function() {
 		activeSwitcher( mobileNavLink, $(this));
-		showContainer( mobileNavLink, section );
+		showContainer( $(this), section );
 		toggleNav();
 	});
 };
@@ -196,6 +196,7 @@ var mobileNav = function() {
 
 // ------------------------ PUBLIC METHODS -------------------------------------
 var init = function() {
+
 	// init config map
 	$("#nd").html(nd.shell);
 	homeScreenContent();
