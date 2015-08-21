@@ -1,3 +1,4 @@
+(function() {
 // ------------------------ MODULE SCOPE VARIABLES -----------------------------
 // creating the Norgren Designs object, which will house shell and all
 // modules for the page
@@ -204,5 +205,6 @@ var init = function() {
 	mobileNav();
 };
 
-init();
+return init();
 // ------------------------ END PUBLIC METHODS ---------------------------------
+})();

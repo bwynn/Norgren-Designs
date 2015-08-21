@@ -185,6 +185,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 #mobileNav > nav {
 	display: none;
 	position: absolute;
+	z-index: 10;
 	width: 100%;
 	top: 3em;
 	background-color: #377F5E;
@@ -308,6 +309,8 @@ section#companyProfile .profileBox {
 	color: #fff;
 	margin: 1em;
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 
 section#companyProfile figure.portrait {
