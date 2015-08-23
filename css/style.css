@@ -482,7 +482,7 @@ footer p {
 	#homePageContent p,
 	#aboutPageContent p,
 	#contactPageContent p {
-		font-size: 1;
+		font-size: 1em;
 	}
 
 	button#send {
