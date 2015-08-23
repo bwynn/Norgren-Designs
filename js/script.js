@@ -6,7 +6,7 @@ var nd = {
 	shell:  String() +
 				"<header id='globalHeader'>" +
 					 "<div id='logo-wrap' class='center'>" +
-						"<a href='index.html' class='homeBtn'>" +
+						"<a href='/sites/norgrendesign' class='homeBtn'>" +
 							 "<figure id='headerIcon' class='logo'></figure>" +
 							 "<h1>Norgren Designs</h1>" +
 						 "</a>" +
@@ -149,7 +149,7 @@ var activeSwitcher = function( elems, obj ) {
 var showContainer = function( btn, container ) {
 	var i;
 
-	container.removeClass("show");	
+	container.removeClass("show");
 	for (i = 0; i < btn.length; i++) {
 		if (btn[i].classList.contains("active")) {
 				container[i].classList.add("show");
