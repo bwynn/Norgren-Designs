@@ -117,9 +117,20 @@ var buildPageContent = function( obj, str ) {
 var toggleNav = function() {
 	var cont = $("#mobileNav > nav"),
 			background = $(".nav-background");
-	background.slideToggle(600, function() {
-		cont.slideToggle(500, "linear");
-	});
+
+		if (cont.css("display") === "block") {
+			cont.slideToggle(500, function() {
+				background.slideToggle(500, "linear");
+			});
+		}
+		else if (cont.css("display") === "none") {
+			background.slideToggle(500, function() {
+				cont.slideToggle(500, "linear");
+			});
+		}
+		else {
+			console.log("something went wrong");
+		}
 };
 // End DOM method /toggleNav/
 
