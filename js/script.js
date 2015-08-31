@@ -51,6 +51,7 @@ var buildPageContent = function( obj, str ) {
 var toggleNav = function() {
 	var cont = $("#mobileNav > nav"),
 			background = $(".nav-background");
+			height = $("html").css("height") === window.outerHeight + "px";
 
 		if (cont.css("display") === "block") {
 			cont.slideToggle(500, function() {
@@ -136,6 +137,7 @@ var toggleMobileNav = function() {
 var mobileNav = function() {
 	var mobileNavLink = $("#mobileNav > nav > ul > li > a"),
 			section = $("#contentSection > section");
+
 	mobileNavLink.on("click", function() {
 		activeSwitcher( mobileNavLink, $(this));
 		showContainer( mobileNavLink, section );
