@@ -128,7 +128,7 @@ var homeScreenContent = function() {
 	buildPageContent( p1, pageContent.homeScreen.home_p1 );
 	buildPageContent( p2, pageContent.homeScreen.home_p2 );
 };
-// End DOM model /homeScreenContent/
+// End DOM method /homeScreenContent/
 
 // Begin DOM method /aboutScreenContent/
 var aboutScreenContent = function() {
@@ -139,12 +139,14 @@ var aboutScreenContent = function() {
 	buildPageContent( p1, pageContent.aboutScreen.about_p );
 	buildPageContent( p2, pageContent.aboutScreen.collaborators_p );
 };
-// End DOM model /aboutScreenContent/
+// End DOM method /aboutScreenContent/
 
+// Begin DOM method /activeSwitcher/
 var activeSwitcher = function( elems, obj ) {
 	elems.removeClass("active");
 	obj.addClass("active");
 };
+// End Dom method /activeSwitcher/
 
 var showContainer = function( btn, container ) {
 	var i;
@@ -187,7 +189,7 @@ var mobileNav = function() {
 			section = $("#contentSection > section");
 	mobileNavLink.on("click", function() {
 		activeSwitcher( mobileNavLink, $(this));
-		showContainer( $(this), section );
+		showContainer( mobileNavLink, section );
 		toggleNav();
 	});
 };
