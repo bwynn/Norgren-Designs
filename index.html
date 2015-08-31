@@ -9,7 +9,91 @@
 </head>
 
 <body>
-    <div id="nd"></div>
+    <div id="nd">
+      <header id='globalHeader'>
+         <div id='logo-wrap' class='center'>
+          <a href='/sites/norgrendesign' class='homeBtn'>
+             <figure id='headerIcon' class='logo'></figure>
+             <h1>Norgren Designs</h1>
+           </a>
+         </div>
+         <nav>
+           <ul>
+             <li><a href='#' class='active'>Home</a></li>
+             <li><a href='#'>About Erik</a></li>
+             <li><a href='#'>Company</a></li>
+             <li><a href='#'>Contact</a></li>
+           </ul>
+         </nav>
+         <div id='mobileNav'>
+           <button id='mobileNavBtn'>
+             <svg version="1.1" id="menu-bar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"' +
+               'viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+             <path class="bar" fill="#377F5E" d="M36.5,11.7h-33C2.7,11.7,2,11,2,10.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,11,37.3,11.7,36.5,11.7z"/>
+             <path class="bar" fill="#377F5E" d="M36.5,21.7h-33C2.7,21.7,2,21,2,20.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,21,37.3,21.7,36.5,21.7z"/>
+             <path class="bar" fill="#377F5E" d="M36.5,31.7h-33C2.7,31.7,2,31,2,30.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,31,37.3,31.7,36.5,31.7z"/>
+             </svg>
+           </button>
+           <nav>
+             <ul>
+               <li><a href='#' class='active'>Home</a></li>
+               <li><a href='#'>About Erik</a></li>
+               <li><a href='#'>Company</a></li>
+               <li><a href='#'>Contact</a></li>
+             </ul>
+           </nav>
+         </div>
+       </header>
+       <div id='contentSection'>
+         <section id='homePageContent' class='show'>
+           <h1></h1>
+           <p></p>
+           <p></p>
+         </section>
+         <section id='aboutPageContent'>
+           <h1></h1>
+           <p></p>
+           <p></p>
+          </section>
+          <section id='companyPageContent'>
+              <section id="companyProfile">
+               <div class="profileBox">
+                 <figure class="portrait"></figure>
+                 <div class="profile-info">
+                  <h3>Erik Norgren</h3>
+                  <p>Founder & CEO, Norgren Design</p>
+                 </div>
+               </div>
+               <article class="openings">
+               </article>
+             </section>
+          </section>
+          <section id='contactPageContent'>
+            <div id="contactContainer">
+              <form action="process.php" method="post" id="contact-form">
+                <h1>Contact Me</h1>
+                <div id="nameWrap">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" placeholder="Enter your name" pattern="[a-zA-Z]+" min="2" required>
+                </div>
+                <div id="emailWrap">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+                <div id="commentWrap">
+                  <label for="comment">Message:</label>
+                  <textarea id="comment" name="user_comment" required></textarea>
+                </div>
+                <button type="submit" id="send" class="inactive">Send</button>
+              </form>
+            </div>
+          </section>
+       </div>
+       <div class='nav-background'></div>
+       <footer>
+         <p>&copy; 2015 Norgren Designs</p>
+       </footer>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
