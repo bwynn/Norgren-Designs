@@ -433,8 +433,6 @@ button#closeContainer:hover {
 }
 
 button#send {
-	background-color: #377F5E;
-	color: white;
 	padding: .3em .5em;
 	margin-left: 0;
 	-webkit-transition: .3s ease-in-out;
@@ -442,8 +440,18 @@ button#send {
 	transition: .3s ease-in-out;
 }
 
-button#send:hover {
+button#send.active {
+	background-color: #377F5E;
+	color: white;
+}
+
+button#send.active:hover {
 	background-color: green;
+}
+
+button#send.inactive {
+	background-color: #999;
+	cursor: default;
 }
 
 /* ------------------  Footer Elements -------------------------------  */

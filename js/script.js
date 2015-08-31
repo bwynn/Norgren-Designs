@@ -78,7 +78,7 @@ var nd = {
 										'<label for="comment">Message:</label>' +
 										'<textarea id="comment" name="user_comment" required></textarea>' +
 									'</div>' +
-									'<button type="submit" id="send">Send</button>' +
+									'<button type="submit" id="send" class="inactive">Send</button>' +
 								'</form>' +
 							'</div>' +
   					"</section>" +
@@ -104,6 +104,7 @@ var pageContent = {
 
 // ------------------------ END MODULE SCOPE VARIABLES -------------------------
 // ------------------------ BEGIN MODEL ----------------------------------------
+
 // ------------------------ END MODEL ------------------------------------------
 
 // ------------------------ UTILITY METHODS ------------------------------------
