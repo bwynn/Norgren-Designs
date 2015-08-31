@@ -83,6 +83,7 @@ var nd = {
 							'</div>' +
   					"</section>" +
 				 '</div>' +
+				 "<div class='nav-background'></div>" +
 				 "<footer>" +
 		    	 "<p>&copy; 2015 Norgren Designs</p>" +
 		     "</footer>"
@@ -114,8 +115,11 @@ var buildPageContent = function( obj, str ) {
 // ------------------------ DOM METHODS ----------------------------------------
 // Begin DOM method /toggleNav/
 var toggleNav = function() {
-	var cont = $("#mobileNav > nav");
-	cont.slideToggle(500, "linear");
+	var cont = $("#mobileNav > nav"),
+			background = $(".nav-background");
+	background.slideToggle(600, function() {
+		cont.slideToggle(500, "linear");
+	});
 };
 // End DOM method /toggleNav/
 
@@ -194,6 +198,12 @@ var mobileNav = function() {
 	});
 };
 
+var mobileBackground = function() {
+	$(".nav-background").on("click", function() {
+		toggleNav();
+	});
+};
+
 // ------------------------ END EVENT HANDLERS ---------------------------------
 
 // ------------------------ PUBLIC METHODS -------------------------------------
@@ -206,6 +216,7 @@ var init = function() {
 	navBtn();
 	toggleMobileNav();
 	mobileNav();
+	mobileBackground();
 };
 
 return init();

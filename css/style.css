@@ -80,6 +80,22 @@ form {
 	color: #999;
 }
 
+html, body, #nd {
+	height: 100%;
+}
+
+#nd > div.nav-background {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 3em;
+	left: 0;
+	z-index: 5;
+	background-color: #333;
+	opacity: .5;
+	display: none;
+}
+
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
 	height: 3em;
@@ -153,7 +169,7 @@ figure#headerIcon {
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 10;
 	width: 100%;
 	display: none;
 }
@@ -168,6 +184,7 @@ button#mobileNavBtn {
 	border-radius: .5em;
 	cursor: pointer;
 	position: relative;
+	z-index: 7;
 	transition: .5s background ease;
 }
 
@@ -213,7 +230,6 @@ button#mobileNavBtn:hover > svg > path.bar {
 	text-decoration: none;
 	font-size: 1.1em;
 }
-
 
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
