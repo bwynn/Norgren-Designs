@@ -19,18 +19,25 @@ increases. */
 	padding: 0;
 }
 
+html, body, #nd {
+	height: 100%;
+}
+
 html, body, footer {
 	width: 100%;
 }
 
-body {
+body, input, textarea, button {
 	font-family: "Lato", Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+body {
 	font-size: 18px;
 	background-color: #FCFCF8;
 	color: #222;
 	max-width: 1440px;
 	margin: 0 auto;
-	overflow: hidden;
 }
 
 p {
@@ -79,10 +86,6 @@ form {
 
 .active {
 	color: #999;
-}
-
-html, body, #nd {
-	height: 100%;
 }
 
 #nd > div.nav-background {
@@ -296,14 +299,14 @@ button#mobileNavBtn:hover > svg > path.bar {
 #contactPageContent h1 {
 	text-align: center;
 	padding: 1em;
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 #homePageContent p,
 #aboutPageContent p,
 #contactPageContent p {
 	padding: .2em 2em;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	line-height: 1.4;
 	letter-spacing: .05em;
 	font-weight: 300;
@@ -399,7 +402,7 @@ section#companyProfile .profileBox:hover > div.profile-info {
 #contact-form textarea {
 	width: 100%;
 	border-radius: 3px;
-	font-size: 1.1em;
+	font-size: 1em;
 	border: 1px solid #999;
 	padding: .1em;
 }
@@ -417,6 +420,10 @@ section#companyProfile .profileBox:hover > div.profile-info {
 	outline: none;
 }
 
+#contact-form input.ng-invalid-required.ng-dirty { background-color: lightpink; }
+#contact-form input.ng-invalid-email.ng-dirty { background-color: #F3F0BF; }
+#contact-form input.ng-valid.ng-dirty { background-color: #C1F0BF; }
+
 button#closeContainer {
 	background-color: inherit;
 	color: #999;
@@ -425,9 +432,11 @@ button#closeContainer {
 button#closeContainer,
 button#send {
 	font-size: 1.2em;
-	border: none;
-	cursor: pointer;
 	margin: .5em;
+}
+
+button#closeContainer {
+	cursor: pointer;
 }
 
 button#closeContainer:hover {
@@ -437,12 +446,27 @@ button#closeContainer:hover {
 button#send {
 	padding: .3em .5em;
 	margin-left: 0;
+	background-color: #377F5E;
+	color: #fff;
+	border: none;
+	cursor: pointer;
 	-webkit-transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 
-button#send.active {
+button#send[disabled="disabled"] {
+	cursor: default;
+	background-color: #98BDA0;
+	color: #333;
+}
+
+#contactPageContent div.formError {
+	color: maroon;
+	font-weight: bold;
+}
+
+/*button#send.active {
 	background-color: #377F5E;
 	color: white;
 }
@@ -454,7 +478,7 @@ button#send.active:hover {
 button#send.inactive {
 	background-color: #999;
 	cursor: default;
-}
+}*/
 
 /* ------------------  Footer Elements -------------------------------  */
 

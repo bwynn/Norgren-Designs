@@ -16,7 +16,7 @@ var pageContent = {
 // ------------------------ END MODULE SCOPE VARIABLES -------------------------
 // ------------------------ BEGIN MODEL ----------------------------------------
 // build the send button activation model
-var activeSendBtn = function() {
+/*var activeSendBtn = function() {
 	var name = $("input#name"),
 			email = $("input#email"),
 			textarea = $("textarea#comment"),
@@ -28,7 +28,7 @@ var activeSendBtn = function() {
 		button.hasClass("inactive");
 		// button is inactive
 	}
-};
+};*/
 // ------------------------ END MODEL ------------------------------------------
 
 // ------------------------ UTILITY METHODS ------------------------------------
@@ -152,13 +152,13 @@ var mobileBackground = function() {
 };
 
 // contact form send handler //
-var contactForm = function() {
+/*var contactForm = function() {
 	var form = $("#contactContainer form");
 
 	form.on("keyup", function() {
 		activeSendBtn();
 	});
-}
+}*/
 
 // ------------------------ END EVENT HANDLERS ---------------------------------
 
@@ -173,7 +173,7 @@ var init = function() {
 	toggleMobileNav();
 	mobileNav();
 	mobileBackground();
-	contactForm();
+	//contactForm();
 };
 
 return init();
