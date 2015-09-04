@@ -1,7 +1,27 @@
-(function() {
-// ------------------------ MODULE SCOPE VARIABLES -----------------------------
-// ------------------------ END MODULE SCOPE VARIABLES -------------------------
+//(function() {
+var background = {
+	class: ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+};
+
 // ------------------------ BEGIN MODEL ----------------------------------------
+// begin model function /getClass/
+// Purpose: this function is run for each array item in the background content
+// section. It pulls a random item out of the background.class array and then
+// removes that item from the array.
+var getClass = function() {
+	// get random string from array, will hold class value
+ 	var random = Math.floor(Math.random() * background.class.length),
+	 		cur_class = background.class.splice( random, 1 );
+
+	if ( background.class.length > 0 ) {
+		return cur_class;
+	}
+	else {
+		console.log("There aren't any more background images to place.");
+	}
+
+};
+// end model function /getClass/
 // ------------------------ END MODEL ------------------------------------------
 
 // ------------------------ UTILITY METHODS ------------------------------------
@@ -112,6 +132,8 @@ var init = function() {
 	mobileBackground();
 };
 
-return init();
+init();
+
+//return init();
 // ------------------------ END PUBLIC METHODS ---------------------------------
-})();
+//})();

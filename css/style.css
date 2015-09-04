@@ -38,6 +38,7 @@ body {
 	color: #222;
 	max-width: 1440px;
 	margin: 0 auto;
+	overflow-x: hidden;
 }
 
 p {
@@ -294,12 +295,11 @@ button#mobileNavBtn:hover > svg > path.bar {
 	padding-bottom: 1em;
 }
 
-#homePageContent h1,
-#aboutPageContent h1,
-#contactPageContent h1 {
+#homePageContent h2,
+#aboutPageContent h2,
+#contactPageContent h2 {
 	text-align: center;
 	padding: 1em;
-	font-size: 2em;
 }
 
 #homePageContent p,
