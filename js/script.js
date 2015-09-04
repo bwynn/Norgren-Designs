@@ -1,40 +1,10 @@
 (function() {
 // ------------------------ MODULE SCOPE VARIABLES -----------------------------
-var pageContent = {
-	homeScreen : {
-		title: "Our design philosophy – an uncommon perspective",
-		home_p1: "Norgren Designs was founded by Erik Norgren as a platform to bring creative ideas to life. Inspired by organic form and function, Norgren Designs takes pride in its ability to create elegant solutions to the strictest design constraints and toughest functional challenges. Clients rely on our experience and knowledge to help design products that meet their goals quickly and efficiently. Let Norgren Designs help you with your next mechanical engineering design project.",
-		home_p2: "Our design philosophy – An uncommon perspective. Engineering is often perceived as a dry, technical, numbers game, transforming ideas into products through mathematical tools and methods. Norgren Designs understands that wiz-bang 3D modeling, FEA, and other technical engineering practices are tools that can easily be wasted without a solid foundation on which to apply them. We value the highly creative stage in the design process that is often overlooked and undervalued. We excel at this creative stage by leveraging experience and intuition to quickly arrive at an optimal starting point. Any design can be optimized in a technical sense, but not every optimized design is an optimal solution. We focus on the creative stage up front to set your project up for success later. Our motto: Creativity, Quantified."
-	},
-	aboutScreen : {
-		new_title: "About",
-		about_p: "Erik comes from a family with multiple generations of creative engineers - engineering is in his blood. He has a Masters in Mechanical Engineering from the University of Colorado, Boulder, and 15+ years' experience designing mechatronic systems from the ground up. Robotics and mechanism design are his specialties. He has a proven ability to create successful products from primitive concepts. He enjoys rock climbing and hiking in his spare time.",
-		collaborators_p: "I am continuously making progress on a handful of in-house development projects alongside client-based projects. Think think-tank meets technical competency. I am looking for creative minds to augment my mechanical engineering technical expertise. If you have an innate ability to do what you do, are self-motivated, and want to test your abilities in a new setting, I am interested in hearing from you."
-	}
-};
-
 // ------------------------ END MODULE SCOPE VARIABLES -------------------------
 // ------------------------ BEGIN MODEL ----------------------------------------
-// build the send button activation model
-/*var activeSendBtn = function() {
-	var name = $("input#name"),
-			email = $("input#email"),
-			textarea = $("textarea#comment"),
-			button = $("button#send");
-	if ( name.val().length !== 0 && email.val().length !== 0 && textarea.val().length !== 0 ) {
-		button.removeClass("inactive").addClass("active");
-	}
-	else {
-		button.hasClass("inactive");
-		// button is inactive
-	}
-};*/
 // ------------------------ END MODEL ------------------------------------------
 
 // ------------------------ UTILITY METHODS ------------------------------------
-var buildPageContent = function( obj, str ) {
-	obj.text(str);
-};
 // ------------------------ END UTILITY METHODS --------------------------------
 
 // ------------------------ DOM METHODS ----------------------------------------
@@ -68,28 +38,6 @@ var toggleNav = function() {
 		}
 };
 // End DOM method /toggleNav/
-
-// Begin DOM method /homeScreenContent/
-var homeScreenContent = function() {
-	var h1 = $("#homePageContent h1"),
-	 		p1 = $("#homePageContent p:first"),
-	 		p2 = $("#homePageContent p:last");
-	buildPageContent( h1, pageContent.homeScreen.title );
-	buildPageContent( p1, pageContent.homeScreen.home_p1 );
-	buildPageContent( p2, pageContent.homeScreen.home_p2 );
-};
-// End DOM method /homeScreenContent/
-
-// Begin DOM method /aboutScreenContent/
-var aboutScreenContent = function() {
-	var h1 = $("#aboutPageContent h1"),
-	 		p1 = $("#aboutPageContent p:first"),
-	 		p2 = $("#aboutPageContent p:last");
-	buildPageContent( h1, pageContent.aboutScreen.new_title );
-	buildPageContent( p1, pageContent.aboutScreen.about_p );
-	buildPageContent( p2, pageContent.aboutScreen.collaborators_p );
-};
-// End DOM method /aboutScreenContent/
 
 // Begin DOM method /activeSwitcher/
 var activeSwitcher = function( elems, obj ) {
@@ -151,14 +99,6 @@ var mobileBackground = function() {
 	});
 };
 
-// contact form send handler //
-/*var contactForm = function() {
-	var form = $("#contactContainer form");
-
-	form.on("keyup", function() {
-		activeSendBtn();
-	});
-}*/
 
 // ------------------------ END EVENT HANDLERS ---------------------------------
 
@@ -166,14 +106,10 @@ var mobileBackground = function() {
 var init = function() {
 
 	// init config map
-	//$("#nd").html(nd.shell);
-	homeScreenContent();
-	aboutScreenContent();
 	navBtn();
 	toggleMobileNav();
 	mobileNav();
 	mobileBackground();
-	//contactForm();
 };
 
 return init();
