@@ -3,7 +3,7 @@ var background = {
 	class: ["black", "grey", "blue", "red", "yellow", "gold", "slate", "orange", "purple"]
 };
 var buildArray = function( newArray ) {
-	return model.getClass( background.class );
+	return model.getClass( newArray );
 };
 
 var randomClasses = function() {

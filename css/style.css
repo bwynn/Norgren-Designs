@@ -29,7 +29,7 @@ html, body, footer {
 
 body, input, textarea, button {
 	font-family: "Lato", Helvetica, sans-serif;
-	/*font-weight: 300;*/
+	font-weight: 300;
 }
 
 body {
@@ -271,10 +271,11 @@ button#mobileNavBtn:hover > svg > path.bar {
 #aboutPageContent,
 #contactPageContent {
 	width: 70%;
+	border-radius: 2px;
 	margin: 3em auto;
 	background-color: #FCFCF8;
-	opacity: .9;
-	box-shadow: 2px 2px 10px #666;
+	opacity: .96;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 
 #homePageContent,
@@ -298,7 +299,6 @@ button#mobileNavBtn:hover > svg > path.bar {
 #homePageContent h2,
 #aboutPageContent h2,
 #contactPageContent h2 {
-	font-weight: 300;
 	text-align: center;
 	padding: 1em;
 }
@@ -310,7 +310,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 	font-size: 1.2em;
 	line-height: 1.4;
 	letter-spacing: .05em;
-	/*font-weight: 300;*/
+	font-weight: 300;
 }
 
 #homePageContent p:last-child,
