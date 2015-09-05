@@ -1,28 +1,20 @@
 //(function() {
 var background = {
-	class: ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+	class: ["black", "grey", "blue", "red", "yellow", "gold", "slate", "orange", "purple"]
+};
+var buildArray = function( newArray ) {
+	return model.getClass( background.class );
 };
 
-// ------------------------ BEGIN MODEL ----------------------------------------
-// begin model function /getClass/
-// Purpose: this function is run for each array item in the background content
-// section. It pulls a random item out of the background.class array and then
-// removes that item from the array.
-var getClass = function() {
-	// get random string from array, will hold class value
- 	var random = Math.floor(Math.random() * background.class.length),
-	 		cur_class = background.class.splice( random, 1 );
-
-	if ( background.class.length > 0 ) {
-		return cur_class;
+var randomClasses = function() {
+	var newLength = background.class.length,
+			elem = document.querySelectorAll(".background-array > figure");
+	for (var i = 0; i < newLength; i++) {
+		elem[i].classList.add( buildArray( background.class ) );
 	}
-	else {
-		console.log("There aren't any more background images to place.");
-	}
-
 };
-// end model function /getClass/
-// ------------------------ END MODEL ------------------------------------------
+
+
 
 // ------------------------ UTILITY METHODS ------------------------------------
 // ------------------------ END UTILITY METHODS --------------------------------
@@ -41,7 +33,6 @@ var getClass = function() {
 var toggleNav = function() {
 	var cont = $("#mobileNav > nav"),
 			background = $(".nav-background");
-			height = $("html").css("height") === window.outerHeight + "px";
 
 		if (cont.css("display") === "block") {
 			cont.slideToggle(500, function() {
@@ -130,6 +121,7 @@ var init = function() {
 	toggleMobileNav();
 	mobileNav();
 	mobileBackground();
+	randomClasses();
 };
 
 init();

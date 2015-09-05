@@ -29,7 +29,7 @@ html, body, footer {
 
 body, input, textarea, button {
 	font-family: "Lato", Helvetica, sans-serif;
-	font-weight: 300;
+	/*font-weight: 300;*/
 }
 
 body {
@@ -239,7 +239,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
-	background-image: url("../img/banner-header.jpg");
+	background-image: url("../img/array_test.jpg");
 	background-size: cover;
 	background-position: center;
 	width: 100%;
@@ -298,6 +298,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 #homePageContent h2,
 #aboutPageContent h2,
 #contactPageContent h2 {
+	font-weight: 300;
 	text-align: center;
 	padding: 1em;
 }
@@ -309,7 +310,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 	font-size: 1.2em;
 	line-height: 1.4;
 	letter-spacing: .05em;
-	font-weight: 300;
+	/*font-weight: 300;*/
 }
 
 #homePageContent p:last-child,
