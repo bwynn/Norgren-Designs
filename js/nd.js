@@ -1,6 +1,6 @@
 //(function() {
 var background = {
-	class: ["black", "grey", "blue", "red", "yellow", "gold", "slate", "orange", "purple"]
+	class: ["bolt", "cable", "card", "circuitboard", "coffee", "cylinder", "hardware", "input", "prototypes"]
 };
 var buildArray = function( newArray ) {
 	return model.getClass( newArray );

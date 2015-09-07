@@ -239,9 +239,6 @@ button#mobileNavBtn:hover > svg > path.bar {
 
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
-	background-image: url("../img/array_test.jpg");
-	background-size: cover;
-	background-position: center;
 	width: 100%;
 	overflow: hidden;
 }
@@ -250,8 +247,10 @@ button#mobileNavBtn:hover > svg > path.bar {
 #contentSection > section#aboutPageContent,
 #contentSection > section#contactPageContent,
 #contentSection > section#companyPageContent {
+	height: 100%;
 	display: none;
 	position: relative;
+	z-index: 3;
 	top: -10%;
 	left: 0;
 	transition: 1.5s ease;
@@ -272,9 +271,8 @@ button#mobileNavBtn:hover > svg > path.bar {
 #contactPageContent {
 	width: 70%;
 	border-radius: 2px;
-	margin: 3em auto;
-	background-color: #FCFCF8;
-	opacity: .96;
+	margin: 3em auto 6em;
+	background-color: rgba(252, 252, 248, 0.96);
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 
@@ -307,7 +305,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 #aboutPageContent p,
 #contactPageContent p {
 	padding: .2em 2em;
-	font-size: 1.2em;
+	font-size: 1em;
 	line-height: 1.4;
 	letter-spacing: .05em;
 	font-weight: 300;
@@ -317,6 +315,43 @@ button#mobileNavBtn:hover > svg > path.bar {
 #aboutPageContent p:last-child,
 #contactPageContent p:last-child {
 	padding: 2em;
+}
+
+/* -------------------- ABOUT PAGE ------------------------------------------ */
+
+section#aboutPageContent {
+	display: flex;
+	flex-flow: wrap;
+	align-content: flex-start;
+	justify-content: flex-start;
+}
+
+section#aboutPageContent .profileBox {
+		display: inline-block;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    width: 23%;
+    max-height: 14em;
+    max-width: 27%;
+    color: #fff;
+    margin: 2em;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+		float: left;
+}
+
+section#aboutPageContent figure.portrait {
+	background-color: goldenrod;
+	background-image: url("../img/erik.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 14em;
+	width: 100%;
+}
+
+section#aboutPageContent h2 {
+	text-align: left;
 }
 
 
@@ -331,62 +366,6 @@ section#companyProfile {
 	-webkit-align-items: stretch;
 	align-items: stretch;
 }
-
-section#companyProfile .profileBox {
-	-webkit-flex-grow: 1;
-	flex-grow: 1;
-	width: 20%;
-	max-height: 14em;
-	max-width: 27%;
-	color: #fff;
-	margin: 1em;
-	overflow: hidden;
-	position: relative;
-	z-index: 1;
-}
-
-section#companyProfile figure.portrait {
-	background-color: goldenrod;
-	background-image: url("../img/erik.jpg");
-	background-size: cover;
-	background-position: center;
-	height: 14em;
-	width: 100%;
-	position: relative;
-	z-index: 2;
-}
-
-.profileBox h3,
-#companyPageContent div.profileBox p {
-	padding: .3em;
-}
-
-section#companyProfile .profileBox div.profile-info {
-	position: relative;
-	z-index: 3;
-	top: -2em;
-	background-color: #377F5E;
-	opacity: .95;
-	transition: 1.5s ease;
-}
-
-section#companyProfile .profileBox:hover > div.profile-info {
-	top: -4em;
-}
-
-/*#companyPageContent article {
-    background-color: #FCFCF8;
-    opacity: .9;
-    display: block;
-    flex-grow: 1;
-    padding: 1em;
-		margin: 1em;
-}
-
-#companyPageContent article p:first-child {
-	font-weight: bold;
-	text-decoration: underline;
-}*/
 
 
 /* ------------------  Contact Container ---------------------------------- */
@@ -467,30 +446,105 @@ button#send[disabled="disabled"] {
 	font-weight: bold;
 }
 
-/*button#send.active {
-	background-color: #377F5E;
-	color: white;
+/* ------------------ Background Array ------------------------------- */
+#nd div.background-array {
+	position: absolute;
+	top: 3em;
+	width: 100%;
+	background-color: #333;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
-button#send.active:hover {
-	background-color: green;
+#nd div.background-array figure {
+	min-height: 290px;
+	min-width: 32%;
+	flex-grow: 1;
+	background-size: cover;
+	background-position: center;
 }
 
-button#send.inactive {
-	background-color: #999;
-	cursor: default;
-}*/
+.bolt {
+	background-image: url("../img/array_bolt_2x.jpg");
+}
+
+.cable {
+	background-image: url("../img/array_cable_2x.jpg");
+}
+
+.card {
+	background-image: url("../img/array_card_2x.jpg");
+}
+
+.circuitboard {
+	background-image: url("../img/array_circuitboard_2x.jpg");
+}
+
+.coffee {
+	background-image: url("../img/array_coffee_2x.jpg");
+}
+
+.cylinder {
+	background-image: url("../img/array_cylinder_2x.jpg");
+}
+.hardware {
+	background-image: url("../img/array_hardware_2x.jpg");
+}
+
+.input {
+	background-image: url("../img/array_input_2x.jpg");
+}
+
+.prototypes {
+	background-image: url("../img/array_prototypes_2x.jpg");
+}
 
 /* ------------------  Footer Elements -------------------------------  */
+
+footer {
+	position: relative;
+	bottom: 0;
+	z-index: 2;
+}
 
 footer p {
 	text-align: center;
 	padding: 1em;
 	font-weight: 300;
+	color: #FCFCF8;
+	text-shadow: 1px 1px 1px #000;
 }
 
 /* ------------------- Media Queries --------------------------------- */
+@media only screen and (max-width: 1000px) {
+	section#aboutPageContent .profileBox {
+			display: block;
+	    width: 100%;
+			max-width: 40%;
+	}
+}
+
 @media only screen and (max-width: 767px) {
+	#nd div.background-array figure {
+		min-height: 290px;
+		min-width: 49%;
+	}
+
+	section#aboutPageContent .profileBox {
+			display: block;
+	    width: 100%;
+			max-width: 60%;
+			float: none;
+			margin: 0 auto;
+			padding-top: 1em;
+	}
+
+	section#aboutPageContent h2  {
+		text-align: center;
+	}
+
 	form {
 		width: 85%;
 	}
