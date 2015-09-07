@@ -34,7 +34,7 @@ body, input, textarea, button {
 
 body {
 	font-size: 18px;
-	background-color: #FCFCF8;
+	background-color: #222;
 	color: #222;
 	max-width: 1440px;
 	margin: 0 auto;
@@ -43,6 +43,10 @@ body {
 
 p {
 	line-height: 1.4;
+}
+
+header{
+	background-color: #FCFCF8;
 }
 
 header,
@@ -199,7 +203,7 @@ button#mobileNavBtn:hover {
 }
 
 button#mobileNavBtn:hover > svg > path.bar {
-	fill: #fff;
+	fill: #ffffff;
 }
 
 .menu-bar {
@@ -320,16 +324,17 @@ button#mobileNavBtn:hover > svg > path.bar {
 /* -------------------- ABOUT PAGE ------------------------------------------ */
 
 section#aboutPageContent {
+	display: -webkit-flex;
 	display: flex;
+	-webkit-flex-flow: wrap;
 	flex-flow: wrap;
+	-webkit-align-content: flex-start;
 	align-content: flex-start;
+	-webkit-justify-content: flex-start;
 	justify-content: flex-start;
 }
 
 section#aboutPageContent .profileBox {
-		display: inline-block;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
     width: 23%;
     max-height: 14em;
     max-width: 27%;
@@ -451,17 +456,26 @@ button#send[disabled="disabled"] {
 	position: absolute;
 	top: 3em;
 	width: 100%;
+	max-width: 1440px;
 	background-color: #333;
-	height: 100%;
+	height: inherit;
+	display: -webkit-flex;
 	display: flex;
-	flex-wrap: wrap;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-align-items: center;
 	align-items: center;
 }
 
 #nd div.background-array figure {
-	min-height: 290px;
+	min-height: 270px;
 	min-width: 32%;
+	width: 33%;
+	display: inline-block;
+	-webkit-flex-grow: 1;
 	flex-grow: 1;
+	-webkit-align-self: flex-start;
+	align-self: flex-start;
 	background-size: cover;
 	background-position: center;
 }
@@ -526,10 +540,10 @@ footer p {
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 800px) {
 	#nd div.background-array figure {
-		min-height: 290px;
 		min-width: 49%;
+		width: 50%;
 	}
 
 	section#aboutPageContent .profileBox {
@@ -594,5 +608,13 @@ footer p {
 		display: block;
 		margin: 1em auto;
 		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#nd div.background-array figure {
+		min-height: 200px;
+		min-width: 99%;
+		width: 100%;
 	}
 }
