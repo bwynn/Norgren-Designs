@@ -507,6 +507,21 @@ footer p.copy-footer {
 
 /* ------------------- Media Queries --------------------------------- */
 @media only screen and (max-width: 1000px) {
+
+	div#contentSection > section {
+		width: 85%;
+		-webkit-transition: 1.5s background ease-in-out;
+		-ms-transition: 1.5s background ease-in-out;
+		transition: 1.5s background ease-in-out;
+	}
+
+	#contentSection > section#homePageContent.show,
+	#contentSection > section#aboutPageContent.show,
+	#contentSection > section#companyPageContent.show,
+	#contentSection > section#contactPageContent.show {
+		top: -2em;
+	}
+
 	section#aboutPageContent .profileBox {
 			display: block;
 	    width: 100%;
@@ -518,6 +533,10 @@ footer p.copy-footer {
 	#nd div.background-array figure {
 		min-width: 49%;
 		width: 50%;
+	}
+
+	#nd div.background-array figure:last-child {
+		display: none;
 	}
 
 	section#aboutPageContent .profileBox {
