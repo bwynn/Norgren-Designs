@@ -62,13 +62,26 @@
           </section>
           <section id='companyPageContent'>
               <section id="companyProfile">
-
+                <article class="client-design-services">
+                  <h2>Client Design Services</h2>
+                  <ul>
+                    <li>Technical Expertise</li>
+                    <li>Skills, listed out</li>
+                    <li>Along with details</li>
+                    <li>Software skills</li>
+                    <li>And core competencies</li>
+                  </ul>
+                </article>
+                <article class="in-house-projects">
+                  <h2>In House Projects</h2>
+                  <p>We are continuously progressing a handful of in-house development projects alongside our client based projects.  Think think-tank meets technical competency.  Stay tuned for developments.</p>
+                </article>
              </section>
           </section>
           <section id='contactPageContent' ng-app="formApp">
             <div id="contactContainer" ng-controller="formCtrl">
               <form action="process.php" method="post" name="ndForm" novalidate ng-submit="addUser( newUser )" id="contact-form">
-                <h2>Contact Me</h2>
+                <h3>Have a project? Need Expert&nbsp;Advice? Contact&nbsp;Us.</h3>
                 <div id="nameWrap">
                   <label for="userName">Name:</label>
                   <input type="text" id="name" name="userName" placeholder="Enter your name" required ng-model="newUser.name">
@@ -111,7 +124,7 @@
        </div>
        <div class='nav-background'></div>
        <footer>
-         <p>&copy; 2015 Norgren Designs</p>
+         <p class="copy-footer">&copy; 2015 Norgren Designs</p>
        </footer>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

@@ -41,8 +41,20 @@ body {
 	overflow-x: hidden;
 }
 
+h2, h3 {
+	text-align: center;
+	padding: 1em;
+}
+
 p {
+	padding: .2em 2em;
+	font-size: 1em;
 	line-height: 1.4;
+	letter-spacing: .05em;
+	font-weight: 300;
+}
+p:last-child {
+	padding: 2em;
 }
 
 header{
@@ -63,10 +75,6 @@ a {
 
 a:hover {
 	text-decoration: underline;
-}
-
-ul {
-	list-style-type: none;
 }
 
 .nav-line,
@@ -163,6 +171,8 @@ div#logo-wrap, figure#headerIcon, div#logo-wrap h1 {
 }
 
 div#logo-wrap h1 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
 	margin-top: .2em;
 }
 
@@ -252,10 +262,7 @@ button#mobileNavBtn:hover > svg > path.bar {
 	overflow: hidden;
 }
 
-#contentSection > section#homePageContent,
-#contentSection > section#aboutPageContent,
-#contentSection > section#contactPageContent,
-#contentSection > section#companyPageContent {
+div#contentSection > section {
 	height: 100%;
 	display: none;
 	position: relative;
@@ -263,12 +270,17 @@ button#mobileNavBtn:hover > svg > path.bar {
 	top: -10%;
 	left: 0;
 	transition: 1.5s ease;
+	width: 70%;
+	border-radius: 2px;
+	margin: 3em auto 6em;
+	background-color: rgba(252, 252, 248, 0.96);
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 
 #contentSection > section#homePageContent.show,
 #contentSection > section#aboutPageContent.show,
-#contentSection > section#contactPageContent.show,
-#contentSection > section#companyPageContent.show {
+#contentSection > section#companyPageContent.show,
+#contentSection > section#contactPageContent.show {
 	transition: 1.5s ease;
 	top: 10%;
 	display: block;
@@ -277,53 +289,13 @@ button#mobileNavBtn:hover > svg > path.bar {
 
 #homePageContent,
 #aboutPageContent,
-#contactPageContent {
-	width: 70%;
-	border-radius: 2px;
-	margin: 3em auto 6em;
-	background-color: rgba(252, 252, 248, 0.96);
-	box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
-}
-
-#homePageContent,
-#aboutPageContent {
+#companyPageContent {
 	min-height: 450px;
 }
 
 #contactPageContent {
 	min-height: 550px;
-}
-
-#companyPageContent {
-	margin: 0 auto;
-	min-height: 650px;
-}
-
-#contactPageContent {
 	padding-bottom: 1em;
-}
-
-#homePageContent h2,
-#aboutPageContent h2,
-#contactPageContent h2 {
-	text-align: center;
-	padding: 1em;
-}
-
-#homePageContent p,
-#aboutPageContent p,
-#contactPageContent p {
-	padding: .2em 2em;
-	font-size: 1em;
-	line-height: 1.4;
-	letter-spacing: .05em;
-	font-weight: 300;
-}
-
-#homePageContent p:last-child,
-#aboutPageContent p:last-child,
-#contactPageContent p:last-child {
-	padding: 2em;
 }
 
 /* -------------------- ABOUT PAGE ------------------------------------------ */
@@ -366,17 +338,13 @@ section#aboutPageContent h2 {
 
 
 /* ------------------  Company Page ----------------------------------- */
-section#companyProfile {
-	height: 100%;
-	width: 100%;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-flow: row wrap;
-	flex-flow: row wrap;
-	-webkit-align-items: stretch;
-	align-items: stretch;
+section#companyProfile > article ul {
+	padding-left: 3em;
 }
 
+section#companyProfile > article p:last-child {
+	padding: .2em 2em 2em;
+}
 
 /* ------------------  Contact Container ---------------------------------- */
 #contactContainer {
@@ -528,7 +496,8 @@ footer {
 	z-index: 2;
 }
 
-footer p {
+footer p.copy-footer {
+	text-transform: uppercase;
 	text-align: center;
 	padding: 1em;
 	font-weight: 300;
@@ -585,7 +554,7 @@ footer p {
 		margin-top: .5em;
 	}
 
-	#contentSection > section {
+	div#contentSection > section {
 		width: 95%;
 		-webkit-transition: 1.5s background ease-in-out;
 		-ms-transition: 1.5s background ease-in-out;
