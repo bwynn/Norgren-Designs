@@ -319,8 +319,27 @@ section#aboutPageContent .profileBox {
     margin: 2em;
     overflow: hidden;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 		float: left;
+}
+
+section#aboutPageContent .profileBox div.employeeDetails {
+	position: relative;
+	top: -1.7em;
+	padding: .3em;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, .5);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+
+section#aboutPageContent .profileBox:hover div.employeeDetails {
+	top: -2.8em;
+}
+
+section#aboutPageContent .profileBox div.employeeDetails p {
+	padding: 0;
 }
 
 section#aboutPageContent figure.portrait {
@@ -335,6 +354,8 @@ section#aboutPageContent figure.portrait {
 section#aboutPageContent h2 {
 	text-align: left;
 }
+
+
 
 
 /* ------------------  Company Page ----------------------------------- */
@@ -431,7 +452,6 @@ button#send[disabled="disabled"] {
 	width: 100%;
 	max-width: 1440px;
 	background-color: #333;
-	height: inherit;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-flow: row wrap;
@@ -525,7 +545,7 @@ footer p.copy-footer {
 	section#aboutPageContent .profileBox {
 			display: block;
 	    width: 100%;
-			max-width: 40%;
+			max-width: 25%;
 	}
 }
 
@@ -542,7 +562,7 @@ footer p.copy-footer {
 	section#aboutPageContent .profileBox {
 			display: block;
 	    width: 100%;
-			max-width: 60%;
+			max-width: 30%;
 			float: none;
 			margin: 0 auto;
 			padding-top: 1em;
@@ -604,5 +624,9 @@ footer p.copy-footer {
 		min-height: 200px;
 		min-width: 99%;
 		width: 100%;
+	}
+
+	section#aboutPageContent .profileBox {
+		max-width: 49%;
 	}
 }
