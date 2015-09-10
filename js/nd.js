@@ -1,31 +1,13 @@
 (function() {
+	// ------------------------ MODULE SCOPE VARIABLES ---------------------------
 	// Background object contains the class array, which is retrieved and
 	// removed from the array after being assigned to the background figure
 	var background = {
 		class: ["bolt", "cable", "card", "circuitboard", "coffee", "cylinder", "hardware", "input", "prototypes"]
 	};
-	// builder anon function to assign class
-	var buildArray = function( newArray ) {
-		return model.getClass( newArray );
-	};
-	// this anon function pulls items out of background class array object
-	// assigns it to a random element within the targeted containers, and then
-	// removes the item from the array, so that it can be assigned only once.
-	var randomClasses = function() {
-		var newLength = background.class.length,
-				elem = document.querySelectorAll(".background-array > figure");
-		for (var i = 0; i < newLength; i++) {
-			elem[i].classList.add( buildArray( background.class ) );
-		}
-	};
-
-
-
-	// ------------------------ UTILITY METHODS ------------------------------------
-	// ------------------------ END UTILITY METHODS --------------------------------
-
+	// ------------------------ END MODULE SCOPE VARIABLES -----------------------
 	// ------------------------ DOM METHODS ----------------------------------------
-	// Begin DOM method /toggleNav/
+	// Begin DOM function /toggleNav/
 	// Purpose: To set the navigation display on devices smaller than a viewport width of 768px.
 	// Arguments: Content section and background modal section. -- to be defined in a later build, after dom
 	// is established in an html build. For the time being, this gets a boolean value to
@@ -55,12 +37,12 @@
 	};
 	// End DOM method /toggleNav/
 
-	// Begin DOM method /activeSwitcher/
+	// Begin DOM function /activeSwitcher/
 	var activeSwitcher = function( elems, obj ) {
 		elems.removeClass("active");
 		obj.addClass("active");
 	};
-	// End Dom method /activeSwitcher/
+	// End Dom function /activeSwitcher/
 
 	var showContainer = function( btn, container ) {
 		var i;
@@ -73,11 +55,30 @@
 		}
 	};
 
+	// Begin DOM function /buildArray/
+	// builder anon function to assign class
+	var buildArray = function( newArray ) {
+		return model.getClass( newArray );
+	};
+	// End DOM function /buildArray/
+	// this anon function pulls items out of background class array object
+	// assigns it to a random element within the targeted containers, and then
+	// removes the item from the array, so that it can be assigned only once.
+	var randomClasses = function() {
+		var newLength = background.class.length,
+				elem = document.querySelectorAll(".background-array > figure");
+		for (var i = 0; i < newLength; i++) {
+			elem[i].classList.add( buildArray( background.class ) );
+		}
+	};
+
+
 
 	// ------------------------ END DOM METHODS ------------------------------------
 
 	// ------------------------ EVENT HANDLERS -------------------------------------
 
+	// Begin event /navBtn/
 	var navBtn = function() {
 		var anchor = $("#globalHeader > nav > ul > li > a"),
 				section = $("#contentSection > section");
@@ -88,6 +89,7 @@
 			showContainer( anchor, section );
 		});
 	};
+	// End event /navBtn/
 
 	// Begin event /toggleMobileNav/
 	var toggleMobileNav = function() {
