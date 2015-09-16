@@ -53,9 +53,6 @@ p {
 	letter-spacing: .05em;
 	font-weight: 300;
 }
-p:last-child {
-	padding: 2em;
-}
 
 header{
 	background-color: #FCFCF8;
@@ -298,9 +295,13 @@ div#contentSection > section {
 	padding-bottom: 1em;
 }
 
+#homePageContent p:last-child {
+	padding: 2em;
+}
+
 /* -------------------- ABOUT PAGE ------------------------------------------ */
 
-section#aboutPageContent {
+section#aboutPageContent > .page-wrap > div.row {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-flow: wrap;
@@ -344,19 +345,35 @@ section#aboutPageContent .profileBox div.employeeDetails p {
 
 section#aboutPageContent figure.portrait {
 	background-color: goldenrod;
-	background-image: url("../img/erik.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 14em;
 	width: 100%;
 }
 
-section#aboutPageContent h2 {
-	text-align: left;
+section#aboutPageContent figure.portrait.erik {
+	background-image: url("../img/erik.jpg");
 }
 
+section#aboutPageContent figure.portrait.default {
+	background-color: #333;
+}
 
+section#aboutPageContent > .page-wrap > div.row > p {
+	width: 60%;
+	padding: 2em .2em;
+}
 
+section#aboutPageContent > .page-wrap > div.row > span.row-separator {
+	width: 92%;
+	border: 1px solid #999;
+	display: block;
+	margin: 0 auto;
+}
+
+section#aboutPageContent > .page-wrap > div.row:last-child span.row-separator {
+	border: none;
+}
 
 /* ------------------  Company Page ----------------------------------- */
 section#companyProfile > article ul {
@@ -611,8 +628,7 @@ footer p.copy-footer {
 	    width: 100%;
 			max-width: 30%;
 			float: none;
-			margin: 0 auto;
-			padding-top: 1em;
+			margin: 1em auto;
 	}
 
 	section#aboutPageContent h2  {
@@ -675,5 +691,10 @@ footer p.copy-footer {
 
 	section#aboutPageContent .profileBox {
 		max-width: 49%;
+	}
+
+	section#aboutPageContent > .page-wrap > div.row > p {
+		width: 100%;
+		padding: 2em;
 	}
 }
