@@ -259,6 +259,17 @@ button#mobileNavBtn:hover > svg > path.bar {
 	overflow: hidden;
 }
 
+div.row {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: wrap;
+	flex-flow: wrap;
+	-webkit-align-content: flex-start;
+	align-content: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+}
+
 div#contentSection > section {
 	height: 100%;
 	display: none;
@@ -300,17 +311,6 @@ div#contentSection > section {
 }
 
 /* -------------------- ABOUT PAGE ------------------------------------------ */
-
-section#aboutPageContent > .page-wrap > div.row {
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-flow: wrap;
-	flex-flow: wrap;
-	-webkit-align-content: flex-start;
-	align-content: flex-start;
-	-webkit-justify-content: flex-start;
-	justify-content: flex-start;
-}
 
 section#aboutPageContent .profileBox {
     width: 23%;

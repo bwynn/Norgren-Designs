@@ -52,6 +52,7 @@
            <p>Engineering is often perceived as a dry, technical, numbers game, transforming ideas into products through mathematical tools and methods. Norgren Designs understands that wiz-bang 3D modeling, FEA, and other technical engineering practices are tools that can easily be wasted without a solid foundation on which to apply them. We value the highly creative stage in the design process that is often overlooked and undervalued. We excel at this creative stage by leveraging experience and intuition to quickly arrive at an optimal starting point. Any design can be optimized in a technical sense, but not every optimized design is an optimal solution. We focus on the creative stage up front to set your project up for success later.</p>
            <h2>Our motto: Creativity, Quantified.</h2>
          </section>
+
          <section id='aboutPageContent'>
            <div class="page-wrap" ng-controller="employeeCtrl">
 
@@ -69,17 +70,17 @@
 
            </div>
           </section>
+
           <section id='companyPageContent'>
-              <section id="companyProfile">
+              <section id="companyProfile" ng-controller="servicesCtrl">
                 <article class="client-design-services">
                   <h2>Client Design Services</h2>
-                  <ul>
-                    <li>Technical Expertise</li>
-                    <li>Skills, listed out</li>
-                    <li>Along with details</li>
-                    <li>Software skills</li>
-                    <li>And core competencies</li>
-                  </ul>
+                  <div class="row" ng-repeat="category in services">
+                    <h3>{{category.title}}</h3>
+                    <ul>
+                      <li ng-repeat="item in category.items">{{item}}</li>
+                    </ul>
+                  </div>
                 </article>
                 <article class="in-house-projects">
                   <h2>In House Projects</h2>
