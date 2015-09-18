@@ -356,7 +356,7 @@ section#aboutPageContent figure.portrait.erik {
 }
 
 section#aboutPageContent figure.portrait.default {
-	background-color: #333;
+	background-image: url("../img/default-user.png");
 }
 
 section#aboutPageContent > .page-wrap > div.row > p {
