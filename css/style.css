@@ -375,6 +375,23 @@ section#aboutPageContent > .page-wrap > div.row:last-child span.row-separator {
 	border: none;
 }
 
+section#aboutPageContent > .page-wrap > div.row:last-child > p > a {
+	background-color: goldenrod;
+	border-radius: 2px;
+	display: block;
+	text-align: center;
+	padding: 1.5em;
+	width: 5em;
+	margin: 3em auto 0;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+section#aboutPageContent > .page-wrap > div.row:last-child > p > a:hover {
+	background: gold;
+}
+
 /* ------------------  Company Page ----------------------------------- */
 section#companyProfile > article ul {
 	padding-left: 3em;
@@ -382,6 +399,10 @@ section#companyProfile > article ul {
 
 section#companyProfile > article p:last-child {
 	padding: .2em 2em 2em;
+}
+
+section#companyProfile > article ul {
+	width: 100%;
 }
 
 /* ------------------  Contact Container ---------------------------------- */

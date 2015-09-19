@@ -5,6 +5,9 @@
 	var background = {
 		class: ["bolt", "cable", "card", "circuitboard", "coffee", "cylinder", "hardware", "input", "prototypes"]
 	};
+
+	var clickCount = [];
+
 	// ------------------------ END MODULE SCOPE VARIABLES -----------------------
 	// ------------------------ DOM METHODS ----------------------------------------
 	// Begin DOM function /toggleNav/
@@ -72,6 +75,11 @@
 		}
 	};
 
+	var contactBtn = function() {
+		var para = $("#aboutPageContent div.row:last-child > p");
+		para.append("<a href='#' class='contact-form-button'>ContactMe</a>")
+	};
+
 
 
 	// ------------------------ END DOM METHODS ------------------------------------
@@ -85,6 +93,12 @@
 
 		anchor.on("click", function( e ) {
 			e.preventDefault();
+			if (this === anchor[1]) {
+	      if (clickCount.length < 1) {
+	        clickCount.push(1);
+	        contactBtn();
+	      }
+	    }
 			activeSwitcher( anchor, $(this) );
 			showContainer( anchor, section );
 		});
@@ -104,7 +118,14 @@
 		var mobileNavLink = $("#mobileNav > nav > ul > li > a"),
 				section = $("#contentSection > section");
 
-		mobileNavLink.on("click", function() {
+		mobileNavLink.on("click", function( e ) {
+			e.preventDefault();
+			if (this === mobileNavLink[1]) {
+	      if (clickCount.length < 1) {
+	        clickCount.push(1);
+	        contactBtn();
+	      }
+	    }
 			activeSwitcher( mobileNavLink, $(this));
 			showContainer( mobileNavLink, section );
 			toggleNav();
@@ -122,7 +143,6 @@
 
 	// ------------------------ PUBLIC METHODS -------------------------------------
 	var init = function() {
-
 		// init config map
 		navBtn();
 		toggleMobileNav();

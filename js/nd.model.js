@@ -18,9 +18,29 @@ var model = (function() {
 
   };
   // end model function /getClass/
+
+  /*contactCondition = function( elem ) {
+    var count = [];
+
+    if (this === elem[1]) {
+      if (count.length < 1) {
+        count.push(1);
+        contactBtn();
+      }
+      else {
+        console.log("something went wrong with the array count");
+      }
+      console.log(count);
+    }
+    else {
+      console.log(count);
+      console.log("something went wrong with element scope");
+    }
+  }*/
   // ------------------------ END MODEL ------------------------------------------
   return {
-    getClass : getClass
+    getClass : getClass//,
+    //contactCondition : contactCondition
   }
 
 }());
