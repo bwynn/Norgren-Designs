@@ -151,6 +151,7 @@
 		$(".contact-form-button").on("click", function(e) {
 			e.preventDefault();
 			anchor.removeClass("active");
+			anchor[3].classList.add("active");
 			contactContainer( section );
 		});
 	}

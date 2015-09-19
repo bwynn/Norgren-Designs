@@ -405,6 +405,10 @@ section#companyProfile > article ul {
 	width: 100%;
 }
 
+section#companyProfile > article li {
+	padding-right: 1em;
+}
+
 /* ------------------  Contact Container ---------------------------------- */
 #contactContainer {
 	width: 100%;
@@ -629,7 +633,6 @@ footer p.copy-footer {
 
 	section#aboutPageContent .profileBox {
 			display: block;
-	    width: 100%;
 			max-width: 25%;
 	}
 }
@@ -647,7 +650,7 @@ footer p.copy-footer {
 	section#aboutPageContent .profileBox {
 			display: block;
 	    width: 100%;
-			max-width: 30%;
+			max-width: 35%;
 			float: none;
 			margin: 1em auto;
 	}
@@ -684,15 +687,23 @@ footer p.copy-footer {
 		max-width: 100%;
 	}
 
+	section#companyProfile > article ul {
+		padding-left: 2em;
+	}
+
+	section#aboutPageContent > .page-wrap > div.row > p {
+		width: 100%;
+		padding: 2em;
+	}
+
 	#homePageContent h1,
 	#aboutPageContent h1,
 	#contactPageContent h1 {
 		font-size: 1.3em;
 	}
 
-	#homePageContent p,
-	#aboutPageContent p,
-	#contactPageContent p {
+	section p,
+	section li {
 		font-size: .8em;
 	}
 
@@ -712,10 +723,5 @@ footer p.copy-footer {
 
 	section#aboutPageContent .profileBox {
 		max-width: 49%;
-	}
-
-	section#aboutPageContent > .page-wrap > div.row > p {
-		width: 100%;
-		padding: 2em;
 	}
 }
