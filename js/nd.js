@@ -75,6 +75,11 @@
 		}
 	};
 
+	var contactContainer = function( container ) {
+		container.removeClass("show");
+		container[3].classList.add("show");
+	}
+
 	var contactBtn = function() {
 		var para = $("#aboutPageContent div.row:last-child > p");
 		para.append("<a href='#' class='contact-form-button'>ContactMe</a>")
@@ -98,6 +103,7 @@
 	        clickCount.push(1);
 	        contactBtn();
 	      }
+				contactEvent();
 	    }
 			activeSwitcher( anchor, $(this) );
 			showContainer( anchor, section );
@@ -125,6 +131,7 @@
 	        clickCount.push(1);
 	        contactBtn();
 	      }
+				contactEvent();
 	    }
 			activeSwitcher( mobileNavLink, $(this));
 			showContainer( mobileNavLink, section );
@@ -137,6 +144,16 @@
 			toggleNav();
 		});
 	};
+
+	var contactEvent = function() {
+		var anchor = $("#globalHeader > nav > ul > li > a"),
+				section = $("#contentSection > section");
+		$(".contact-form-button").on("click", function(e) {
+			e.preventDefault();
+			anchor.removeClass("active");
+			contactContainer( section );
+		});
+	}
 
 
 	// ------------------------ END EVENT HANDLERS ---------------------------------
