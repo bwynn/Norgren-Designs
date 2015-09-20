@@ -6,6 +6,10 @@
 		class: ["bolt", "cable", "card", "circuitboard", "coffee", "cylinder", "hardware", "input", "prototypes"]
 	};
 
+	// The clickCount array stores the number of clicks on the About page section
+	// Using a conditional in the events to determine the number of clicks to allow for
+	// the propagation of one contact button, but if the content section visited
+	// more than once, further propagation of the button is restricted.
 	var clickCount = [];
 
 	// ------------------------ END MODULE SCOPE VARIABLES -----------------------
@@ -64,6 +68,8 @@
 		return model.getClass( newArray );
 	};
 	// End DOM function /buildArray/
+
+	// Begin Dom method /randomClasses/
 	// this anon function pulls items out of background class array object
 	// assigns it to a random element within the targeted containers, and then
 	// removes the item from the array, so that it can be assigned only once.
@@ -74,18 +80,7 @@
 			elem[i].classList.add( buildArray( background.class ) );
 		}
 	};
-
-	var contactContainer = function( container ) {
-		container.removeClass("show");
-		container[3].classList.add("show");
-	}
-
-	var contactBtn = function() {
-		var para = $("#aboutPageContent div.row:last-child > p");
-		para.append("<a href='#' class='contact-form-button'>ContactMe</a>")
-	};
-
-
+	// end DOM method /randomClasses/
 
 	// ------------------------ END DOM METHODS ------------------------------------
 
@@ -98,13 +93,7 @@
 
 		anchor.on("click", function( e ) {
 			e.preventDefault();
-			if (this === anchor[1]) {
-	      if (clickCount.length < 1) {
-	        clickCount.push(1);
-	        contactBtn();
-	      }
-				contactEvent();
-	    }
+			contact.showContactConditional( this, anchor, clickCount );
 			activeSwitcher( anchor, $(this) );
 			showContainer( anchor, section );
 		});
@@ -126,13 +115,7 @@
 
 		mobileNavLink.on("click", function( e ) {
 			e.preventDefault();
-			if (this === mobileNavLink[1]) {
-	      if (clickCount.length < 1) {
-	        clickCount.push(1);
-	        contactBtn();
-	      }
-				contactEvent();
-	    }
+			contact.showContactConditional( this, mobileNavLink, clickCount );
 			activeSwitcher( mobileNavLink, $(this));
 			showContainer( mobileNavLink, section );
 			toggleNav();
@@ -145,23 +128,11 @@
 		});
 	};
 
-	var contactEvent = function() {
-		var anchor = $("#globalHeader > nav > ul > li > a"),
-				section = $("#contentSection > section");
-		$(".contact-form-button").on("click", function(e) {
-			e.preventDefault();
-			anchor.removeClass("active");
-			anchor[3].classList.add("active");
-			contactContainer( section );
-		});
-	}
-
 
 	// ------------------------ END EVENT HANDLERS ---------------------------------
 
 	// ------------------------ PUBLIC METHODS -------------------------------------
 	var init = function() {
-		// init config map
 		navBtn();
 		toggleMobileNav();
 		mobileNav();

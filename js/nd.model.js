@@ -18,6 +18,7 @@ var model = (function() {
 
   };
   // end model function /getClass/
+
   // ------------------------ END MODEL ------------------------------------------
   return {
     getClass : getClass
