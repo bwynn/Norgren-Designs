@@ -401,6 +401,10 @@ section#companyProfile > article p:last-child {
 	padding: .2em 2em 2em;
 }
 
+section#companyProfile > article h3 {
+	text-align: left;
+}
+
 section#companyProfile > article ul {
 	width: 100%;
 }

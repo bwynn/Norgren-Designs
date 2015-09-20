@@ -19,9 +19,14 @@ var model = (function() {
   };
   // end model function /getClass/
 
+  topOfPage = function() {
+    return window.scrollTo(0, 0);
+  }
+
   // ------------------------ END MODEL ------------------------------------------
   return {
-    getClass : getClass
+    getClass : getClass,
+    topOfPage : topOfPage
   }
 
 }());
