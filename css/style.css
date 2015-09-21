@@ -275,7 +275,7 @@ div#contentSection > section {
 	display: none;
 	position: relative;
 	z-index: 3;
-	top: -10%;
+	top: -3em;
 	left: 0;
 	transition: 1.5s ease;
 	width: 70%;
@@ -290,7 +290,7 @@ div#contentSection > section {
 #contentSection > section#companyPageContent.show,
 #contentSection > section#contactPageContent.show {
 	transition: 1.5s ease;
-	top: 10%;
+	top: 1em;
 	display: block;
 	transition: .2s ease;
 }
@@ -344,7 +344,7 @@ section#aboutPageContent .profileBox div.employeeDetails p {
 }
 
 section#aboutPageContent figure.portrait {
-	background-color: goldenrod;
+	background-color: #98BDA0;
 	background-size: cover;
 	background-position: center;
 	height: 14em;
@@ -376,7 +376,7 @@ section#aboutPageContent > .page-wrap > div.row:last-child span.row-separator {
 }
 
 section#aboutPageContent > .page-wrap > div.row:last-child > p > a {
-	background-color: goldenrod;
+	background-color: #98BDA0;
 	border-radius: 2px;
 	display: block;
 	text-align: center;
@@ -389,7 +389,7 @@ section#aboutPageContent > .page-wrap > div.row:last-child > p > a {
 }
 
 section#aboutPageContent > .page-wrap > div.row:last-child > p > a:hover {
-	background: gold;
+	background: #377F5E;
 }
 
 /* ------------------  Company Page ----------------------------------- */
@@ -632,7 +632,7 @@ footer p.copy-footer {
 	#contentSection > section#aboutPageContent.show,
 	#contentSection > section#companyPageContent.show,
 	#contentSection > section#contactPageContent.show {
-		top: -2em;
+		top: 0em;
 	}
 
 	section#aboutPageContent .profileBox {
@@ -692,7 +692,7 @@ footer p.copy-footer {
 	}
 
 	section#companyProfile > article ul {
-		padding-left: 2em;
+		padding: 1em 1em 2em;
 	}
 
 	section#aboutPageContent > .page-wrap > div.row > p {
@@ -719,6 +719,13 @@ footer p.copy-footer {
 }
 
 @media only screen and (max-width: 500px) {
+	#contentSection > section#homePageContent.show,
+	#contentSection > section#aboutPageContent.show,
+	#contentSection > section#companyPageContent.show,
+	#contentSection > section#contactPageContent.show {
+		top: -2em;
+	}
+
 	#nd div.background-array figure {
 		min-height: 200px;
 		min-width: 99%;
