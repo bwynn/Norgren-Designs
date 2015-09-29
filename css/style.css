@@ -180,7 +180,7 @@ figure#headerIcon {
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
 	position: absolute;
-	top: 5em;
+	top: 4em;
 	width: 100%;
 	overflow: hidden;
 	max-width: 1440px;
@@ -190,7 +190,7 @@ article.client-design-services,
 div.row {
 	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-flow: wrap;
+	-webkit-flex-flow: row wrap;
 	flex-flow: wrap;
 	-webkit-align-content: flex-start;
 	align-content: flex-start;
@@ -543,12 +543,6 @@ only screen and (min-resolution: 2dppx) {
 }
 
 /* ------------------  Footer Elements -------------------------------  */
-
-footer {
-	position: relative;
-	bottom: 0;
-	z-index: 10;
-}
 
 footer p.copy-footer {
 	text-transform: uppercase;
