@@ -20,7 +20,7 @@ increases. */
 }
 
 html, body, #nd {
-	height: 100%;
+	min-height: 1050px;
 }
 
 html, body, footer {
@@ -34,11 +34,15 @@ body, input, textarea, button {
 
 body {
 	font-size: 18px;
-	background-color: #222;
 	color: #222;
 	max-width: 1440px;
 	margin: 0 auto;
 	overflow-x: hidden;
+	background-color: #222;
+}
+
+footer {
+	background-color: #FCFCF8;
 }
 
 h2, h3 {
@@ -98,21 +102,9 @@ form {
 	color: #999;
 }
 
-#nd > div.nav-background {
-	width: 100%;
-	height: inherit;
-	position: absolute;
-	top: 3em;
-	left: 0;
-	z-index: 5;
-	background-color: #222;
-	opacity: .8;
-	display: none;
-}
-
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
-	height: 3em;
+	height: 4em;
 	overflow: hidden;
 }
 
@@ -142,7 +134,7 @@ header#globalHeader > nav > ul {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	margin-top: 1.5em;
+	margin-top: 2.5em;
 }
 
 header#globalHeader > nav > ul > li {
@@ -168,9 +160,9 @@ div#logo-wrap, figure#headerIcon, div#logo-wrap h1 {
 div#logo-wrap h1 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	margin-top: .8em;
+	margin-top: 1.2em;
 	font-weight: 300;
-	font-size: 1.5em;
+	font-size: 1.6em;
 }
 
 figure#headerIcon {
@@ -181,84 +173,20 @@ figure#headerIcon {
 
 .logo {
 	height: 100%;
-	width: 3em;
-	margin: 0 .5em;
-}
-
-/* Mobile Nav Elements */
-
-#mobileNav {
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 10;
-	width: 100%;
-	display: none;
-}
-
-button#mobileNavBtn {
-	float: right;
-	height: 4em;
 	width: 4em;
-	margin: .45em;
-	background-color: inherit;
-	border: .2em solid #222;
-	border-radius: .5em;
-	cursor: pointer;
-	position: relative;
-	z-index: 7;
-	transition: .5s background ease;
-}
-
-button#mobileNavBtn:hover {
-	background-color: #222;
-}
-
-button#mobileNavBtn:hover > svg > path.bar {
-	fill: #ffffff;
-}
-
-.menu-bar {
-	fill: green;
-	height: 10px;
-}
-
-#mobileNav > nav {
-	display: none;
-	position: absolute;
-	z-index: 10;
-	width: 100%;
-	top: 3em;
-	background-color: #222;
-	box-shadow: .5em .5em .5em rgba(0, 0, 0, .5);
-}
-
-#mobileNav > nav > ul > li {
-	padding: .6em;
-}
-
-#mobileNav > nav > ul > li:first-of-type {
-	padding-top: 1.2em;
-}
-
-#mobileNav > nav > ul > li > a {
-	color: #FCFCF8;
-	display: block;
-	border-bottom: .1em solid #FCFCF8;
-}
-
-#mobileNav > nav > ul > li > a:hover {
-	text-shadow: .05em .05em #224F3B;
-	text-decoration: none;
-	font-size: 1.1em;
+	margin: 0 .5em;
 }
 
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
+	position: absolute;
+	top: 5em;
 	width: 100%;
 	overflow: hidden;
+	max-width: 1440px;
 }
 
+article.client-design-services,
 div.row {
 	display: -webkit-flex;
 	display: flex;
@@ -304,6 +232,11 @@ div#contentSection > section {
 #contactPageContent {
 	min-height: 550px;
 	padding-bottom: 1em;
+}
+
+#homePageContent h2:last-child {
+	font-weight: 300;
+	font-size: 1.1em;
 }
 
 #homePageContent p:last-child {
@@ -413,6 +346,14 @@ section#companyProfile > article li {
 	padding-right: 1em;
 }
 
+section#companyProfile article.client-design-services > h2 {
+	width: 100%;
+}
+
+section#companyProfile article.client-design-services > div.row {
+	max-width: 50%;
+}
+
 /* ------------------  Contact Container ---------------------------------- */
 #contactContainer {
 	width: 100%;
@@ -493,8 +434,8 @@ button#send[disabled="disabled"] {
 
 /* ------------------ Background Array ------------------------------- */
 #nd div.background-array {
-	position: absolute;
-	top: 3em;
+	/*position: absolute;
+	top: 3em;*/
 	width: 100%;
 	max-width: 1440px;
 	background-color: #333;
@@ -507,7 +448,7 @@ button#send[disabled="disabled"] {
 }
 
 #nd div.background-array figure {
-	min-height: 270px;
+	min-height: 350px;
 	min-width: 32%;
 	width: 33%;
 	display: inline-block;
@@ -606,7 +547,7 @@ only screen and (min-resolution: 2dppx) {
 footer {
 	position: relative;
 	bottom: 0;
-	z-index: 2;
+	z-index: 10;
 }
 
 footer p.copy-footer {
@@ -614,8 +555,7 @@ footer p.copy-footer {
 	text-align: center;
 	padding: 1em;
 	font-weight: 300;
-	color: #FCFCF8;
-	text-shadow: 1px 1px 1px #000;
+	color: #222;
 }
 
 /* ------------------- Media Queries --------------------------------- */
@@ -641,7 +581,95 @@ footer p.copy-footer {
 	}
 }
 
+/* ------------ 800 Pixels -------------------- */
+
 @media only screen and (max-width: 800px) {
+	header#globalHeader {
+		height: 3em
+	}
+
+	/* Mobile Nav Elements */
+
+	#mobileNav {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+		width: 100%;
+		display: none;
+	}
+
+	button#mobileNavBtn {
+		float: right;
+		height: 45px;
+		width: 45px;
+		margin: .45em;
+		background-color: inherit;
+		border: .2em solid #222;
+		border-radius: .5em;
+		cursor: pointer;
+		position: relative;
+		z-index: 7;
+		transition: .5s background ease;
+	}
+
+	button#mobileNavBtn:hover {
+		background-color: #222;
+	}
+
+	button#mobileNavBtn:hover > svg > path.bar {
+		fill: #ffffff;
+		height: 100%;
+		width: 100%;
+	}
+
+	svg#menu-bar {
+		position: relative;
+		height: inherit;
+		width: inherit;
+		top: 0;
+		left: 0px;
+	}
+
+	#mobileNav > nav {
+		display: none;
+		position: absolute;
+		z-index: 10;
+		width: 100%;
+		top: 3em;
+		background-color: #222;
+		box-shadow: .5em .5em .5em rgba(0, 0, 0, .5);
+	}
+
+	#mobileNav > nav > ul > li {
+		padding: .6em;
+	}
+
+	#mobileNav > nav > ul > li:first-of-type {
+		padding-top: 1.2em;
+	}
+
+	#mobileNav > nav > ul > li > a {
+		color: #FCFCF8;
+		display: block;
+		border-bottom: .1em solid #FCFCF8;
+	}
+
+	#mobileNav > nav > ul > li > a:hover {
+		text-shadow: .05em .05em #224F3B;
+		text-decoration: none;
+		font-size: 1.1em;
+	}
+
+	div#logo-wrap h1 {
+		margin-top: 1em;
+		font-size: 1.3em;
+	}
+
+	.logo {
+		width: 3em;
+	}
+
 	#nd div.background-array figure {
 		min-width: 49%;
 		width: 50%;
@@ -679,6 +707,19 @@ footer p.copy-footer {
 		width: 80%;
 	}
 
+	#nd > div.nav-background {
+		width: 100%;
+		height: 100%;
+		min-height: 1050px;
+		position: absolute;
+		top: 3em;
+		left: 0;
+		z-index: 5;
+		background-color: #222;
+		opacity: .8;
+		display: none;
+	}
+
 	div#contentSection > section {
 		width: 95%;
 		-webkit-transition: 1.5s background ease-in-out;
@@ -693,6 +734,7 @@ footer p.copy-footer {
 
 	section#companyProfile > article ul {
 		padding: 1em 1em 2em;
+		margin-left: 1em;
 	}
 
 	section#aboutPageContent > .page-wrap > div.row > p {
@@ -715,6 +757,10 @@ footer p.copy-footer {
 		display: block;
 		margin: 1em auto;
 		width: 60%;
+	}
+
+	section#companyProfile article.client-design-services > div.row {
+		max-width: 100%;
 	}
 }
 
