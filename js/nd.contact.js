@@ -9,7 +9,7 @@ var contact = (function() {
   // Begin DOM method /contactBtn/
   var contactBtn = function() {
     var para = $("#aboutPageContent div.row:last-child > p");
-    para.append("<a href='#' class='contact-form-button'>ContactMe</a>")
+    para.append("<a href='#' class='contact-form-button'>Contact Us</a>")
   };
   // End DOM method /contactBtn/
 

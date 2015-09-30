@@ -42,7 +42,7 @@ body {
 }
 
 footer {
-	background-color: #FCFCF8;
+	background-color: #222;
 }
 
 h2, h3 {
@@ -308,13 +308,13 @@ section#aboutPageContent > .page-wrap > div.row:last-child span.row-separator {
 	border: none;
 }
 
-section#aboutPageContent > .page-wrap > div.row:last-child > p > a {
+section#aboutPageContent > .page-wrap > div.row:last-child > p > a.contact-form-button {
 	background-color: #98BDA0;
 	border-radius: 2px;
 	display: block;
 	text-align: center;
 	padding: 1.5em;
-	width: 5em;
+	width: 6em;
 	margin: 3em auto 0;
 	-webkit-transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
@@ -361,6 +361,10 @@ section#companyProfile article.client-design-services > div.row {
 	z-index: 2;
 	top: 0;
 	left: 0;
+}
+
+#contactContainer h3 {
+	padding: 2em 1em 1em;
 }
 
 #contact-form input[type="text"],
@@ -549,7 +553,7 @@ footer p.copy-footer {
 	text-align: center;
 	padding: 1em;
 	font-weight: 300;
-	color: #222;
+	color: #FCFCF8;
 }
 
 /* ------------------- Media Queries --------------------------------- */
