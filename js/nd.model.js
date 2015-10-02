@@ -21,12 +21,23 @@ var model = (function() {
 
   topOfPage = function() {
     return window.scrollTo(0, 0);
-  }
+  };
+
+  switchLogic = function( arr, cont ) {
+		if (arr.classList.contains("active")) {
+			cont.classList.add("show");
+		}
+
+		if ( cont.classList.contains("show")) {
+			$.Velocity(cont, { opacity: 1 }, { display: "block" }, 300, { easing: "spring" });
+		}
+	};
 
   // ------------------------ END MODEL ------------------------------------------
   return {
     getClass : getClass,
-    topOfPage : topOfPage
+    topOfPage : topOfPage,
+    switchLogic : switchLogic
   }
 
 }());

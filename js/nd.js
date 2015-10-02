@@ -13,6 +13,7 @@
 	var clickCount = [];
 
 	// ------------------------ END MODULE SCOPE VARIABLES -----------------------
+
 	// ------------------------ DOM METHODS ----------------------------------------
 	// Begin DOM function /toggleNav/
 	// Purpose: To set the navigation display on devices smaller than a viewport width of 768px.
@@ -55,10 +56,10 @@
 		var i;
 
 		container.removeClass("show");
+		//container.hide();
+		$.Velocity(container, { opacity: 0 }, { display: "none" }, 100)
 		for (i = 0; i < btn.length; i++) {
-			if (btn[i].classList.contains("active")) {
-					container[i].classList.add("show");
-			}
+			model.switchLogic( btn[i], container[i] );
 		}
 	};
 
@@ -138,6 +139,7 @@
 		mobileNav();
 		mobileBackground();
 		randomClasses();
+		showContainer( $("#globalHeader > nav > ul > li > a"), $("#contentSection > section") );
 	};
 
 	return init();

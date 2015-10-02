@@ -204,13 +204,11 @@ article.client-design-services {
 
 
 div#contentSection > section {
-	height: 100%;
 	display: none;
 	position: relative;
 	z-index: 3;
-	top: -3em;
+	top: 1em;
 	left: 0;
-	transition: 1.5s ease;
 	width: 70%;
 	border-radius: 2px;
 	margin: 3em auto 6em;
@@ -222,10 +220,7 @@ div#contentSection > section {
 #contentSection > section#aboutPageContent.show,
 #contentSection > section#companyPageContent.show,
 #contentSection > section#contactPageContent.show {
-	transition: 1.5s ease;
 	top: 1em;
-	display: block;
-	transition: .2s ease;
 }
 
 #homePageContent,
@@ -249,7 +244,7 @@ div#contentSection > section {
 }
 
 article.in-house-projects h2 {
-	padding-top: 0;
+	padding-top: 1em;
 }
 
 /* -------------------- ABOUT PAGE ------------------------------------------ */
@@ -770,6 +765,11 @@ footer p.copy-footer {
 	section#companyProfile article.client-design-services > div.row {
 		width: 100%;
 	}
+
+	article.in-house-projects h2 {
+		padding-top: inherit;
+	}
+
 }
 
 @media only screen and (max-width: 500px) {

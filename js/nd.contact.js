@@ -3,6 +3,7 @@ var contact = (function() {
   var contactContainer = function( container ) {
     container.removeClass("show");
     container[3].classList.add("show");
+    $.Velocity(container[3], { opacity: 1 }, { display: "block" }, 300, { easing: "spring" });
   }
   // End DOM method /contactContainer/
 
@@ -41,6 +42,7 @@ var contact = (function() {
       e.preventDefault();
       anchor.removeClass("active");
       anchor[3].classList.add("active");
+      $.Velocity(section, { opacity: 0 }, { display: "none" }, 100);
       contactContainer( section );
       model.topOfPage();
     });
