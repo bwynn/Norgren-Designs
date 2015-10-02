@@ -177,6 +177,10 @@ figure#headerIcon {
 	margin: 0 .5em;
 }
 
+	button#mobileNavBtn {
+		display: none;
+	}
+
 /* ------------------  Content Elements ------------------------------  */
 #contentSection {
 	position: absolute;
@@ -603,6 +607,7 @@ footer p.copy-footer {
 	}
 
 	button#mobileNavBtn {
+		display: block;
 		float: right;
 		height: 45px;
 		width: 45px;
