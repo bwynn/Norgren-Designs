@@ -29,7 +29,7 @@ var model = (function() {
 		}
 
 		if ( cont.classList.contains("show")) {
-			$.Velocity(cont, { opacity: 1 }, { display: "block" }, 300, { easing: "spring" });
+			$.Velocity(cont, { opacity: 1 }, { display: "block" }, 100, { easing: "ease-in-out" });
 		}
 	};
 

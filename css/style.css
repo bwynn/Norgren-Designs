@@ -690,6 +690,13 @@ footer p.copy-footer {
 			margin: 1em auto;
 	}
 
+	#contentSection > section#homePageContent.show,
+	#contentSection > section#aboutPageContent.show,
+	#contentSection > section#companyPageContent.show,
+	#contentSection > section#contactPageContent.show {
+		top: -2em;
+	}
+
 	section#aboutPageContent h2  {
 		text-align: center;
 	}
@@ -721,6 +728,8 @@ footer p.copy-footer {
 		background-color: #222;
 		opacity: .8;
 		display: none;
+		-webkit-transition: 1.5s background ease-in-out;
+		transition: 3s background ease-in-out;
 	}
 
 	div#contentSection > section {
@@ -773,12 +782,6 @@ footer p.copy-footer {
 }
 
 @media only screen and (max-width: 500px) {
-	#contentSection > section#homePageContent.show,
-	#contentSection > section#aboutPageContent.show,
-	#contentSection > section#companyPageContent.show,
-	#contentSection > section#contactPageContent.show {
-		top: -2em;
-	}
 
 	#nd div.background-array figure {
 		min-height: 200px;

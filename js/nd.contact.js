@@ -1,11 +1,10 @@
 var contact = (function() {
-  // Begin DOM method /contactContainer/
   var contactContainer = function( container ) {
-    container.removeClass("show");
-    container[3].classList.add("show");
-    $.Velocity(container[3], { opacity: 1 }, { display: "block" }, 300, { easing: "spring" });
-  }
-  // End DOM method /contactContainer/
+      container.removeClass("show");
+      container[3].classList.add("show");
+      console.log("contact container function");
+      $.Velocity(container[3], { opacity: 1 }, { display: "block" }, 300, { easing: "spring" });
+    }
 
   // Begin DOM method /contactBtn/
   var contactBtn = function() {
@@ -13,6 +12,8 @@ var contact = (function() {
     para.append("<a href='#' class='contact-form-button'>Contact Us</a>")
   };
   // End DOM method /contactBtn/
+
+  var
 
   // Begin Logic method /showContactConditional/
   // Purpose: This method is the constructor method to build the contact page
@@ -37,14 +38,18 @@ var contact = (function() {
   // Purpose: This event is the trigger for the about page contact button
   var contactEvent = function() {
     var anchor = $("#globalHeader > nav > ul > li > a"),
-        section = $("#contentSection > section");
-    $(".contact-form-button").on("click", function(e) {
-      e.preventDefault();
-      anchor.removeClass("active");
-      anchor[3].classList.add("active");
-      $.Velocity(section, { opacity: 0 }, { display: "none" }, 100);
+        section = $("#contentSection > section"),
+        button = $(".contact-form-button"),
+        count = [];
+
+    button.on("click", function(e) {
+      e.preventDefault(); // prevent default action
+      anchor.removeClass("active"); // remove class from nav element
+      anchor[3].classList.add("active"); // add active class to the last nav element
+      $.Velocity(section, { opacity: 0 }, { display: "none" }, 100); // animate the content section out
       contactContainer( section );
-      model.topOfPage();
+      model.topOfPage(); // scroll up to the top of the page, this feature is geared towards improving experience
+      // on mobile devices
     });
   }
   // End Event /contactEvent/

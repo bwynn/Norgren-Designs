@@ -30,14 +30,12 @@
 				background = $(".nav-background");
 
 			if (cont.css("display") === "block") {
-				cont.slideToggle(500, function() {
-					background.slideToggle(500, "linear");
-				});
+				cont.slideToggle(300);
+				background.slideToggle(300);
 			}
 			else if (cont.css("display") === "none") {
-				background.slideToggle(500, function() {
-					cont.slideToggle(500, "linear");
-				});
+				background.slideToggle(300);
+				cont.slideToggle(300);
 			}
 			else {
 				console.log("something went wrong");
@@ -57,7 +55,7 @@
 
 		container.removeClass("show");
 		//container.hide();
-		$.Velocity(container, { opacity: 0 }, { display: "none" }, 100)
+		$.Velocity(container, { opacity: 0 }, { display: "none" }, 100, { easing: "spring" });
 		for (i = 0; i < btn.length; i++) {
 			model.switchLogic( btn[i], container[i] );
 		}
