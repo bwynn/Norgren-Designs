@@ -7,7 +7,7 @@ angular.module("ndApp", [])
   })
   .controller("servicesCtrl", function( $scope, $http ) {
     // in live site, this get url needs to reflect relative path from root
-    // eg /norgrendesign/data/services.json
+    // eg /sites/norgrendesign/data/services.json
     $http.get("../data/services.json")
     .success(function(response) {
       $scope.services = response.services;
