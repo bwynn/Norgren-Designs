@@ -2,9 +2,8 @@ var contact = (function() {
   var contactContainer = function( container ) {
       container.removeClass("show");
       container[3].classList.add("show");
-      console.log("contact container function");
       $.Velocity(container[3], { opacity: 1 }, { display: "block" }, 300, { easing: "spring" });
-    }
+  };
 
   // Begin DOM method /contactBtn/
   var contactBtn = function() {
@@ -13,7 +12,11 @@ var contact = (function() {
   };
   // End DOM method /contactBtn/
 
-  var
+  var showContainer = function( section ) {
+    // need to add conditional information to only allow this to be invoked once per click .
+    $.Velocity(section, { opacity: 0 }, { display: "none" }, 100); // animate the content section out
+    contactContainer( section );
+  }
 
   // Begin Logic method /showContactConditional/
   // Purpose: This method is the constructor method to build the contact page
@@ -28,8 +31,9 @@ var contact = (function() {
       if (count.length < 1) {
         count.push(1);
         contactBtn();
+        contactEvent();
       }
-      contactEvent();
+      return;
     }
   }
   // End Logic Method /showContactConditional/
@@ -46,9 +50,9 @@ var contact = (function() {
       e.preventDefault(); // prevent default action
       anchor.removeClass("active"); // remove class from nav element
       anchor[3].classList.add("active"); // add active class to the last nav element
-      $.Velocity(section, { opacity: 0 }, { display: "none" }, 100); // animate the content section out
-      contactContainer( section );
+      showContainer( section );
       model.topOfPage(); // scroll up to the top of the page, this feature is geared towards improving experience
+      //console.log("hello");
       // on mobile devices
     });
   }
