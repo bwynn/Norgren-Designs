@@ -6,7 +6,7 @@
 		class: ["bolt", "cable", "card", "circuitboard", "coffee", "cylinder", "hardware", "input", "prototypes"]
 	};
 
-	// The clickCount array stores the number of clicks on the About page section
+	// The clickCount array stores the number of clicks on the About content section.
 	// Using a conditional in the events to determine the number of clicks to allow for
 	// the propagation of one contact button, but if the content section visited
 	// more than once, further propagation of the button is restricted.
@@ -31,7 +31,7 @@
 
 			// display conditional
 			if (cont.css("display") === "block") {
-				$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content 
+				$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content
 				setTimeout(function() { // set timeout to animate the background after the content has finished
 					$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
 				}, 300);
@@ -55,6 +55,9 @@
 	};
 	// End Dom function /activeSwitcher/
 
+	// Begin DOM function /showContainer/
+	// Purpose: Provides dom manipulation based on the nav btn clicked on
+	// and selects the corresponding content section
 	var showContainer = function( btn, container ) {
 		var i;
 
@@ -65,6 +68,7 @@
 			model.switchLogic( btn[i], container[i] );
 		}
 	};
+	// End DOM function /showContainer/
 
 	// Begin DOM function /buildArray/
 	// builder anon function to assign class
@@ -113,6 +117,8 @@
 	};
 	// End event /toggleMobileNav/
 
+	// Begin event /mobileNav/
+	// Interaction with any of the mobile navigation list elements
 	var mobileNav = function() {
 		var mobileNavLink = $("#mobileNav > nav > ul > li > a"),
 				section = $("#contentSection > section");
@@ -125,12 +131,17 @@
 			toggleNav();
 		});
 	};
+	// End event /mobileNav/
 
+	// Begin event /mobileBackground/
+	// Purpose: interaction with any part of the nav-background element will
+	// close the mobile nav overlay.
 	var mobileBackground = function() {
 		$(".nav-background").on("click", function() {
 			toggleNav();
 		});
 	};
+	// End event /mobileBackground/
 
 
 	// ------------------------ END EVENT HANDLERS ---------------------------------
