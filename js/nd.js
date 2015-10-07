@@ -90,6 +90,13 @@
 	};
 	// end DOM method /randomClasses/
 
+	// Begin DOM method /setYear/
+	var setYear = function() {
+		var elem = $(".copy-footer span");
+		elem.html( model.curYear );
+	}
+	// End DOM method /setYear/
+
 	// ------------------------ END DOM METHODS ------------------------------------
 
 	// ------------------------ EVENT HANDLERS -------------------------------------
@@ -154,6 +161,7 @@
 		mobileBackground();
 		randomClasses();
 		showContainer( $("#globalHeader > nav > ul > li > a"), $("#contentSection > section") );
+		setYear();
 	};
 
 	return init();

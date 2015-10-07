@@ -33,11 +33,17 @@ var model = (function() {
 		}
 	};
 
+  curYear = function() {
+    var d = new Date();
+    return d.getFullYear();
+  }
+
   // ------------------------ END MODEL ------------------------------------------
   return {
     getClass : getClass,
     topOfPage : topOfPage,
-    switchLogic : switchLogic
+    switchLogic : switchLogic,
+    curYear: curYear
   }
 
 }());

@@ -237,10 +237,7 @@ div#contentSection > section {
 #homePageContent h2:last-child {
 	font-weight: 300;
 	font-size: 1.1em;
-}
-
-#homePageContent p:last-child {
-	padding: 2em;
+	padding-bottom: 2em;
 }
 
 article.in-house-projects h2 {
