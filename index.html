@@ -115,7 +115,7 @@
                 </div>
                 <div id="emailWrap">
                   <label for="userEmail">Email:</label>
-                  <input type="email" id="email" name="userEmail" placeholder="example@gmail.com" required ng-model="newUser.email">
+                  <input type="email" id="email" name="userEmail" placeholder="example@gmail.com" ng-minlength="6" required ng-model="newUser.email">
                   <div class="formError" ng-show="ndForm.userEmail.$invalid && ndForm.userEmail.$dirty">
                     <span ng-show="ndForm.userEmail.$error.email">Please enter a valid email</span>
                     <span ng-show="ndForm.userEmail.$error.required">Please enter a value</span>

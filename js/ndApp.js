@@ -1,12 +1,12 @@
 angular.module("ndApp", [])
   .controller("homeCtrl", function( $scope, $http ) {
-    $http.get("/sites/norgrendesign/data/home.json")
+    $http.get("../data/home.json")
     .success(function( response ) {
       $scope.home = response.home;
     });
   })
   .controller("employeeCtrl", function( $scope, $http ) {
-    $http.get("/sites/norgrendesign/data/users.json")
+    $http.get("../data/users.json")
     .success(function(response) {
       $scope.employees = response.employees;
     });
@@ -14,7 +14,7 @@ angular.module("ndApp", [])
   .controller("servicesCtrl", function( $scope, $http ) {
     // in live site, this get url needs to reflect relative path from root
     // eg /sites/norgrendesign/data/services.json
-    $http.get("/sites/norgrendesign/data/services.json")
+    $http.get("../data/services.json")
     .success(function(response) {
       $scope.services = response.services;
     })
