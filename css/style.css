@@ -602,7 +602,8 @@ footer p.copy-footer {
 		transition: .5s background ease;
 	}
 
-	button#mobileNavBtn:hover {
+	/* checking to see if this configuration leads to a better experience on mobile devices */
+	/*button#mobileNavBtn:hover {
 		background-color: #222;
 	}
 
@@ -610,7 +611,7 @@ footer p.copy-footer {
 		fill: #ffffff;
 		height: 100%;
 		width: 100%;
-	}
+	}*/
 
 	svg#menu-bar {
 		position: relative;
