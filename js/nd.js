@@ -29,22 +29,21 @@
 		var cont = $("#mobileNav > nav"),
 				background = $(".nav-background");
 
-			// display conditional
-			if (cont.css("display") === "block") {
-				$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content
-				setTimeout(function() { // set timeout to animate the background after the content has finished
-					$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
-				}, 300);
-			}
-			else if (cont.css("display") === "none") {
-				$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" }); // animate background
-				setTimeout(function() { // set timeout to animate the content section after the background has finished
-					$.Velocity( cont, { opacity: 1 }, { display: "block" }, 4000, { easing: "spring" });
-				}, 300);
-			}
-			else {
-				console.log("something went wrong");
-			}
+				if (cont.css("display") === "block") {
+						$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content
+						setTimeout(function() { // set timeout to animate the background after the content has finished
+							$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
+						}, 300);
+					}
+					else if (cont.css("display") === "none") {
+						$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" }); // animate background
+						setTimeout(function() { // set timeout to animate the content section after the background has finished
+							$.Velocity( cont, { opacity: 1 }, { display: "block" }, 4000, { easing: "spring" });
+						}, 300);
+					}
+					else {
+						console.log("something went wrong");
+					}
 	};
 	// End DOM method /toggleNav/
 
