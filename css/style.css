@@ -782,6 +782,10 @@ footer p.copy-footer {
 		width: 100%;
 	}
 
+	div#logo-wrap h1 {
+		display: none;
+	}
+
 	section#aboutPageContent .profileBox {
 		max-width: 49%;
 	}
