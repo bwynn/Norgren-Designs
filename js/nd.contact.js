@@ -49,7 +49,7 @@ var contact = (function() {
   // Begin Event /contactEvent/
   // Purpose: This event is the trigger for the about page contact button
   var contactEvent = function() {
-    var anchor = $("#globalHeader > nav > ul > li > a"),
+    var anchor = $("#globalHeader #desk-nav > nav > ul > li > a"),
         section = $("#contentSection > section"),
         button = $(".contact-form-button"),
         count = [];

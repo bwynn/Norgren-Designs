@@ -27,23 +27,45 @@
 	//
 	var toggleNav = function() {
 		var cont = $("#mobileNav > nav"),
-				background = $(".nav-background");
+				background = $(".nav-background"),
+				btn = $("button#mobileNavBtn");
 
-				if (cont.css("display") === "block") {
-						$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content
-						setTimeout(function() { // set timeout to animate the background after the content has finished
-							$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
-						}, 300);
-					}
-					else if (cont.css("display") === "none") {
-						$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" }); // animate background
-						setTimeout(function() { // set timeout to animate the content section after the background has finished
-							$.Velocity( cont, { opacity: 1 }, { display: "block" }, 4000, { easing: "spring" });
-						}, 300);
-					}
-					else {
-						console.log("something went wrong");
-					}
+			if (cont.hasClass("active")) {
+				cont.removeClass("active");
+				btn.removeClass("active");
+				$.Velocity( cont, { translateY: "-8em" }, 300, { easing: "spring" });
+				setTimeout(function() {
+					$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
+				}, 500);
+			}
+			else if (cont.css("class") == undefined){
+				cont.addClass("active");
+				btn.addClass("active");
+				$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" });
+				setTimeout(function() {
+					$.Velocity( cont, { translateY: "11em" }, 300, { easing: "spring" });
+				}, 500);
+			}
+			else {
+				console.log("something went wrong");
+			}
+
+			// display conditional
+			/*if (cont.css("display") === "block") {
+				$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content
+				setTimeout(function() { // set timeout to animate the background after the content has finished
+					$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
+				}, 300);
+			}
+			else if (cont.css("display") === "none") {
+				$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" }); // animate background
+				setTimeout(function() { // set timeout to animate the content section after the background has finished
+					$.Velocity( cont, { opacity: 1 }, { display: "block" }, 4000, { easing: "spring" });
+				}, 300);
+			}
+			else {
+				console.log("something went wrong");
+			}*/
 	};
 	// End DOM method /toggleNav/
 
@@ -102,7 +124,7 @@
 
 	// Begin event /navBtn/
 	var navBtn = function() {
-		var anchor = $("#globalHeader > nav > ul > li > a"),
+		var anchor = $("#globalHeader #desk-nav > nav > ul > li > a"),
 				section = $("#contentSection > section");
 
 		anchor.on("click", function( e ) {
@@ -121,7 +143,7 @@
 
 		// device detection conditional -- this can sort out and make sure the appropriate
 		// device is handling the event only once.
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		/*if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			btn.on("touchstart", function() {
 				btn.css("background-color", "#222");
 				svg.css("fill", "#fff");
@@ -144,7 +166,11 @@
 				btn.css("background-color", "#fff");
 				svg.css("fill", "#222");
 			});
-		}
+		}*/
+
+		btn.on("click", function() {
+			toggleNav();
+		});
 
 	};
 	// End event /toggleMobileNav/
@@ -185,7 +211,7 @@
 		mobileNav();
 		mobileBackground();
 		randomClasses();
-		showContainer( $("#globalHeader > nav > ul > li > a"), $("#contentSection > section") );
+		showContainer( $("#globalHeader #desk-nav > nav > ul > li > a"), $("#contentSection > section") );
 		setYear();
 	};
 

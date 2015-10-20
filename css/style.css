@@ -105,7 +105,8 @@ form {
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
 	height: 4em;
-	overflow: hidden;
+	position: relative;
+	z-index: 5;
 }
 
 header#globalHeader a.homeBtn {
@@ -113,11 +114,14 @@ header#globalHeader a.homeBtn {
 	z-index: 11;
 }
 
-div#logo-wrap, header#globalHeader > nav {
+div#logo-wrap, header#globalHeader #desk-nav {
 	height: inherit;
+	position: relative;
+	z-index: 10;
+	background-color: #FCFCF8;
 }
 
-div#logo-wrap, header#globalHeader > nav, figure#headerIcon, div#logo-wrap h1, header#globalHeader > nav > ul > li {
+div#logo-wrap, header#globalHeader #desk-nav > nav, figure#headerIcon, div#logo-wrap h1, header#globalHeader > nav > ul > li {
 	display: inline-block;
 }
 
@@ -125,29 +129,30 @@ div#logo-wrap {
 	width: 60%;
 }
 
-header#globalHeader > nav {
+header#globalHeader #desk-nav > nav {
 	width: 39%;
 	float: right;
 }
 
-header#globalHeader > nav > ul {
+header#globalHeader #desk-nav > nav > ul {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	margin-top: 2.5em;
 }
 
-header#globalHeader > nav > ul > li {
+header#globalHeader #desk-nav > nav > ul > li {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
 	border-right: 1px solid #222;
+	list-style-type: none;
 }
 
-header#globalHeader > nav > ul > li:last-child {
+header#globalHeader #desk-nav > nav > ul > li:last-child {
 	border: none;
 }
 
-header#globalHeader > nav > ul > li > a {
+header#globalHeader #desk-nav > nav > ul > li > a {
 	display: block;
 	text-align: center;
 	font-weight: 300;
@@ -176,6 +181,10 @@ figure#headerIcon {
 	width: 4em;
 	margin: 0 .5em;
 }
+
+	#mobileNav {
+		display: none;
+	}
 
 	button#mobileNavBtn {
 		display: none;
@@ -572,6 +581,7 @@ footer p.copy-footer {
 /* ------------ 800 Pixels -------------------- */
 
 @media only screen and (max-width: 800px) {
+
 	header#globalHeader {
 		height: 3em
 	}
@@ -579,10 +589,10 @@ footer p.copy-footer {
 	/* Mobile Nav Elements */
 
 	#mobileNav {
-		position: absolute;
+		position: relative;
 		top: 0;
 		right: 0;
-		z-index: 10;
+		z-index: 3;
 		width: 100%;
 		display: none;
 	}
@@ -598,20 +608,20 @@ footer p.copy-footer {
 		border-radius: .5em;
 		cursor: pointer;
 		position: relative;
-		z-index: 7;
+		top: 0;
 		transition: .5s background ease;
 	}
 
 	/* checking to see if this configuration leads to a better experience on mobile devices */
-	/*button#mobileNavBtn:hover {
+	button#mobileNavBtn.active {
 		background-color: #222;
 	}
 
-	button#mobileNavBtn:hover > svg > path.bar {
+	button#mobileNavBtn.active > svg > path.bar {
 		fill: #ffffff;
 		height: 100%;
 		width: 100%;
-	}*/
+	}
 
 	svg#menu-bar {
 		position: relative;
@@ -622,17 +632,17 @@ footer p.copy-footer {
 	}
 
 	#mobileNav > nav {
-		display: none;
-		position: absolute;
-		z-index: 10;
+		position: relative;
+		z-index: 3;
 		width: 100%;
-		top: 3em;
+		top: -11em;
 		background-color: #222;
 		box-shadow: .5em .5em .5em rgba(0, 0, 0, .5);
 	}
 
 	#mobileNav > nav > ul > li {
 		padding: .6em;
+		list-style-type: none;
 	}
 
 	#mobileNav > nav > ul > li:first-of-type {
@@ -654,6 +664,7 @@ footer p.copy-footer {
 	div#logo-wrap h1 {
 		margin-top: 1em;
 		font-size: 1.3em;
+		/*display: none;*/
 	}
 
 	.logo {
@@ -692,7 +703,7 @@ footer p.copy-footer {
 		width: 85%;
 	}
 
-	header#globalHeader > nav {
+	header#globalHeader #desk-nav > nav {
 		display: none;
 	}
 
@@ -711,7 +722,7 @@ footer p.copy-footer {
 		position: absolute;
 		top: 3em;
 		left: 0;
-		z-index: 5;
+		z-index: 3;
 		background-color: #222;
 		opacity: .8;
 		display: none;
