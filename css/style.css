@@ -635,7 +635,7 @@ footer p.copy-footer {
 		position: relative;
 		z-index: 3;
 		width: 100%;
-		top: -11em;
+		top: -13em;
 		background-color: #222;
 		box-shadow: .5em .5em .5em rgba(0, 0, 0, .5);
 	}
@@ -717,15 +717,13 @@ footer p.copy-footer {
 
 	#nd > div.nav-background {
 		width: 100%;
-		height: 100%;
-		min-height: 1050px;
+		height: 0%;
 		position: absolute;
 		top: 3em;
 		left: 0;
 		z-index: 3;
 		background-color: #222;
 		opacity: .8;
-		display: none;
 	}
 
 	div#contentSection > section {

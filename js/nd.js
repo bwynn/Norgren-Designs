@@ -33,17 +33,17 @@
 			if (cont.hasClass("active")) {
 				cont.removeClass("active");
 				btn.removeClass("active");
-				$.Velocity( cont, { translateY: "-8em" }, 300, { easing: "spring" });
+				$.Velocity( cont, { translateY: "-8em" }, 300, { easing: "ease-in-out" });
 				setTimeout(function() {
-					$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
+					$.Velocity( background, { height: "0%", minHeight: "0px" }, 300, { easing: "ease-in-out" });
 				}, 500);
 			}
 			else if (cont.css("class") == undefined){
 				cont.addClass("active");
 				btn.addClass("active");
-				$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" });
+				$.Velocity( background, { height: "100%", minHeight: "1000px" }, 300, { easing: "spring" });
 				setTimeout(function() {
-					$.Velocity( cont, { translateY: "11em" }, 300, { easing: "spring" });
+					$.Velocity( cont, { translateY: "13em" }, 300, { easing: "spring" });
 				}, 500);
 			}
 			else {
