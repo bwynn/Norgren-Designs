@@ -609,7 +609,6 @@ footer p.copy-footer {
 		cursor: pointer;
 		position: relative;
 		top: 0;
-		transition: .5s background ease;
 	}
 
 	/* checking to see if this configuration leads to a better experience on mobile devices */

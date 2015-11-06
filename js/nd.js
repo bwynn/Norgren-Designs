@@ -81,10 +81,10 @@
 	// and selects the corresponding content section
 	var showContainer = function( btn, container ) {
 		var i;
-
+		
 		container.removeClass("show");
-		//container.hide();
-		$.Velocity(container, { opacity: 0 }, { display: "none" }, 100, { easing: "spring" });
+		container.hide(100);
+		//$.Velocity(container, { opacity: 0 }, { display: "none" }, 100, { easing: "spring" });
 		for (i = 0; i < btn.length; i++) {
 			model.switchLogic( btn[i], container[i] );
 		}
@@ -140,33 +140,6 @@
 	var toggleMobileNav = function() {
 		var btn = $("button#mobileNavBtn");
 		var svg = $("button#mobileNavBtn > svg > path.bar");
-
-		// device detection conditional -- this can sort out and make sure the appropriate
-		// device is handling the event only once.
-		/*if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			btn.on("touchstart", function() {
-				btn.css("background-color", "#222");
-				svg.css("fill", "#fff");
-				toggleNav();
-			});
-
-			btn.on("touchend", function() {
-				btn.css("background-color", "#fff");
-				svg.css("fill", "#222");
-			});
-		}
-		else {
-			btn.on("mousedown", function(e) {
-				btn.css("background-color", "#222");
-				svg.css("fill", "#fff");
-				toggleNav();
-			});
-
-			btn.on("mouseup", function(e) {
-				btn.css("background-color", "#fff");
-				svg.css("fill", "#222");
-			});
-		}*/
 
 		btn.on("click", function() {
 			toggleNav();
