@@ -81,9 +81,9 @@
 	// and selects the corresponding content section
 	var showContainer = function( btn, container ) {
 		var i;
-		
+
 		container.removeClass("show");
-		container.hide(100);
+		container.hide(10);
 		//$.Velocity(container, { opacity: 0 }, { display: "none" }, 100, { easing: "spring" });
 		for (i = 0; i < btn.length; i++) {
 			model.switchLogic( btn[i], container[i] );
