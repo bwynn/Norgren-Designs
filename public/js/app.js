@@ -1,10 +1,13 @@
-angular.module("ndApp", ["ngRoute"])
+var ndApp = angular.module("ndApp", ["ngRoute"])
   .config(function($routeProvider, $locationProvider) {
+
+    // enable html5Mode for url handling
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
 
+    // set ng-view template paths
     $routeProvider.
       when('/main', {
         templateUrl: '/views/main.html'
@@ -20,8 +23,6 @@ angular.module("ndApp", ["ngRoute"])
       }).
       otherwise({
         redirectTo: '/main'
-      })
-  })
-  .controller("ndCtrl", function($scope) {
+      });
 
-  })
+  });
