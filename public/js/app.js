@@ -1,25 +1,27 @@
 angular.module("ndApp", ["ngRoute"])
-  .config(function($routeProvider) {
+  .config(function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
+
     $routeProvider.
       when('/main', {
-        templateUrl: '/main.html'
+        templateUrl: '/views/main.html'
       }).
       when('/services', {
-        templateUrl: '/services.html'
+        templateUrl: '/views/services.html'
       }).
       when('/about', {
-        templateUrl: '/about.html'
+        templateUrl: '/views/about.html'
       }).
       when('/contact', {
-        templateUrl: '/contact.html'
+        templateUrl: '/views/contact.html'
       }).
       otherwise({
-        redirectTo: '/main/'
+        redirectTo: '/main'
       })
   })
   .controller("ndCtrl", function($scope) {
-    $scope.template = {
-      name: 'header.html',
-        url: '../../views/header.html'
-    }
+
   })
