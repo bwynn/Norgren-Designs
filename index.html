@@ -17,12 +17,9 @@
 
 <body ng-controller="ndCtrl">
 
-  <a href="/main/">Main</a>
-  <a href="/about/">About</a>
-  <a href="/services/">Services</a>
-  <a href="/contact/">Contact</a>
+  <header ng-include="'views/header.html'"></header>
 
-  <header ng-include="header.html"></header>
+  <div ng-view></div>
 
 </body>
 </html>

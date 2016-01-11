@@ -1,17 +1,17 @@
 angular.module("ndApp", ["ngRoute"])
   .config(function($routeProvider) {
     $routeProvider.
-      when('/main/', {
-        templateUrl: '../../views/main.html'
+      when('/main', {
+        templateUrl: '/main.html'
       }).
-      when('/services/', {
-        templateUrl: '../../views/services.html'
+      when('/services', {
+        templateUrl: '/services.html'
       }).
-      when('/about/', {
-        templateUrl: '../../views/about.html'
+      when('/about', {
+        templateUrl: '/about.html'
       }).
-      when('/contact/', {
-        templateUrl: '../../views/contact.html'
+      when('/contact', {
+        templateUrl: '/contact.html'
       }).
       otherwise({
         redirectTo: '/main/'
@@ -20,6 +20,6 @@ angular.module("ndApp", ["ngRoute"])
   .controller("ndCtrl", function($scope) {
     $scope.template = {
       name: 'header.html',
-      url: '../../views/header.html'
+        url: '../../views/header.html'
     }
   })
