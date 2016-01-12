@@ -9,15 +9,13 @@ Norgren Designs was built as a mobile-first website. All styles are oriented bas
 mobile oriented design in a portrait layout. Media queries are added as the viewport size
 increases. */
 /* ------------------  Global Elements   -----------------------------  */
-* {
-  margin: 0;
-  padding: 0; }
-
-html, body, #nd {
-  min-height: 1050px; }
-
-html, body, footer {
+html {
+  min-height: 1050px;
   width: 100%; }
+  html body, html footer {
+    width: 100%; }
+  html body, html #nd {
+    min-height: 1050px; }
 
 body, input, textarea, button {
   font-family: "Lato", Helvetica, sans-serif;
@@ -44,9 +42,6 @@ p {
   line-height: 1.4;
   letter-spacing: .05em;
   font-weight: 300; }
-
-header {
-  background-color: #FCFCF8; }
 
 header,
 a {
@@ -82,69 +77,65 @@ form {
 
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
-  height: 4em;
+  background-color: #FCFCF8;
+  height: 4.5em;
   position: relative;
   z-index: 5; }
-
-header#globalHeader a.homeBtn {
-  position: relative;
-  z-index: 11; }
-
-div#logo-wrap, header#globalHeader #desk-nav {
-  height: inherit;
-  position: relative;
-  z-index: 10;
-  background-color: #FCFCF8; }
-
-div#logo-wrap, header#globalHeader #desk-nav > nav, figure#headerIcon, div#logo-wrap h1, header#globalHeader > nav > ul > li {
-  display: inline-block; }
-
-div#logo-wrap {
-  width: 60%; }
-
-header#globalHeader #desk-nav > nav {
-  width: 39%;
-  float: right; }
-
-header#globalHeader #desk-nav > nav > ul {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 2.5em; }
-
-header#globalHeader #desk-nav > nav > ul > li {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  border-right: 1px solid #222;
-  list-style-type: none; }
-
-header#globalHeader #desk-nav > nav > ul > li:last-child {
-  border: none; }
-
-header#globalHeader #desk-nav > nav > ul > li > a {
-  display: block;
-  text-align: center;
-  font-weight: 300; }
-
-div#logo-wrap, figure#headerIcon, div#logo-wrap h1 {
-  float: left; }
-
-div#logo-wrap h1 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 1.2em;
-  font-weight: 300;
-  font-size: 1.6em; }
-
-figure#headerIcon {
-  background-image: url("../img/logo_grey.png");
-  background-repeat: no-repeat;
-  background-size: contain; }
-
-.logo {
-  height: 100%;
-  width: 4em;
-  margin: 0 .5em; }
+  header#globalHeader #logo-wrap {
+    width: 60%;
+    display: inline-block; }
+    header#globalHeader #logo-wrap h1 {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 1.2em;
+      margin-bottom: 0;
+      font-weight: 300;
+      font-size: 1.6em;
+      float: left; }
+    header#globalHeader #logo-wrap a.homeBtn {
+      display: block;
+      height: 4em;
+      position: relative;
+      z-index: 11; }
+    header#globalHeader #logo-wrap #headerIcon {
+      display: inline-block;
+      background-image: url("../img/logo_grey.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: .4em;
+      width: 4em;
+      height: 4em;
+      float: left; }
+      header#globalHeader #logo-wrap #headerIcon .logo {
+        height: 100%;
+        width: 100%;
+        margin: 0 .5em; }
+  header#globalHeader #desk-nav {
+    height: inherit;
+    position: relative;
+    z-index: 10;
+    background-color: #FCFCF8; }
+    header#globalHeader #desk-nav nav {
+      display: inline-block;
+      width: 39%;
+      float: right; }
+      header#globalHeader #desk-nav nav ul {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-top: 2.5em; }
+        header#globalHeader #desk-nav nav ul li {
+          -webkit-flex-grow: 1;
+          flex-grow: 1;
+          border-right: 1px solid #222;
+          list-style-type: none; }
+          header#globalHeader #desk-nav nav ul li:last-child {
+            border: none; }
+          header#globalHeader #desk-nav nav ul li a {
+            display: block;
+            text-align: center;
+            font-weight: 300; }
 
 #mobileNav {
   display: none; }

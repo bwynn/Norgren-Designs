@@ -1,17 +1,17 @@
-<section id='companyPageContent'>
-    <section id="companyProfile">
-      <article class="client-design-services">
-        <h2>Client Design Services</h2>
-        <div class="row" ng-repeat="category in data.services">
-          <h3>{{category.title}}</h3>
-          <ul>
-            <li ng-repeat="item in category.items">{{item}}</li>
-          </ul>
+<section id='aboutPageContent'>
+  <div class="page-wrap">
+
+    <div class="row" ng-repeat="employee in data.employees">
+      <div class="profileBox">
+        <figure class="portrait" ng-class="employee.class"></figure>
+        <div class="employeeDetails">
+          <h4>{{employee.name}}</h4>
+          <p>{{employee.title}}</p>
         </div>
-      </article>
-      <article class="in-house-projects">
-        <h2>In House Projects</h2>
-        <p>We are continuously progressing a handful of in-house development projects alongside our client based projects.  Think think-tank meets technical competency.  Stay tuned for developments.</p>
-      </article>
-   </section>
-</section>
+      </div>
+      <p>{{employee.bio}}</p>
+      <span class="row-separator"></span>
+    </div>
+
+  </div>
+ </section>
