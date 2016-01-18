@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   // Home Routes
   // get
-  app.get("/api/main", function(req, res) {
+  app.get("/main", function(req, res) {
     // get home db contents
     Home.find(function(err, home) {
       if (err) {
@@ -21,7 +21,7 @@ module.exports = function(app) {
   });
 
   // post
-  app.post("/api/main", function(req, res) {
+  app.post("/main", function(req, res) {
     // create a new instance of home
     var home = new Home();
 
@@ -42,7 +42,7 @@ module.exports = function(app) {
   // delete
 
   // Employees Routes
-  app.get("/api/employees", function(req, res) {
+  app.get("/employees", function(req, res) {
     // get employees db contents
     Employees.find(function(err, employees) {
       if (err) {
@@ -58,7 +58,7 @@ module.exports = function(app) {
   // delete
 
   // Services Routes
-  app.get("/api/services", function(req, res) {
+  app.get("/services", function(req, res) {
     // get services db contents
     Services.find(function(err, services) {
       if (err) {
