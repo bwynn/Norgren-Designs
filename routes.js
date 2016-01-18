@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   // Home Routes
   // get
-  app.get("/api/home", function(req, res) {
+  app.get("/api/main", function(req, res) {
     // get home db contents
     Home.find(function(err, home) {
       if (err) {
@@ -21,7 +21,7 @@ module.exports = function(app) {
   });
 
   // post
-  app.post("/api/home", function(req, res) {
+  app.post("/api/main", function(req, res) {
     // create a new instance of home
     var home = new Home();
 

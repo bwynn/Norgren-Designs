@@ -10,16 +10,20 @@ var ndApp = angular.module("ndApp", ["ngRoute"])
     // set ng-view template paths
     $routeProvider.
       when('/main', {
-        templateUrl: '/views/main.html'
+        templateUrl: 'views/main.html',
+        controller: "HomeController"
       }).
       when('/services', {
-        templateUrl: '/views/services.html'
+        templateUrl: 'views/services.html',
+        controller: "ServicesController"
       }).
       when('/about', {
-        templateUrl: '/views/about.html'
+        templateUrl: 'views/about.html',
+        controller: "EmployeeController"
       }).
       when('/contact', {
-        templateUrl: '/views/contact.html'
+        templateUrl: 'views/contact.html',
+        controller: "ContactController"
       }).
       otherwise({
         redirectTo: '/main'
