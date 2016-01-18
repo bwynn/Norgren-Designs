@@ -1,28 +1,26 @@
-var ndApp = angular.module("ndApp", ["ngRoute"])
-  .config(function($routeProvider, $locationProvider) {
-
-    // enable html5Mode for url handling
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
+angular.module("ndApp", [])
+  .controller("homeCtrl", function( $scope, $http ) {
+    $http.get("../data/home.json")
+    .success(function( response ) {
+      $scope.home = response.home;
     });
-
-    // set ng-view template paths
-    $routeProvider.
-      when('/main', {
-        templateUrl: '/views/main.html'
-      }).
-      when('/services', {
-        templateUrl: '/views/services.html'
-      }).
-      when('/about', {
-        templateUrl: '/views/about.html'
-      }).
-      when('/contact', {
-        templateUrl: '/views/contact.html'
-      }).
-      otherwise({
-        redirectTo: '/main'
-      });
-
+  })
+  .controller("employeeCtrl", function( $scope, $http ) {
+    $http.get("../data/users.json")
+    .success(function(response) {
+      $scope.employees = response.employees;
+    });
+  })
+  .controller("servicesCtrl", function( $scope, $http ) {
+    // in live site, this get url needs to reflect relative path from root
+    // eg /sites/norgrendesign/data/services.json
+    $http.get("../data/services.json")
+    .success(function(response) {
+      $scope.services = response.services;
+    })
+  })
+  .controller("formCtrl", function( $scope ) {
+    $scope.addUser = function( userDetails ) {
+      alert("Thanks " + userDetails.name + ", we'll be in touch shortly.");
+    }
   });
