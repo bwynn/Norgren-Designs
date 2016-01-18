@@ -36,7 +36,11 @@ app.use(express.static(__dirname + '/public'));
 
 // routes
 // =============================================================================
-require("./routes");
+require("./routes")(app);
+
+// start app
+// =============================================================================
+app.listen(port);
 
 console.log("Server running on port " + port);
 

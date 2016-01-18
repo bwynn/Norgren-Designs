@@ -1,5 +1,5 @@
-var ndApp = angular.module("ndApp", ["ngRoute"])
-  .config(function($routeProvider, $locationProvider) {
+angular.module("appRoutes", [])
+  .config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 
     // enable html5Mode for url handling
     $locationProvider.html5Mode({
@@ -29,4 +29,4 @@ var ndApp = angular.module("ndApp", ["ngRoute"])
         redirectTo: '/main'
       });
 
-  });
+  }]);
