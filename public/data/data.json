@@ -1,0 +1,59 @@
+{
+  "home": [
+    {
+      "heading" : "Why?",
+      "content" : "Norgren Designs was founded by Erik Norgren as a platform to bring creative ideas to life. Inspired by organic form and function, Norgren Designs takes pride in its ability to create elegant solutions to the strictest design constraints and toughest functional challenges. Clients rely on our experience and knowledge to help design products that meet their goals quickly and efficiently. Let Norgren Designs help you with your next mechanical engineering design project."
+    },
+    {
+      "heading" : "Our Design Philosophy – An Uncommon Perspective.",
+      "content" : "Engineering is often perceived as a dry, technical, numbers game, transforming ideas into products through mathematical tools and methods. Norgren Designs understands that 3D modeling, FEA, and other technical engineering practices are tools that can easily be wasted without a solid foundation on which to apply them. We value the highly creative stage in the design process that is often overlooked and undervalued. We excel at this creative stage by leveraging experience and intuition to quickly arrive at an optimal starting point. Any design can be optimized in a technical sense, but not every optimized design is an optimal solution. We focus on the creative stage up front to set your project up for success later."
+    }
+  ],
+  "services": [
+      {
+          "title": "Core Services",
+          "items": [
+              "Concept to product robotic system development",
+              "Custom actuator design (lead screw, ball screw, linear motor, parallel axis robotics, specialty mechanisms)",
+              "Electro-mechanical system architecture development",
+              "Prototyping for concept and function"
+          ]
+      },
+      {
+          "title": "Specialty Design Capabilities",
+          "items": [
+              "Closed loop control (servo) systems",
+              "Open and closed loop stepper motor systems",
+              "Electrical cable management in robotic systems",
+              "3D concept design modeling and photo rendering",
+              "Parts optimized for CNC Machining, Lathe, Sheet Metal, Injection Molded Plastics, or 3D Printing",
+              "Vast materials experience - Aluminum, Stainless Steel, Plastics, Carbon Fiber",
+              "Design for manufacturing and assembly"
+          ]
+      },
+      {
+          "title": "Tools and Engineering",
+          "items": [
+              "SolidWorks - 3D Modeling",
+              "Motion Simulation",
+              "Finite Element Analysis (FEA)",
+              "Geometric Dimensioning and Tolerancing (GD&T)",
+              "Design validation, documentation, and testing"
+          ]
+      }
+  ],
+  "employees": [
+      {
+          "name": "Erik Norgren",
+          "title": "CEO & Founder",
+          "bio": "Erik comes from a family with multiple generations of creative engineers - engineering is in his blood. He has a Masters in Mechanical Engineering from the University of Colorado, Boulder, and 15+ years' experience designing mechatronic systems from the ground up. Robotics and mechanism design are his specialties. He has a proven ability to create successful products from primitive concepts. He enjoys rock climbing and hiking in his spare time.",
+          "class": "erik"
+      },
+      {
+          "name": "Interested?",
+          "title": "Find out More",
+          "bio": "Interested in joining our team?  We are always looking for partners with unique skills and experience to augment our expertise.",
+          "class": "default"
+      }
+  ]
+}

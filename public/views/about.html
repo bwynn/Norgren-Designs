@@ -1,0 +1,17 @@
+<section id='aboutPageContent'>
+  <div class="page-wrap">
+
+    <div class="row" ng-repeat="employee in data.employees">
+      <div class="profileBox">
+        <figure class="portrait" ng-class="employee.class"></figure>
+        <div class="employeeDetails">
+          <h4>{{employee.name}}</h4>
+          <p>{{employee.title}}</p>
+        </div>
+      </div>
+      <p>{{employee.bio}}</p>
+      <span class="row-separator"></span>
+    </div>
+
+  </div>
+ </section>
