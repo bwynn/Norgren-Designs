@@ -2,10 +2,10 @@
      <section id="companyProfile">
        <article class="client-design-services">
          <h2>Client Design Services</h2>
-         <div class="row" ng-repeat="category in data.services">
-           <h3>{{category.title}}</h3>
+         <div class="row" ng-repeat="service in services">
+           <h3>{{service.title}}</h3>
            <ul>
-             <li ng-repeat="item in category.items">{{item}}</li>
+             <li ng-repeat="item in service.items">{{service.items}}</li>
            </ul>
          </div>
        </article>

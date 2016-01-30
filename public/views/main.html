@@ -1,3 +1,6 @@
 <section id='homePageContent' class="show">
-  <div>{{tagline}}</div>
+  <div ng-repeat="section in sections">
+    <h3>{{section.heading}}</h3>
+    <p>{{section.content}}</p>
+  </div>
 </section>

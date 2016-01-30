@@ -34,14 +34,16 @@ footer {
 
 h2, h3 {
   text-align: center;
-  padding: 1em; }
+  padding: 1em;
+  color: #FCFCF8; }
 
 p {
   padding: .2em 2em;
   font-size: 1em;
   line-height: 1.4;
   letter-spacing: .05em;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #FCFCF8; }
 
 header,
 a {

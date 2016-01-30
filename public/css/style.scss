@@ -55,6 +55,7 @@ footer {
 h2, h3 {
 	text-align: center;
 	padding: 1em;
+	color: $white; // change this after you place the foreground container back in
 }
 
 p {
@@ -63,6 +64,7 @@ p {
 	line-height: 1.4;
 	letter-spacing: .05em;
 	font-weight: 300;
+	color: $white; // change this after you place the foreground container back in
 }
 
 header,

@@ -17,7 +17,7 @@ var db = require("./config/db");
 var port = process.env.port || 8080;
 
 // connect to db
-mongoose.connect(db.url);
+mongoose.connect(db.database);
 
 // set data types using body-parser
 app.use(bodyParser.json());

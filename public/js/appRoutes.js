@@ -11,7 +11,7 @@ angular.module("appRoutes", [])
     $routeProvider.
       when('/main', {
         templateUrl: 'views/main.html',
-        controller: "HomeController"
+        controller: "MainController"
       }).
       when('/services', {
         templateUrl: 'views/services.html',
@@ -26,7 +26,8 @@ angular.module("appRoutes", [])
         controller: "ContactController"
       }).
       otherwise({
-        redirectTo: '/main'
+        redirectTo: '/main',
+        controller: "MainController"
       });
 
   }]);

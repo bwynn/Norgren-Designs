@@ -1,6 +1,8 @@
+var path = require("path");
+
 var Employees = require("./models/employees");
 var Home = require("./models/home");
-var Services = require("./models/services");
+var Service = require("./models/services");
 
 module.exports = function(app) {
   // server routes =============================================================
@@ -9,7 +11,7 @@ module.exports = function(app) {
 
   // Home Routes
   // get
-  app.get("/main", function(req, res) {
+  app.get("/api/main", function(req, res) {
     // get home db contents
     Home.find(function(err, home) {
       if (err) {
@@ -21,7 +23,7 @@ module.exports = function(app) {
   });
 
   // post
-  app.post("/main", function(req, res) {
+  app.post("/api/main", function(req, res) {
     // create a new instance of home
     var home = new Home();
 
@@ -39,10 +41,8 @@ module.exports = function(app) {
 
   // put
 
-  // delete
-
   // Employees Routes
-  app.get("/employees", function(req, res) {
+  app.get("/api/employees", function(req, res) {
     // get employees db contents
     Employees.find(function(err, employees) {
       if (err) {
@@ -58,25 +58,40 @@ module.exports = function(app) {
   // delete
 
   // Services Routes
-  app.get("/services", function(req, res) {
+  app.get("/api/services", function(req, res) {
     // get services db contents
-    Services.find(function(err, services) {
+    Service.find(function(err, service) {
       if (err) {
         res.send(err);
       }
 
-      res.json(services);
+      res.json(service);
     });
   });
 
   // post
+  app.post("/api/services", function(req, res) {
+    // post services
+    var service = new Service();
+
+    service.title = req.body.title;
+    service.items = req.body.items;
+
+    service.save(function(err, service) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(service);
+    })
+  })
   // put
   // delete
 
 // frontend routes
 // =============================================================================
 app.get("*", function(req, res) {
-  res.sendfile("./public/views/index.html");
+  res.sendFile(path.join(__dirname, "./public/views/index.html"));
 });
 
 

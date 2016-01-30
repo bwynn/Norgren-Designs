@@ -1,1 +1,1 @@
-angular.module("ndApp", ["ngRoute", "appRoutes", "MainCtrl", "HomeCtrl"]);
+angular.module("ndApp", ["ngRoute", "appRoutes", "MainCtrl", "HomeCtrl", "EmployeesCtrl", "ServicesCtrl", "adminService"]);
