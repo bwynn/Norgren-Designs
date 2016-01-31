@@ -90,9 +90,13 @@ module.exports = function(app) {
 
 // frontend routes
 // =============================================================================
-app.get("*", function(req, res) {
+app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/views/index.html"));
 });
+
+app.get("/admin", function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
+})
 
 
 };

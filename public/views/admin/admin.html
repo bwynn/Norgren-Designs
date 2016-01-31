@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="ndAdminApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <base href="/admin">
+    <title>Norgren Designs Admin</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'/>
+    <link rel='stylesheet' href='libs/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel="stylesheet" href="css/admin.css"/>
+
+</head>
+
+<body ng-controller="MainController">
+
+  <div class="container">
+    <div class="panel panel-header">
+      <div class="well">{{hello}}</div>
+    </div>
+  </div>
+
+  <div ng-view></div>
+
+  <!-- libraries -->
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-route/angular-route.min.js"></script>
+  <script src="libs/angular-ui/build/angular-ui.min.js"></script>
+
+  <!-- app scripts -->
+  <!-- controllers -->
+  <script src="js/admin/controllers/MainCtrl.js"></script>
+  <!-- services/factories -->
+  <!-- routes -->
+  <script src="js/admin/appRoutes.js"></script>
+  <!-- app -->
+  <script src="js/admin/app.js"></script>
+
+</body>
+</html>
