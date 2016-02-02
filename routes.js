@@ -40,6 +40,21 @@ module.exports = function(app) {
   });
 
   // put
+  app.put('/api/main', function(req, res) {
+
+    Home.findOne({_id: req.body.id}, function(err, home) {
+      Home.update({
+        heading: req.body.heading,
+        content: req.body.content
+      }, function(err, home) {
+        if (err) {
+          res.send(err);
+        }
+
+        res.json(home);
+      });
+    });
+  });
 
   // Employees Routes - ADMIN & user route
   app.get("/api/employees", function(req, res) {
