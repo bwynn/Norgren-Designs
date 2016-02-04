@@ -19,8 +19,12 @@ angular.module("adminService", [])
       // get services model data
       getServices: function() {
         return $http.get('/api/services');
-      }
+      },
       // post services model data
       // put services model data
+
+      getMessages: function() {
+        return $http.get('/api/messages');
+      }
     };
   }]);

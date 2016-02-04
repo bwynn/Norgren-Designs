@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>Messages</h1>
+  <p>You have {{msgCount}} messages</p>
+</div>
+<div class="row" ng-repeat="msg in messages">
+  <p><strong>Date: {{msg.date}}</strong></p>
+  <p><strong>Name: </strong>{{msg.name}}</p>
+  <p><strong>Email: </strong>{{msg.email}}</p>
+  <div class="well">
+    <p>{{msg.message}}</p>
+  </div>
+</div>

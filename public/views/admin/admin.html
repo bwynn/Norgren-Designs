@@ -9,19 +9,23 @@
 
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'/>
     <link rel='stylesheet' href='libs/bootstrap/dist/css/bootstrap.min.css'/>
-    <link rel="stylesheet" href="css/admin.css"/>
+    <link rel="stylesheet" href="css/admin/style.css"/>
 
 </head>
 
 <body ng-controller="MainController">
-
-  <div class="container">
-    <div class="panel panel-header">
-      <div class="well">{{hello}}</div>
-    </div>
+  <div class="panel panel-header">
+    <nav class="navbar navbar-inverse">
+      <ul class="nav navbar-nav">
+        <li><a href="/admin">Admin Home/Messages</a></li>
+        <li><a href="/admin/main">Home Page</a></li>
+        <li><a href="/admin/services">Services Page</a></li>
+        <li><a href="/admin/about">Employees Page</a></li>
+      </ul>
+    </nav>
   </div>
 
-  <div ng-view></div>
+  <div ng-view class="container"></div>
 
   <!-- libraries -->
   <script src="libs/angular/angular.min.js"></script>
@@ -31,7 +35,12 @@
   <!-- app scripts -->
   <!-- controllers -->
   <script src="js/admin/controllers/MainCtrl.js"></script>
+  <script src="js/admin/controllers/AdminAboutCtrl.js"></script>
+  <script src="js/admin/controllers/AdminMainCtrl.js"></script>
+  <script src="js/admin/controllers/AdminMsgCtrl.js"></script>
+  <script src="js/admin/controllers/AdminServiceCtrl.js"></script>
   <!-- services/factories -->
+  <script src="js/services/adminServices.js"></script>
   <!-- routes -->
   <script src="js/admin/appRoutes.js"></script>
   <!-- app -->

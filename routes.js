@@ -3,6 +3,7 @@ var path = require("path");
 var Employees = require("./models/employees");
 var Home = require("./models/home");
 var Service = require("./models/services");
+var Message = require('./models/messages');
 
 module.exports = function(app) {
   // server routes =============================================================
@@ -80,9 +81,9 @@ module.exports = function(app) {
     employee.save(function(err, employee) {
       if (err) {
         res.send(err);
+      }
 
       res.json(employee);
-      }
     });
   });
   // put
@@ -142,6 +143,38 @@ module.exports = function(app) {
       }
 
       res.json("service successfully deleted");
+    });
+  });
+
+  // Messages Routes
+  // this will handle the form data coming from inquiries
+  // GET - for admin views
+  app.get('/api/messages', function(req, res) {
+    // get messages db contents
+    Message.find(function(err, messages) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(messages);
+    });
+  });
+
+  // POST - from user input
+  app.post('/api/messages', function(req, res) {
+
+    var msg = new Message();
+
+    msg.name = req.body.name;
+    msg.email = req.body.email;
+    msg.message = req.body.message;
+
+    msg.save(function(err, message) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(message);
     });
   });
 
