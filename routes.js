@@ -46,7 +46,7 @@ module.exports = function(app) {
     Home.findOne({_id: req.body.id}, function(err, home) {
       Home.update({
         heading: req.body.heading,
-        content: req.body.content
+        content: req.body.content,
       }, function(err, home) {
         if (err) {
           res.send(err);

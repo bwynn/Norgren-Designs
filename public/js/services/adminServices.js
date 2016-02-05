@@ -8,6 +8,7 @@ angular.module("adminService", [])
       },
       // put employee model data
       // post employee model data
+
       // delete employee model data
 
       // get home model data
@@ -15,7 +16,13 @@ angular.module("adminService", [])
         return $http.get('/api/main');
       },
       // put home model data
-
+      updateMain: function(mainData) {
+        return $http.put('/api/main', mainData);
+      },
+      // post home model
+      sendMain: function(mainData) {
+        return $http.post('/api/main', mainData);
+      },
       // get services model data
       getServices: function() {
         return $http.get('/api/services');

@@ -1,0 +1,11 @@
+<div class="row well" ng-repeat="employee in employees">
+  <div class="profileBox">
+    <figure class="portrait" ng-class="employee.class"></figure>
+    <div class="employeeDetails">
+      <h4>{{employee.name}}</h4>
+      <p>{{employee.title}}</p>
+    </div>
+  </div>
+  <p>{{employee.bio}}</p>
+  <span class="row-separator"></span>
+</div>
