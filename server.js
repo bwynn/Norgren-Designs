@@ -7,6 +7,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var morgan = require('morgan');
 
 // connection
 // =============================================================================
@@ -18,6 +19,9 @@ var port = process.env.port || 8080;
 
 // connect to db
 mongoose.connect(db.database);
+
+// get console responses
+app.use(morgan('dev'));
 
 // set data types using body-parser
 app.use(bodyParser.json());

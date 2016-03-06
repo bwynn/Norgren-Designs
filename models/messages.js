@@ -5,7 +5,7 @@ var MessageSchema = new Schema({
   name: String,
   email: String,
   message: String,
-  timestamp: Date
+  timestamp: {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model("Message", MessageSchema);

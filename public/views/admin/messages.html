@@ -2,11 +2,12 @@
   <h1>Messages</h1>
   <p>You have {{msgCount}} messages</p>
 </div>
-<div class="row" ng-repeat="msg in messages">
-  <p><strong>Date: {{msg.date}}</strong></p>
+<div class="row" ng-repeat="msg in messages | orderBy: 'msg.timestamp': true">
+  <p><strong>Date: {{msg.timestamp | date:"MM/dd/yyyy 'at' h:mma"}}</strong></p>
   <p><strong>Name: </strong>{{msg.name}}</p>
   <p><strong>Email: </strong>{{msg.email}}</p>
   <div class="well">
     <p>{{msg.message}}</p>
   </div>
+  <button class="btn btn-warning" ng-click="deleteMessage(msg._id)">Delete Message</button>
 </div>

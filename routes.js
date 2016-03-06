@@ -178,6 +178,20 @@ module.exports = function(app) {
     });
   });
 
+  // DELETE - admin view
+  app.delete('/api/messages', function(req, res) {
+
+    console.log(req.body);
+
+    Message.remove({_id: req.body.id}, function(err, user) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json({"message": "Record removed"});
+    });
+  });
+
 // frontend routes
 // =============================================================================
 app.get("/", function(req, res) {

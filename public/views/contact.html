@@ -1,10 +1,10 @@
 <section id='contactPageContent'>
   <div id="contactContainer">
-    <form action="process.php" method="post" name="ndForm" novalidate ng-submit="addUser( newUser )" id="contact-form">
+    <form name="ndForm" novalidate ng-submit="addUser()" id="contact-form">
       <h3>Have a project? Need expert&nbsp;advice? Contact&nbsp;us.</h3>
       <div id="nameWrap">
         <label for="userName">Name:</label>
-        <input type="text" id="name" name="userName" placeholder="Enter your name" required ng-model="newUser.name">
+        <input type="text" id="name" name="userName" placeholder="Enter your name" required ng-model="name">
         <div class="formError" ng-show="ndForm.userName.$invalid && ndForm.userName.$dirty">
           <span ng-show="ndForm.userName.$error.required">Please enter your name</span>
         </div>
@@ -12,7 +12,7 @@
       </div>
       <div id="emailWrap">
         <label for="userEmail">Email:</label>
-        <input type="email" id="email" name="userEmail" placeholder="example@gmail.com" ng-minlength="6" required ng-model="newUser.email">
+        <input type="email" id="email" name="userEmail" placeholder="example@gmail.com" ng-minlength="6" required ng-model="email">
         <div class="formError" ng-show="ndForm.userEmail.$invalid && ndForm.userEmail.$dirty">
           <span ng-show="ndForm.userEmail.$error.email">Please enter a valid email</span>
           <span ng-show="ndForm.userEmail.$error.required">Please enter a value</span>
@@ -20,7 +20,7 @@
       </div>
       <div id="commentWrap">
         <label for="userComment">Message:</label>
-        <textarea id="comment" name="userComment" required ng-model="newUser.msg"></textarea>
+        <textarea id="comment" name="userComment" required ng-model="message"></textarea>
         <div class="formError" ng-show="ndForm.userMsg.$invalid && ndForm.userMsg.$dirty">
           <span ng-show="ndForm.userMsg.$error.required">Please include a message</span>
         </div>

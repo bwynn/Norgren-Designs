@@ -32,6 +32,14 @@ angular.module("adminService", [])
 
       getMessages: function() {
         return $http.get('/api/messages');
+      },
+
+      submitMessage: function(messageData) {
+        return $http.post('/api/messages', messageData);
+      },
+
+      deleteMessage: function(messageData) {
+        return $http.delete('/api/messages', messageData);
       }
     };
   }]);
