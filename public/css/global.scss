@@ -1,0 +1,95 @@
+/* ------------------  Global Elements   -----------------------------  */
+
+html {
+	min-height: $min-height;
+	width: 100%;
+	body, footer {
+		width: 100%;
+	}
+	body, #nd {
+		min-height: $min-height;
+	}
+}
+
+body, input, textarea, button {
+	font-family: "Lato", Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+body {
+	font-size: 18px;
+	color: $dark-grey;
+	max-width: 1440px;
+	margin: 0 auto;
+	overflow-x: hidden;
+	background-color: $dark-grey;
+}
+
+footer {
+	background-color: $dark-grey;
+}
+
+h2, h3 {
+	text-align: center;
+	padding: 1em;
+	color: $dark-grey;
+}
+
+p {
+	padding: .2em 2em;
+	font-size: 1em;
+	line-height: 1.4;
+	letter-spacing: .05em;
+	font-weight: 300;
+	color: $dark-grey; 
+}
+
+header,
+a {
+	color: $dark-grey;
+}
+
+a {
+	text-decoration: none;
+	-webkit-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.nav-line,
+#logo-wrap {
+	margin: 0 auto;
+	}
+
+button:active,
+button:focus {
+	outline: none;
+}
+
+label {
+	display: block;
+	margin: .5em 0;
+}
+
+form {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.active {
+	color: #999;
+}
+
+/* ------------------  Footer Elements -------------------------------  */
+
+footer p.copy-footer {
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1em;
+	font-weight: 300;
+	color: $white;
+}

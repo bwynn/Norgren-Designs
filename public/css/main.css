@@ -35,7 +35,7 @@ footer {
 h2, h3 {
   text-align: center;
   padding: 1em;
-  color: #FCFCF8; }
+  color: #222; }
 
 p {
   padding: .2em 2em;
@@ -43,7 +43,7 @@ p {
   line-height: 1.4;
   letter-spacing: .05em;
   font-weight: 300;
-  color: #FCFCF8; }
+  color: #222; }
 
 header,
 a {
@@ -76,6 +76,14 @@ form {
 
 .active {
   color: #999; }
+
+/* ------------------  Footer Elements -------------------------------  */
+footer p.copy-footer {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1em;
+  font-weight: 300;
+  color: #FCFCF8; }
 
 /* ------------------  Header Elements -------------------------------  */
 header#globalHeader {
@@ -159,14 +167,15 @@ article.client-design-services {
 
 div#contentSection {
   position: absolute;
-  top: 4em;
+  top: 6em;
   width: 100%;
-  overflow: hidden;
-  max-width: 1440px; }
+  max-width: 1440px;
+  min-height: 500px;
+  z-index: 10; }
   div#contentSection > section {
-    display: none;
+    display: block;
     position: relative;
-    z-index: 3;
+    z-index: 12;
     top: 1em;
     left: 0;
     width: 70%;
@@ -174,8 +183,6 @@ div#contentSection {
     margin: 3em auto 6em;
     background-color: rgba(252, 252, 248, 0.96);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); }
-    div#contentSection > section .show {
-      top: 1em; }
   div#contentSection #homePageContent {
     min-height: 450px; }
     div#contentSection #homePageContent h2:last-child {
@@ -202,7 +209,7 @@ section#aboutPageContent {
     margin: 2em;
     overflow: hidden;
     position: relative;
-    z-index: 3;
+    z-index: 13;
     float: left; }
     section#aboutPageContent .profileBox:hover div.employeeDetails {
       top: -2.8em; }
@@ -426,185 +433,4 @@ footer p.copy-footer {
   font-weight: 300;
   color: #FCFCF8; }
 
-/* ------------------- Media Queries --------------------------------- */
-@media only screen and (max-width: 1000px) {
-  div#contentSection > section {
-    width: 85%; }
-
-  #contentSection > section#homePageContent.show,
-  #contentSection > section#aboutPageContent.show,
-  #contentSection > section#companyPageContent.show,
-  #contentSection > section#contactPageContent.show {
-    top: 0em; }
-
-  section#aboutPageContent .profileBox {
-    display: block;
-    max-width: 25%; } }
-/* ------------ 800 Pixels -------------------- */
-@media only screen and (max-width: 800px) {
-  header#globalHeader {
-    height: 3em; }
-
-  /* Mobile Nav Elements */
-  #mobileNav {
-    position: relative;
-    top: 0;
-    right: 0;
-    z-index: 3;
-    width: 100%;
-    display: none; }
-
-  button#mobileNavBtn {
-    display: block;
-    float: right;
-    height: 45px;
-    width: 45px;
-    margin: .45em;
-    background-color: inherit;
-    border: .2em solid #222;
-    border-radius: .5em;
-    cursor: pointer;
-    position: relative;
-    top: 0; }
-
-  /* checking to see if this configuration leads to a better experience on mobile devices */
-  button#mobileNavBtn.active {
-    background-color: #222; }
-
-  button#mobileNavBtn.active > svg > path.bar {
-    fill: #ffffff;
-    height: 100%;
-    width: 100%; }
-
-  svg#menu-bar {
-    position: relative;
-    height: inherit;
-    width: inherit;
-    top: 0;
-    left: 0px; }
-
-  #mobileNav > nav {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    top: -13em;
-    background-color: #222;
-    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.5); }
-
-  #mobileNav > nav > ul > li {
-    padding: .6em;
-    list-style-type: none; }
-
-  #mobileNav > nav > ul > li:first-of-type {
-    padding-top: 1.2em; }
-
-  #mobileNav > nav > ul > li > a {
-    color: #FCFCF8;
-    display: block;
-    border-bottom: 0.1em solid #FCFCF8; }
-
-  #mobileNav > nav > ul > li > a:hover {
-    text-shadow: .05em .05em #224F3B;
-    text-decoration: none;
-    font-size: 1.1em; }
-
-  div#logo-wrap h1 {
-    margin-top: 1em;
-    font-size: 1.3em;
-    /*display: none;*/ }
-
-  .logo {
-    width: 3em; }
-
-  #nd div.background-array figure {
-    min-width: 49%;
-    width: 50%; }
-
-  #nd div.background-array figure:last-child {
-    display: none; }
-
-  section#aboutPageContent .profileBox {
-    display: block;
-    width: 100%;
-    max-width: 35%;
-    float: none;
-    margin: 1em auto; }
-
-  #contentSection > section#homePageContent.show,
-  #contentSection > section#aboutPageContent.show,
-  #contentSection > section#companyPageContent.show,
-  #contentSection > section#contactPageContent.show {
-    top: -2em; }
-
-  section#aboutPageContent h2 {
-    text-align: center; }
-
-  form {
-    width: 85%; }
-
-  header#globalHeader #desk-nav > nav {
-    display: none; }
-
-  #mobileNav {
-    display: block; }
-
-  div#logo-wrap {
-    width: 80%; }
-
-  #nd > div.nav-background {
-    width: 100%;
-    height: 0%;
-    position: absolute;
-    top: 3em;
-    left: 0;
-    z-index: 3;
-    background-color: #222;
-    opacity: .8; }
-
-  div#contentSection > section {
-    width: 95%; }
-
-  section#companyProfile .profileBox {
-    width: 30%;
-    max-width: 100%; }
-
-  section#companyProfile > article ul {
-    padding: 1em 1em 2em;
-    margin-left: 1em; }
-
-  section#aboutPageContent > .page-wrap > div.row > p {
-    width: 100%;
-    padding: 2em; }
-
-  #homePageContent h1,
-  #aboutPageContent h1,
-  #contactPageContent h1 {
-    font-size: 1.3em; }
-
-  section p,
-  section li {
-    font-size: .8em; }
-
-  button#send {
-    display: block;
-    margin: 1em auto;
-    width: 60%; }
-
-  section#companyProfile article.client-design-services > div.row {
-    width: 100%; }
-
-  article.in-house-projects h2 {
-    padding-top: inherit; } }
-@media only screen and (max-width: 500px) {
-  #nd div.background-array figure {
-    min-height: 200px;
-    min-width: 99%;
-    width: 100%; }
-
-  div#logo-wrap h1 {
-    display: none; }
-
-  section#aboutPageContent .profileBox {
-    max-width: 49%; } }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

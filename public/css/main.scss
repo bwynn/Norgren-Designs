@@ -1,0 +1,27 @@
+/* -------------------------------------------------------------------
+				Norgren Designs v2.0
+   -------------------------------------------------------------------  */
+
+/* Title: Norgren Designs */
+/* Author: Brian Wynn */
+/* URL: www.norgrendesigns.com */
+
+
+/* Author's Note:
+Norgren Designs was built as a mobile-first website. All styles are oriented based off of a
+mobile oriented design in a portrait layout. Media queries are added as the viewport size
+increases. */
+
+// variables
+
+$dark-grey: #222;
+$white: #FCFCF8; // slightly off white
+$content-min: 450px;
+$header-size: 4em;
+$min-height: 1050px;
+
+// import scss modules
+@import "global";
+@import "header";
+@import "content";
+@import "background";

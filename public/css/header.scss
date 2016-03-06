@@ -1,0 +1,82 @@
+/* ------------------  Header Elements -------------------------------  */
+
+header#globalHeader {
+	background-color: $white;
+	height: 4.5em;
+	position: relative;
+	z-index: 5;
+	#logo-wrap {
+		width: 60%;
+		display: inline-block;
+		h1 {
+			display: inline-block;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-top: 1.2em;
+			margin-bottom: 0;
+			font-weight: 300;
+			font-size: 1.6em;
+			float: left;
+		}
+		a.homeBtn {
+			display: block;
+			height: $header-size;
+			position: relative;
+			z-index: 11;
+		}
+		#headerIcon {
+			display: inline-block;
+			background-image: url("../img/logo_grey.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin: .4em;
+			width: $header-size;
+			height: $header-size;
+			float: left;
+			.logo {
+				height: 100%;
+				width: 100%;
+				margin: 0 .5em;
+			}
+		}
+	}
+	#desk-nav {
+		height: inherit;
+		position: relative;
+		z-index: 10;
+		background-color: $white;
+		nav {
+			display: inline-block;
+			width: 39%;
+			float: right;
+			ul {
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				margin-top: 2.5em;
+				li {
+					-webkit-flex-grow: 1;
+					flex-grow: 1;
+					border-right: 1px solid $dark-grey;
+					list-style-type: none;
+					&:last-child {
+						border: none;
+					}
+					a {
+						display: block;
+						text-align: center;
+						font-weight: 300;
+					}
+				}
+			}
+		}
+	}
+}
+
+	#mobileNav {
+		display: none;
+	}
+
+	button#mobileNavBtn {
+		display: none;
+	}
