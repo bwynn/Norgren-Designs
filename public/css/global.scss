@@ -41,7 +41,7 @@ p {
 	line-height: 1.4;
 	letter-spacing: .05em;
 	font-weight: 300;
-	color: $dark-grey; 
+	color: $dark-grey;
 }
 
 header,
@@ -78,6 +78,10 @@ label {
 form {
 	width: 60%;
 	margin: 0 auto;
+}
+
+figure {
+	margin: 0;
 }
 
 .active {

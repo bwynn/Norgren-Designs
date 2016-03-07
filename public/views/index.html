@@ -18,6 +18,10 @@
 
   <div id="contentSection" ng-view></div>
 
+  <div class="background-array">
+    <figure ng-repeat="background in backgrounds" class="{{background}}"></figure>
+  </div>
+
   <footer ng-include="'views/footer.html'"></footer>
 
   <!-- libraries -->

@@ -181,7 +181,7 @@ module.exports = function(app) {
   // DELETE - admin view
   app.delete('/api/messages', function(req, res) {
 
-    console.log(req.body);
+    console.log(req);
 
     Message.remove({_id: req.body.id}, function(err, user) {
       if (err) {

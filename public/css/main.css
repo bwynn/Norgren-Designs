@@ -74,6 +74,9 @@ form {
   width: 60%;
   margin: 0 auto; }
 
+figure {
+  margin: 0; }
+
 .active {
   color: #999; }
 
@@ -348,7 +351,7 @@ button#send[disabled="disabled"] {
   font-weight: bold; }
 
 /* ------------------ Background Array ------------------------------- */
-#nd div.background-array {
+div.background-array {
   width: 100%;
   max-width: 1440px;
   background-color: #333;
@@ -359,7 +362,7 @@ button#send[disabled="disabled"] {
   -webkit-align-items: center;
   align-items: center; }
 
-#nd div.background-array figure {
+div.background-array figure {
   min-height: 350px;
   min-width: 32%;
   width: 33%;
@@ -372,58 +375,58 @@ button#send[disabled="disabled"] {
   background-position: center; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
-  #nd div.background-array figure.bolt {
+  div.background-array figure.bolt {
     background-image: url("../img/array_bolt.jpg"); }
 
-  #nd div.background-array figure.cable {
+  div.background-array figure.cable {
     background-image: url("../img/array_cable.jpg"); }
 
-  #nd div.background-array figure.card {
+  div.background-array figure.card {
     background-image: url("../img/array_card.jpg"); }
 
-  #nd div.background-array figure.circuitboard {
+  div.background-array figure.circuitboard {
     background-image: url("../img/array_circuitboard.jpg"); }
 
-  #nd div.background-array figure.coffee {
+  div.background-array figure.coffee {
     background-image: url("../img/array_coffee.jpg"); }
 
-  #nd div.background-array figure.cylinder {
+  div.background-array figure.cylinder {
     background-image: url("../img/array_cylinder.jpg"); }
 
-  #nd div.background-array figure.hardware {
+  div.background-array figure.hardware {
     background-image: url("../img/array_hardware.jpg"); }
 
-  #nd div.background-array figure.input {
+  div.background-array figure.input {
     background-image: url("../img/array_input.jpg"); }
 
-  #nd div.background-array figure.prototypes {
+  div.background-array figure.prototypes {
     background-image: url("../img/array_prototypes.jpg"); } }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #nd div.background-array figure.bolt {
+  div.background-array figure.bolt {
     background-image: url("../img/array_bolt_2x.jpg"); }
 
-  #nd div.background-array figure.cable {
+  div.background-array figure.cable {
     background-image: url("../img/array_cable_2x.jpg"); }
 
-  #nd div.background-array figure.card {
+  div.background-array figure.card {
     background-image: url("../img/array_card_2x.jpg"); }
 
-  #nd div.background-array figure.circuitboard {
+  div.background-array figure.circuitboard {
     background-image: url("../img/array_circuitboard_2x.jpg"); }
 
-  #nd div.background-array figure.coffee {
+  div.background-array figure.coffee {
     background-image: url("../img/array_coffee_2x.jpg"); }
 
-  #nd div.background-array figure.cylinder {
+  div.background-array figure.cylinder {
     background-image: url("../img/array_cylinder_2x.jpg"); }
 
-  #nd div.background-array figure.hardware {
+  div.background-array figure.hardware {
     background-image: url("../img/array_hardware_2x.jpg"); }
 
-  #nd div.background-array figure.input {
+  div.background-array figure.input {
     background-image: url("../img/array_input_2x.jpg"); }
 
-  #nd div.background-array figure.prototypes {
+  div.background-array figure.prototypes {
     background-image: url("../img/array_prototypes_2x.jpg"); } }
 /* ------------------  Footer Elements -------------------------------  */
 footer p.copy-footer {
