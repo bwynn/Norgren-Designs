@@ -354,6 +354,8 @@ button#send[disabled="disabled"] {
 div.background-array {
   width: 100%;
   max-width: 1440px;
+  position: relative;
+  top: -4px;
   background-color: #333;
   display: -webkit-flex;
   display: flex;
@@ -373,67 +375,59 @@ div.background-array figure {
   align-self: flex-start;
   background-size: cover;
   background-position: center; }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
-  div.background-array figure.bolt {
-    background-image: url("../img/array_bolt.jpg"); }
-
-  div.background-array figure.cable {
-    background-image: url("../img/array_cable.jpg"); }
-
-  div.background-array figure.card {
-    background-image: url("../img/array_card.jpg"); }
-
-  div.background-array figure.circuitboard {
-    background-image: url("../img/array_circuitboard.jpg"); }
-
-  div.background-array figure.coffee {
-    background-image: url("../img/array_coffee.jpg"); }
-
-  div.background-array figure.cylinder {
-    background-image: url("../img/array_cylinder.jpg"); }
-
-  div.background-array figure.hardware {
-    background-image: url("../img/array_hardware.jpg"); }
-
-  div.background-array figure.input {
-    background-image: url("../img/array_input.jpg"); }
-
-  div.background-array figure.prototypes {
-    background-image: url("../img/array_prototypes.jpg"); } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  div.background-array figure.bolt {
-    background-image: url("../img/array_bolt_2x.jpg"); }
-
-  div.background-array figure.cable {
-    background-image: url("../img/array_cable_2x.jpg"); }
-
-  div.background-array figure.card {
-    background-image: url("../img/array_card_2x.jpg"); }
-
-  div.background-array figure.circuitboard {
-    background-image: url("../img/array_circuitboard_2x.jpg"); }
-
-  div.background-array figure.coffee {
-    background-image: url("../img/array_coffee_2x.jpg"); }
-
-  div.background-array figure.cylinder {
-    background-image: url("../img/array_cylinder_2x.jpg"); }
-
-  div.background-array figure.hardware {
-    background-image: url("../img/array_hardware_2x.jpg"); }
-
-  div.background-array figure.input {
-    background-image: url("../img/array_input_2x.jpg"); }
-
-  div.background-array figure.prototypes {
-    background-image: url("../img/array_prototypes_2x.jpg"); } }
-/* ------------------  Footer Elements -------------------------------  */
-footer p.copy-footer {
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1em;
-  font-weight: 300;
-  color: #FCFCF8; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.bolt {
+      background-image: url("../img/array_bolt.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.bolt {
+      background-image: url("../img/array_bolt_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.cable {
+      background-image: url("../img/array_cable.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.cable {
+      background-image: url("../img/array_cable_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.card {
+      background-image: url("../img/array_card.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.card {
+      background-image: url("../img/array_card_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.circuitboard {
+      background-image: url("../img/array_circuitboard.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.circuitboard {
+      background-image: url("../img/array_circuitboard_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.coffee {
+      background-image: url("../img/array_coffee.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.coffee {
+      background-image: url("../img/array_coffee_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.cylinder {
+      background-image: url("../img/array_cylinder.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.cylinder {
+      background-image: url("../img/array_cylinder_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.hardware {
+      background-image: url("../img/array_hardware.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.hardware {
+      background-image: url("../img/array_hardware_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.input {
+      background-image: url("../img/array_input.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.input {
+      background-image: url("../img/array_input_2x.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+    div.background-array figure.prototypes {
+      background-image: url("../img/array_prototypes.jpg"); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    div.background-array figure.prototypes {
+      background-image: url("../img/array_prototypes_2x.jpg"); } }
 
 /*# sourceMappingURL=main.css.map */
