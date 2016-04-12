@@ -8,5 +8,17 @@ angular.module("AdminAboutCtrl", [])
       });
     }
 
+    // add employee function
+    $scope.addEmployee = function() {
+      Admin.addEmployee({
+        name: $scope.name,
+        title: $scope.title,
+        class: $scope.class,
+        bio: $scope.bio
+      }).then(function() {
+        getData();
+      });
+    };
+
     getData();
   }]);

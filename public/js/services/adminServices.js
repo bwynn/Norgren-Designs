@@ -7,6 +7,9 @@ angular.module("adminService", [])
         return $http.get('/api/employees');
       },
       // put employee model data
+      addEmployee: function() {
+        return $http.post('/api/employees');
+      },
       // post employee model data
 
       // delete employee model data
