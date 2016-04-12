@@ -1,196 +1,64 @@
 var path = require("path");
 
-var Employees = require("./models/employees");
-var Home = require("./models/home");
-var Service = require("./models/services");
-var Message = require('./models/messages');
-
 module.exports = function(app) {
+  var admin = require('./controllers/admin');
   // server routes =============================================================
   // handle api calls
   // authentication routes
 
   // Home Routes
-  // get - ADMIN & User
-  app.get("/api/main", function(req, res) {
-    // get home db contents
-    Home.find(function(err, home) {
-      if (err) {
-        res.send(err);
-      }
+  // ADMIN & User ==============================================================
 
-      res.json(home); // get contents of home
-    });
-  });
+  // get
+  app.get("/api/main", admin.getMain);
 
   // post - ADMIN This route creates a new home content object
-  app.post("/api/main", function(req, res) {
-    // create a new instance of home
-    var home = new Home();
-
-    home.heading = req.body.heading;
-    home.content = req.body.content;
-
-    home.save(function(err) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json({message: "Home page content successfully created"});
-    });
-  });
+  app.post("/api/main", admin.postMain);
 
   // put
-  app.put('/api/main', function(req, res) {
+  app.put('/api/main', admin.updateMain);
 
-    Home.findOne({_id: req.body.id}, function(err, home) {
-      Home.update({
-        heading: req.body.heading,
-        content: req.body.content,
-      }, function(err, home) {
-        if (err) {
-          res.send(err);
-        }
+  // delete
+  app.delete('/api/main', admin.deleteMain);
 
-        res.json(home);
-      });
-    });
-  });
+  // Employees Routes - ADMIN & user route =====================================
 
-  // Employees Routes - ADMIN & user route
-  app.get("/api/employees", function(req, res) {
-    // get employees db contents
-    Employees.find(function(err, employees) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json(employees);
-    });
-  });
+  // get
+  app.get("/api/employees", admin.getEmployees);
 
   // post
-  app.post('/api/employees', function(req, res) {
-    var employee = new Employees();
-
-    employee.name = req.body.name;
-    employee.title = req.body.title;
-    employee.class = req.body.class;
-    employee.bio = req.body.bio;
-
-    employee.save(function(err, employee) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json(employee);
-    });
-  });
+  app.post('/api/employees', admin.addEmployee);
   // put
+  app.put('/api/employees', admin.updateEmployee);
   // delete
+  app.delete('/api/employees', admin.removeEmployee);
 
-  // Services Routes - ADMIN & user route
-  app.get("/api/services", function(req, res) {
-    // get services db contents
-    Service.find(function(err, service) {
-      if (err) {
-        res.send(err);
-      }
+  // Services Routes - ADMIN & user route ======================================
 
-      res.json(service);
-    });
-  });
+  // get 
+  app.get("/api/services", admin.getServices);
 
   // post - ADMIN - endpoint creates a new service item. This is responsible for the
   // title creation of a service item, leaving the items to be filled individually
   // via the front end
-  app.post("/api/services", function(req, res) {
-    // post services
-    var service = new Service();
-
-    service.title = req.body.title;
-
-    service.save(function(err, service) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json(service);
-    })
-  });
+  app.post("/api/services", admin.addServices);
 
   // put - ADMIN - endpoint will update individual items within the items array
-  app.put('/api/services/items', function(req, res) {
-
-    Service.findOne({_id: req.body.id}, function(err, service) {
-      Service.update({title: req.body.title}, {
-        $push: {items: { $each: [req.body.items]}}
-      }, function(err, service) {
-        if (err) {
-          res.send(err);
-        }
-
-        res.json(service);
-      });
-    });
-  });
+  app.put('/api/services/items', admin.addServiceItems);
 
   // delete - ADMIN -- endpoint removes item by id
-  app.delete('/api/services', function(req, res) {
-    Service.remove({_id: req.body.id}, function(err, service) {
-      if (err) {
-        res.send(err);
-      }
+  app.delete('/api/services', admin.removeService);
 
-      res.json("service successfully deleted");
-    });
-  });
-
-  // Messages Routes
+  // Messages Routes ===========================================================
   // this will handle the form data coming from inquiries
   // GET - for admin views
-  app.get('/api/messages', function(req, res) {
-    // get messages db contents
-    Message.find(function(err, messages) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json(messages);
-    });
-  });
+  app.get('/api/messages', admin.getMessages);
 
   // POST - from user input
-  app.post('/api/messages', function(req, res) {
-
-    var msg = new Message();
-
-    msg.name = req.body.name;
-    msg.email = req.body.email;
-    msg.message = req.body.message;
-
-    msg.save(function(err, message) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json(message);
-    });
-  });
+  app.post('/api/messages', admin.postMessage);
 
   // DELETE - admin view
-  app.delete('/api/messages', function(req, res) {
-
-    console.log(req);
-
-    Message.remove({_id: req.body.id}, function(err, user) {
-      if (err) {
-        res.send(err);
-      }
-
-      res.json({"message": "Record removed"});
-    });
-  });
+  app.delete('/api/messages', admin.deleteMessage);
 
 // frontend routes
 // =============================================================================
