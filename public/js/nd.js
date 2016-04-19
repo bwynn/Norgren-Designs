@@ -6,188 +6,24 @@
 		class: ["bolt", "cable", "card", "circuitboard", "coffee", "cylinder", "hardware", "input", "prototypes"]
 	};
 
-	// The clickCount array stores the number of clicks on the About content section.
-	// Using a conditional in the events to determine the number of clicks to allow for
-	// the propagation of one contact button, but if the content section visited
-	// more than once, further propagation of the button is restricted.
-	var clickCount = [];
+	// begin model function /getClass/
+  // Purpose: this function is run for each array item in the background content
+  // section. It pulls a random item out of the background.class array and then
+  // removes that item from the array.
+  var getClass = function( newArray ) {
+  	// get random string from array, will hold class value
+   	var random = Math.floor(Math.random() * newArray.length),
+  	 		cur_class = newArray.splice( random, 1 );
 
-	// ------------------------ END MODULE SCOPE VARIABLES -----------------------
+  	if ( newArray.length >= 0 ) {
+  		return cur_class;
+  	}
+  	else {
+  		console.log("There aren't any more background images to place.");
+  	}
+  };
+  // end model function /getClass/
 
-	// ------------------------ DOM METHODS ----------------------------------------
-	// Begin DOM function /toggleNav/
-	// Purpose: To set the navigation display on devices smaller than a viewport width of 768px.
-	// Arguments: Content section and background modal section. -- to be defined in a later build, after dom
-	// is established in an html build. For the time being, this gets a boolean value to
-	// determine what state the mobile navigation menu should be in, as well as the mobile background
-	// container. If the mobile nav button state has been assigned the display property of block,
-	// this will set a display property state change on the mobile nav element. It also switches the order
-	// in which each section is shown/hidden, to give a transition effect where the background is
-	// layed down first, and then the nav is revealed.
-	//
-	var toggleNav = function() {
-		var cont = $("#mobileNav > nav"),
-				background = $(".nav-background"),
-				btn = $("button#mobileNavBtn");
-
-			if (cont.hasClass("active")) {
-				cont.removeClass("active");
-				btn.removeClass("active");
-				$.Velocity( cont, { translateY: "-8em" }, 300, { easing: "ease-in-out" });
-				setTimeout(function() {
-					$.Velocity( background, { height: "0%", minHeight: "0px" }, 300, { easing: "ease-in-out" });
-				}, 500);
-			}
-			else if (cont.css("class") == undefined){
-				cont.addClass("active");
-				btn.addClass("active");
-				$.Velocity( background, { height: "100%", minHeight: "1000px" }, 300, { easing: "spring" });
-				setTimeout(function() {
-					$.Velocity( cont, { translateY: "13em" }, 300, { easing: "spring" });
-				}, 500);
-			}
-			else {
-				console.log("something went wrong");
-			}
-
-			// display conditional
-			/*if (cont.css("display") === "block") {
-				$.Velocity( cont, { opacity: 0 }, { display: "none" }, 3000, { easing: "ease-in-out" }); // animate the content
-				setTimeout(function() { // set timeout to animate the background after the content has finished
-					$.Velocity( background, { opacity: 0}, { display: "none" }, 3000, { easing: "ease-in-out" });
-				}, 300);
-			}
-			else if (cont.css("display") === "none") {
-				$.Velocity( background, { opacity: 0.8 }, { display: "block" }, 2000, { easing: "spring" }); // animate background
-				setTimeout(function() { // set timeout to animate the content section after the background has finished
-					$.Velocity( cont, { opacity: 1 }, { display: "block" }, 4000, { easing: "spring" });
-				}, 300);
-			}
-			else {
-				console.log("something went wrong");
-			}*/
-	};
-	// End DOM method /toggleNav/
-
-	// Begin DOM function /activeSwitcher/
-	var activeSwitcher = function( elems, obj ) {
-		elems.removeClass("active");
-		obj.addClass("active");
-	};
-	// End Dom function /activeSwitcher/
-
-	// Begin DOM function /showContainer/
-	// Purpose: Provides dom manipulation based on the nav btn clicked on
-	// and selects the corresponding content section
-	var showContainer = function( btn, container ) {
-		var i;
-
-		container.removeClass("show");
-		container.hide(10);
-		//$.Velocity(container, { opacity: 0 }, { display: "none" }, 100, { easing: "spring" });
-		for (i = 0; i < btn.length; i++) {
-			model.switchLogic( btn[i], container[i] );
-		}
-	};
-	// End DOM function /showContainer/
-
-	// Begin DOM function /buildArray/
-	// builder anon function to assign class
-	var buildArray = function( newArray ) {
-		return model.getClass( newArray );
-	};
-	// End DOM function /buildArray/
-
-	// Begin Dom method /randomClasses/
-	// this anon function pulls items out of background class array object
-	// assigns it to a random element within the targeted containers, and then
-	// removes the item from the array, so that it can be assigned only once.
-	var randomClasses = function() {
-		var newLength = background.class.length,
-				elem = document.querySelectorAll(".background-array > figure");
-		for (var i = 0; i < newLength; i++) {
-			elem[i].classList.add( buildArray( background.class ) );
-		}
-	};
-	// end DOM method /randomClasses/
-
-	// Begin DOM method /setYear/
-	var setYear = function() {
-		var elem = $(".copy-footer span");
-		elem.html( model.curYear );
-	}
-	// End DOM method /setYear/
-
-	// ------------------------ END DOM METHODS ------------------------------------
-
-	// ------------------------ EVENT HANDLERS -------------------------------------
-
-	// Begin event /navBtn/
-	var navBtn = function() {
-		var anchor = $("#globalHeader #desk-nav > nav > ul > li > a"),
-				section = $("#contentSection > section");
-
-		anchor.on("click", function( e ) {
-			e.preventDefault();
-			contact.showContactConditional( this, anchor, clickCount );
-			activeSwitcher( anchor, $(this) );
-			showContainer( anchor, section );
-		});
-	};
-	// End event /navBtn/
-
-	// Begin event /toggleMobileNav/
-	var toggleMobileNav = function() {
-		var btn = $("button#mobileNavBtn");
-		var svg = $("button#mobileNavBtn > svg > path.bar");
-
-		btn.on("click", function() {
-			toggleNav();
-		});
-
-	};
-	// End event /toggleMobileNav/
-
-	// Begin event /mobileNav/
-	// Interaction with any of the mobile navigation list elements
-	var mobileNav = function() {
-		var mobileNavLink = $("#mobileNav > nav > ul > li > a"),
-				section = $("#contentSection > section");
-
-		mobileNavLink.on("click", function( e ) {
-			e.preventDefault();
-			contact.showContactConditional( this, mobileNavLink, clickCount );
-			activeSwitcher( mobileNavLink, $(this));
-			showContainer( mobileNavLink, section );
-			toggleNav();
-		});
-	};
-	// End event /mobileNav/
-
-	// Begin event /mobileBackground/
-	// Purpose: interaction with any part of the nav-background element will
-	// close the mobile nav overlay.
-	var mobileBackground = function() {
-		$(".nav-background").on("click", function() {
-			toggleNav();
-		});
-	};
-	// End event /mobileBackground/
-
-
-	// ------------------------ END EVENT HANDLERS ---------------------------------
-
-	// ------------------------ PUBLIC METHODS -------------------------------------
-	var init = function() {
-		navBtn();
-		toggleMobileNav();
-		mobileNav();
-		mobileBackground();
-		randomClasses();
-		showContainer( $("#globalHeader #desk-nav > nav > ul > li > a"), $("#contentSection > section") );
-		setYear();
-	};
-
-	return init();
+	return getClass(background.class);
 // ------------------------ END PUBLIC METHODS ---------------------------------
 })();
