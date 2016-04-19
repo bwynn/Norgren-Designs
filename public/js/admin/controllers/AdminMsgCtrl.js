@@ -10,13 +10,11 @@ angular.module("AdminMsgCtrl", [])
       });
     }
 
-    $scope.deleteMessage = function(recordId) {
-
-      console.log(recordId);
-      //console.log(typeof recordId);
+    $scope.deleteMessage = function(recordID) {
+      console.log(recordID);
 
       Admin.deleteMessage({
-        id: recordId
+        id: recordID
       }).then(function() {
         getData();
       })
