@@ -42,6 +42,7 @@ angular.module("adminService", [])
       },
 
       deleteMessage: function(messageData) {
+        console.log(messageData);
         return $http.delete('/api/messages', messageData);
       }
     };

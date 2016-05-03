@@ -218,7 +218,7 @@ exports.postMessage = function(req, res) {
 // delete
 exports.deleteMessage = function(req, res) {
 
-  //console.log(req);
+  console.log(req.body);
 
   Message.remove({_id: req.body.id}, function(err, user) {
     if (err) {
