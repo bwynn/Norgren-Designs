@@ -2,6 +2,7 @@
 angular.module("adminService", [])
   .factory("Admin", ['$http', function($http) {
     return {
+      // EMPLOYEES
       // get employee model data
       getEmployees: function() {
         return $http.get('/api/employees');
@@ -19,6 +20,8 @@ angular.module("adminService", [])
         console.log(data);
         return $http.put('/api/delete_employees', data);
       },
+
+      // MAIN
       // get home model data
       getMain: function() {
         return $http.get('/api/main');
@@ -35,13 +38,26 @@ angular.module("adminService", [])
       deleteMainSection: function(mainData) {
         return $http.put('/api/delete_main', mainData);
       },
+
+      // SERVICES
       // get services model data
       getServices: function() {
         return $http.get('/api/services');
       },
       // post services model data
+      addService: function() {
+        return $http.post('/api/services');
+      },
       // put services model data
+      addServiceItem: function() {
+        return $http.put('/api/services/items');
+      },
+      // delete services model data
+      deleteService: function() {
+        return $http.put('/api/delete_services');
+      },
 
+      // MESSAGES
       getMessages: function() {
         return $http.get('/api/messages');
       },

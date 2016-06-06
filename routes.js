@@ -47,7 +47,7 @@ module.exports = function(app) {
   app.put('/api/services/items', admin.addServiceItems);
 
   // delete - ADMIN -- endpoint removes item by id
-  app.put('/api/services', admin.removeService);
+  app.put('/api/delete_services', admin.removeService);
 
   // Messages Routes ===========================================================
   // this will handle the form data coming from inquiries
