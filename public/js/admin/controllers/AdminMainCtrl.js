@@ -2,22 +2,55 @@
 angular.module('AdminMainCtrl', [])
   .controller('AdminMainController', ['$scope', 'Admin', function($scope, Admin) {
 
-    $scope.edit = false;
+    $scope.addSection = false;
+    $scope.showForm = false;
 
-    $scope.update = function() {
-      if (!$scope.edit) {
-        $scope.edit = true;
+    $scope.editContent = function() {
+      if (this.showForm) {
+        this.showForm = false;
       } else {
-        $scope.edit = false;
+        this.showForm = true;
       }
     };
 
-    $scope.updateSection = function() {
-      Admin.updateMain({
-        heading: $scope.sections.heading,
-        content: $scope.sections.content,
-        id: $scope.sections._id
+    $scope.toggleNewSection = function() {
+      if ($scope.addSection) {
+        $scope.addSection = false;
+      } else {
+        $scope.addSection = true;
+      }
+    };
+
+    $scope.addContent = function() {
+      Admin.sendMain({
+        heading: $scope.newHeading,
+        content: $scope.newContent
       }).then(function() {
+        $scope.newHeading = "";
+        $scope.newContent = "";
+        $scope.addSection = false;
+        getData();
+      });
+    };
+
+    $scope.updateSection = function(selectedSection) {
+      console.log(selectedSection);
+      Admin.updateMain({
+        heading: selectedSection.heading,
+        content: selectedSection.content,
+        id: selectedSection._id
+      }).then(function() {
+        $scope.showForm = false;
+        getData();
+      });
+    };
+
+    $scope.deleteSection = function(selectedSection) {
+      console.log(selectedSection);
+      Admin.deleteMainSection({
+        id: selectedSection._id
+      }).then(function() {
+        $scope.showForm = false; 
         getData();
       });
     };

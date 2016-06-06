@@ -11,14 +11,15 @@ angular.module("AdminMsgCtrl", [])
     }
 
     $scope.deleteMessage = function(_id) {
-      console.log(_id);
 
-      Admin.deleteMessage({
-        "id": _id
-      }).then(function(data) {
-        getData();
+      Admin.getMessages().then(function(err, messages) {
+        Admin.deleteMessage({
+          "id": _id
+        }).then(function(data) {
+          getData();
+        });
       });
-    }
+    };
 
     getData();
   }]);

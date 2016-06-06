@@ -1,4 +1,5 @@
-<form class="form" novalidate>
+<button class="btn btn-success" ng-click="toggleForm()">Add Employee</button>
+<form class="form" novalidate ng-show="showEmployeeForm">
   <div class="form-group">
     <label for="name">Employee's Name</label>
     <input type="text" class="form-control" ng-model="name">
@@ -15,8 +16,9 @@
     <label for="name">Employee's Bio</label>
     <input type="text" class="form-control" ng-model="bio">
   </div>
-  <button class="btn btn-primary" ng-click="addEmployee()">Add Employee</button>
+  <button class="btn btn-primary" ng-click="addEmployee()">Submit</button>
 </form>
+
 <div class="row well" ng-repeat="employee in employees">
   <div class="profileBox">
     <figure class="portrait" ng-class="employee.class"></figure>
@@ -26,5 +28,26 @@
     </div>
   </div>
   <p>{{employee.bio}}</p>
+  <button class="btn btn-success" ng-click="toggleForm()">Edit Employee Details</button>
   <span class="row-separator"></span>
+  <form class="form" novalidate ng-show="showEmployeeForm">
+    <div class="form-group">
+      <label for="name">Employee's Name</label>
+      <input type="text" class="form-control" ng-model="employee.name">
+    </div>
+    <div class="form-group">
+      <label for="title">Employee's Title</label>
+      <input type="text" class="form-control" ng-model="employee.title">
+    </div>
+    <div class="form-group">
+      <label for="name">Employee's First Name</label>
+      <input type="text" class="form-control" ng-model="employee.class">
+    </div>
+    <div class="form-group">
+      <label for="name">Employee's Bio</label>
+      <input type="text" class="form-control" ng-model="employee.bio">
+    </div>
+    <button class="btn btn-primary" ng-click="updateEmployee(employee)">Update Employee</button>
+    <button class='btn btn-primary' ng-click="deleteEmployee(employee)">Delete Employee</button>
+  </form>
 </div>

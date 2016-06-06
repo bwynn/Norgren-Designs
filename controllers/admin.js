@@ -97,8 +97,8 @@ exports.addEmployee = function(req, res) {
 
 // put
 exports.updateEmployee = function(req, res) {
-  Employees.findOne({_id: req.body.id}, function(err, employee) {
-    Employees.update({
+  Employees.find(function(err, employee) {
+    Employees.update({_id: req.body.id}, {
       name: req.body.name,
       class: req.body.class,
       title: req.body.title,

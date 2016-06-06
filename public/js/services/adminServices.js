@@ -7,13 +7,18 @@ angular.module("adminService", [])
         return $http.get('/api/employees');
       },
       // put employee model data
-      addEmployee: function() {
-        return $http.post('/api/employees');
+      addEmployee: function(data) {
+        return $http.post('/api/employees', data);
       },
       // post employee model data
-
+      updateEmployee: function(data) {
+        return $http.put('/api/employees', data);
+      },
       // delete employee model data
-
+      deleteEmployee: function(data) {
+        console.log(data);
+        return $http.put('/api/delete_employees', data);
+      },
       // get home model data
       getMain: function() {
         return $http.get('/api/main');
@@ -25,6 +30,10 @@ angular.module("adminService", [])
       // post home model
       sendMain: function(mainData) {
         return $http.post('/api/main', mainData);
+      },
+      // delete home section
+      deleteMainSection: function(mainData) {
+        return $http.put('/api/delete_main', mainData);
       },
       // get services model data
       getServices: function() {
@@ -43,7 +52,7 @@ angular.module("adminService", [])
 
       deleteMessage: function(messageData) {
         console.log(messageData);
-        return $http.delete('/api/messages', messageData);
+        return $http.put('/api/messages', messageData);
       }
     };
   }]);

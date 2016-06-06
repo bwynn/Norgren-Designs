@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.put('/api/main', admin.updateMain);
 
   // delete
-  app.delete('/api/main', admin.deleteMain);
+  app.put('/api/delete_main', admin.deleteMain);
 
   // Employees Routes - ADMIN & user route =====================================
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
   // put
   app.put('/api/employees', admin.updateEmployee);
   // delete
-  app.delete('/api/employees', admin.removeEmployee);
+  app.put('/api/delete_employees', admin.removeEmployee);
 
   // Services Routes - ADMIN & user route ======================================
 
@@ -47,7 +47,7 @@ module.exports = function(app) {
   app.put('/api/services/items', admin.addServiceItems);
 
   // delete - ADMIN -- endpoint removes item by id
-  app.delete('/api/services', admin.removeService);
+  app.put('/api/services', admin.removeService);
 
   // Messages Routes ===========================================================
   // this will handle the form data coming from inquiries
@@ -58,7 +58,7 @@ module.exports = function(app) {
   app.post('/api/messages', admin.postMessage);
 
   // DELETE - admin view
-  app.delete('/api/messages', admin.deleteMessage);
+  app.put('/api/messages', admin.deleteMessage);
 
 
 // frontend routes
