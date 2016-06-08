@@ -142,6 +142,7 @@ exports.getServices = function(req, res) {
 
 // post
 exports.addServices = function(req, res) {
+  console.log(req.body);
   // post services
   var service = new Service();
 
@@ -158,9 +159,10 @@ exports.addServices = function(req, res) {
 
 // put
 exports.addServiceItems = function(req, res) {
+  console.log(req.body);
   Service.findOne({_id: req.body.id}, function(err, service) {
     Service.update({title: req.body.title}, {
-      $push: {items: { $each: [req.body.items]}}
+      $push: {items: { $each: req.body.items}}
     }, function(err, service) {
       if (err) {
         res.send(err);

@@ -5,6 +5,8 @@ angular.module('AdminSrvCtrl', [])
     $scope.showItemForm = false;
     $scope.serviceTitle = false;
 
+    $scope.targetItem = {};
+
     // service item array
     $scope.serviceItems = [];
 
@@ -38,17 +40,18 @@ angular.module('AdminSrvCtrl', [])
     };
 
     // Add Service Item
-    // this requires id, title and items as values to work properly, and therefore needs to be assigned via id. 
-    $scope.addServiceItems = function(item) {
-      console.log(item);
+    // this requires id, title and items as values to work properly, and therefore needs to be assigned via id.
+    $scope.addServiceItems = function() {
+      console.log($scope.targetItem);
       Admin.addServiceItem({
-        id: item._id,
-        title: $scope.title,
+        id: $scope.targetItem._id,
+        title: $scope.targetItem.title,
         items: $scope.serviceItems
       }).then(function() {
 
         $scope.items = []; // clear out array items
-        $scope.showItemForm = false; // hide form after submit
+        $scope.showItemForm = true; // hide form after submit
+        $scope.targetItem = {}; // clear out object data
 
         getData();
       });
@@ -71,7 +74,13 @@ angular.module('AdminSrvCtrl', [])
     function getData() {
       Admin.getServices().then(function(services) {
         $scope.services = services.data;
+
+        // get last scope item
+        var idx = $scope.services.length - 1;
+        console.log(idx);
         console.log($scope.services);
+        $scope.targetItem = $scope.services[idx];
+        console.log($scope.targetItem);
       });
     }
 

@@ -45,12 +45,12 @@ angular.module("adminService", [])
         return $http.get('/api/services');
       },
       // post services model data
-      addService: function() {
-        return $http.post('/api/services');
+      addService: function(data) {
+        return $http.post('/api/services', data);
       },
       // put services model data
-      addServiceItem: function() {
-        return $http.put('/api/services/items');
+      addServiceItem: function(data) {
+        return $http.put('/api/services/items', data);
       },
       // delete services model data
       deleteService: function() {

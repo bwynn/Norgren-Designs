@@ -4,14 +4,13 @@
     <li ng-repeat="item in service.items track by $index">{{item}}</li>
   </ul>
 </div>
-<button class="btn btn-success" ng-click="toggleForm()">New Service</button>
+<button class="btn btn-success" ng-click="toggleForm()" ng-hide="showItemForm">New Service</button>
 <div class="serviceForm" ng-show="showForm">
   <form class="form" novalidate>
     <div class="form-group" ng-show="!serviceTitle">
       <label>Service Headline</label>
       <input type="text" class="form-control" ng-model="title" required/>
     </div>
-    <p ng-show="serviceTitle">{{title}}</p>
     <button class="btn btn-primary" ng-click="addService()">Add Services</button>
     <div>
       <div class="form-group">
