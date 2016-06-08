@@ -24,7 +24,6 @@ angular.module('AdminSrvCtrl', [])
         title: $scope.title
       }).then(function() {
 
-        $scope.showForm = false;
         $scope.showItemForm = true;
         $scope.serviceTitle = true;
 
@@ -35,13 +34,16 @@ angular.module('AdminSrvCtrl', [])
     $scope.addItem = function() {
       $scope.serviceItems.push($scope.newItem);
       $scope.newItem = "";
+      console.log($scope.serviceItems);
     };
 
     // Add Service Item
+    // this requires id, title and items as values to work properly, and therefore needs to be assigned via id. 
     $scope.addServiceItems = function(item) {
+      console.log(item);
       Admin.addServiceItem({
         id: item._id,
-        title: item.title,
+        title: $scope.title,
         items: $scope.serviceItems
       }).then(function() {
 
@@ -69,6 +71,7 @@ angular.module('AdminSrvCtrl', [])
     function getData() {
       Admin.getServices().then(function(services) {
         $scope.services = services.data;
+        console.log($scope.services);
       });
     }
 
