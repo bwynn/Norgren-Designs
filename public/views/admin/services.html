@@ -3,6 +3,8 @@
   <ul>
     <li ng-repeat="item in service.items track by $index">{{item}}</li>
   </ul>
+  <button class="btn btn-default">Edit Service</button>
+  <button class="btn btn-primary">Remove Service</button>
 </div>
 <button class="btn btn-success" ng-click="toggleForm()" ng-hide="showItemForm">New Service</button>
 <div class="serviceForm" ng-show="showForm">
@@ -12,7 +14,7 @@
       <input type="text" class="form-control" ng-model="title" required/>
     </div>
     <button class="btn btn-primary" ng-click="addService()">Add Services</button>
-    <div>
+    <div ng-show="showItemForm">
       <div class="form-group">
         <label>Service</label>
         <input type="text" class="form-control" ng-model="newItem" required/>

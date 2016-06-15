@@ -38,8 +38,8 @@ exports.postMain = function(req, res) {
 
 // put
 exports.updateMain = function(req, res) {
-  Home.findOne({_id: req.body.id}, function(err, home) {
-    Home.update({
+  Home.find({}, function(err, home) {
+    Home.update({_id: req.body.id}, {
       heading: req.body.heading,
       content: req.body.content,
     }, function(err, home) {

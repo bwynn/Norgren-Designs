@@ -50,7 +50,8 @@ angular.module('AdminSrvCtrl', [])
       }).then(function() {
 
         $scope.items = []; // clear out array items
-        $scope.showItemForm = true; // hide form after submit
+        $scope.showItemForm = false; // hide form after submit
+        $scope.showForm = false;
         $scope.targetItem = {}; // clear out object data
 
         getData();

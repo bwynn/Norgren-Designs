@@ -22,7 +22,13 @@ angular.module('AdminMainCtrl', [])
     };
 
     $scope.addContent = function() {
+      var idx = $scope.sections.length - 1;
+      $scope.sectionID = $scope.sections[idx];
+
+      console.log($scope.sectionID);
+
       Admin.sendMain({
+        id: $scope.sectionID,
         heading: $scope.newHeading,
         content: $scope.newContent
       }).then(function() {
@@ -36,6 +42,7 @@ angular.module('AdminMainCtrl', [])
     $scope.updateSection = function(selectedSection) {
       console.log(selectedSection);
       Admin.updateMain({
+        id: selectedSection._id,
         heading: selectedSection.heading,
         content: selectedSection.content,
         id: selectedSection._id
@@ -50,7 +57,7 @@ angular.module('AdminMainCtrl', [])
       Admin.deleteMainSection({
         id: selectedSection._id
       }).then(function() {
-        $scope.showForm = false; 
+        $scope.showForm = false;
         getData();
       });
     };
