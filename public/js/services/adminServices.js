@@ -53,8 +53,8 @@ angular.module("adminService", [])
         return $http.put('/api/services/items', data);
       },
       // delete services model data
-      deleteService: function() {
-        return $http.put('/api/delete_services');
+      deleteService: function(data) {
+        return $http.put('/api/delete_services', data);
       },
 
       // MESSAGES

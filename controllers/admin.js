@@ -175,6 +175,7 @@ exports.addServiceItems = function(req, res) {
 
 // delete
 exports.removeService = function(req, res) {
+  console.log(req.body)
   Service.remove({_id: req.body.id}, function(err, service) {
     if (err) {
       res.send(err);

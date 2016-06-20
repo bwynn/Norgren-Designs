@@ -71,6 +71,14 @@ angular.module('AdminSrvCtrl', [])
     };
 
     // Delete Service
+    $scope.deleteService = function(serviceId) {
+      console.log(serviceId);
+      Admin.deleteService({
+        id: serviceId
+      }).then(function() {
+        getData();
+      })
+    }
 
     function getData() {
       Admin.getServices().then(function(services) {
