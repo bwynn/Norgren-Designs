@@ -8,6 +8,10 @@ var app = express();
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var morgan = require('morgan');
+var passport = require('passport');
+var flash = require('connect-flash');
+var session = require('express-session');
+
 
 // connection
 // =============================================================================
@@ -19,6 +23,8 @@ var port = process.env.port || 8080;
 
 // connect to db
 mongoose.connect(db.database);
+
+require('./config/passport')(passport);
 
 // get console responses
 app.use(morgan('dev'));
@@ -38,9 +44,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
+app.use(session({secret: 'noRgr3N'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 // routes
 // =============================================================================
-require("./routes")(app);
+require("./routes")(app, passport);
 
 // start app
 // =============================================================================

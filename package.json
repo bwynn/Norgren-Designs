@@ -7,6 +7,11 @@
     "body-parser": "latest",
     "method-override": "latest",
     "path": "latest",
-    "morgan": "latest"
+    "morgan": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "bcrypt-nodejs": "latest",
+    "connect-flash": "latest",
+    "express-session": "latest"
   }
 }

@@ -29,7 +29,7 @@ angular.module("appRoutes", [])
         templateUrl: 'views/contact.html',
         controller: "ContactController"
       }).
-      // default to /main 
+      // default to /main
       otherwise({
         redirectTo: '/main',
         controller: "MainController"

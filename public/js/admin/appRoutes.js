@@ -16,7 +16,11 @@ angular.module("AppRoutes", [])
       .when('/admin/services', {
         templateUrl: 'views/admin/services.html',
         controller: 'AdminServiceController'
-      })
+      }).
+      when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginController'
+      }).
       .otherwise({
         templateUrl: 'views/admin/messages.html',
         controller: 'AdminMessagesController'

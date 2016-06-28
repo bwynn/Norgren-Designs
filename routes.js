@@ -1,10 +1,22 @@
 var path = require("path");
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
   var admin = require('./controllers/admin');
   // server routes =============================================================
   // handle api calls
   // authentication routes
+  // get login page
+  app.get('/api/admin/login', function(req, res) {
+    res.json({message: "Welcome to the admin login"});
+  });
+
+  app.post('/api/admin/login', passport.authenticate('local-login', {
+    successRedirect: '/admin',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
+
+  // post login page
 
   // Home Routes
   // ADMIN & User ==============================================================
@@ -67,9 +79,22 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/views/index.html"));
 });
 
-app.get("/admin", function(req, res) {
+app.get('/login', function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/views/login.html"));
+})
+
+app.get("/admin", isLoggedIn, function(req, res) {
   res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
 })
 
 
 };
+
+function isLoggedIn(req, res, next) {
+  // if user is authenticated
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  res.redirect('/login');
+}
