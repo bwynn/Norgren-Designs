@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
 
   app.post('/api/admin/login', passport.authenticate('local-login', {
     successRedirect: '/admin',
-    failureRedirect: '/login',
+    failureRedirect: '/admin/login',
     failureFlash: true
   }));
 
@@ -79,8 +79,8 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/views/index.html"));
 });
 
-app.get('/login', function(req, res) {
-  res.sendFile(path.join(__dirname, "./public/views/login.html"));
+app.get('/admin/login', function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
 })
 
 app.get("/admin", isLoggedIn, function(req, res) {
@@ -96,5 +96,5 @@ function isLoggedIn(req, res, next) {
     return next();
   }
 
-  res.redirect('/login');
+  res.redirect('/admin/login');
 }

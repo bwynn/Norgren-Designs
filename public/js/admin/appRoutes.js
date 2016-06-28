@@ -1,7 +1,7 @@
 angular.module("AppRoutes", [])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/admin', {
+      .when('/admin/messages', {
         templateUrl: 'views/admin/messages.html',
         controller: 'AdminMessagesController'
       })
@@ -16,14 +16,14 @@ angular.module("AppRoutes", [])
       .when('/admin/services', {
         templateUrl: 'views/admin/services.html',
         controller: 'AdminServiceController'
-      }).
-      when('/login', {
+      })
+      .when('/admin/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginController'
-      }).
+        controller: 'loginController'
+      })
       .otherwise({
-        templateUrl: 'views/admin/messages.html',
-        controller: 'AdminMessagesController'
+        templateUrl: 'views/login.html',
+        controller: 'loginController'
       });
 
       $locationProvider.html5Mode(true);
