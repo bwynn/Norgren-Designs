@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
   });
 
   app.post('/api/admin/login', passport.authenticate('local-login', {
-    successRedirect: '/admin',
+    successRedirect: '/admin/messages',
     failureRedirect: '/admin/login',
     failureFlash: true
   }));
