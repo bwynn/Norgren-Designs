@@ -25,13 +25,13 @@ module.exports = function(app, passport) {
   app.get("/api/main", admin.getMain);
 
   // post - ADMIN This route creates a new home content object
-  app.post("/api/main", admin.postMain);
+  app.post("/api/main", isLoggedIn, admin.postMain);
 
   // put
-  app.put('/api/main', admin.updateMain);
+  app.put('/api/main', isLoggedIn, admin.updateMain);
 
   // delete
-  app.put('/api/delete_main', admin.deleteMain);
+  app.put('/api/delete_main', isLoggedIn, admin.deleteMain);
 
   // Employees Routes - ADMIN & user route =====================================
 
@@ -39,11 +39,11 @@ module.exports = function(app, passport) {
   app.get("/api/employees", admin.getEmployees);
 
   // post
-  app.post('/api/employees', admin.addEmployee);
+  app.post('/api/employees', isLoggedIn,  admin.addEmployee);
   // put
-  app.put('/api/employees', admin.updateEmployee);
+  app.put('/api/employees', isLoggedIn, admin.updateEmployee);
   // delete
-  app.put('/api/delete_employees', admin.removeEmployee);
+  app.put('/api/delete_employees', isLoggedIn, admin.removeEmployee);
 
   // Services Routes - ADMIN & user route ======================================
 
@@ -53,39 +53,39 @@ module.exports = function(app, passport) {
   // post - ADMIN - endpoint creates a new service item. This is responsible for the
   // title creation of a service item, leaving the items to be filled individually
   // via the front end
-  app.post("/api/services", admin.addServices);
+  app.post("/api/services", isLoggedIn, admin.addServices);
 
   // put - ADMIN - endpoint will update individual items within the items array
-  app.put('/api/services/items', admin.addServiceItems);
+  app.put('/api/services/items', isLoggedIn, admin.addServiceItems);
 
   // delete - ADMIN -- endpoint removes item by id
-  app.put('/api/delete_services', admin.removeService);
+  app.put('/api/delete_services', isLoggedIn, admin.removeService);
 
   // Messages Routes ===========================================================
   // this will handle the form data coming from inquiries
   // GET - for admin views
-  app.get('/api/messages', admin.getMessages);
+  app.get('/api/messages', isLoggedIn, admin.getMessages);
 
   // POST - from user input
   app.post('/api/messages', admin.postMessage);
 
   // DELETE - admin view
-  app.put('/api/messages', admin.deleteMessage);
+  app.put('/api/messages', isLoggedIn, admin.deleteMessage);
 
 
-// frontend routes
-// =============================================================================
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "./public/views/index.html"));
-});
+  // frontend routes
+  // =============================================================================
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/views/index.html"));
+  });
 
-app.get('/admin/login', function(req, res) {
-  res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
-})
+  app.get('/admin/login', function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
+  });
 
-app.get("/admin", isLoggedIn, function(req, res) {
-  res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
-})
+  app.get("/admin", isLoggedIn, function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/views/admin/admin.html"));
+  });
 
 
 };

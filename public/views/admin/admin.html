@@ -16,7 +16,10 @@
 <body ng-controller="MainController">
   <div class="panel panel-header">
     <nav class="navbar navbar-inverse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" ng-hide="loggedIn">
+        <li><a href="/admin/login">Log In</a></li>
+      </ul>
+      <ul class="nav navbar-nav" ng-show="loggedIn">
         <li><a href="/admin/messages">Admin Home/Messages</a></li>
         <li><a href="/admin/main">Home Page</a></li>
         <li><a href="/admin/services">Services Page</a></li>
@@ -41,6 +44,7 @@
   <script src="js/admin/controllers/AdminServiceCtrl.js"></script>
   <script src="js/admin/controllers/loginCtrl.js"></script>
   <!-- services/factories -->
+  <script src="js/admin/services/AdminService.js"></script>
   <script src="js/services/adminServices.js"></script>
   <!-- routes -->
   <script src="js/admin/appRoutes.js"></script>
