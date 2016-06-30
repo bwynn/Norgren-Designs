@@ -1,5 +1,5 @@
 angular.module("MainCtrl", [])
-  .controller("MainController", ['$scope', '$rootScope', function($scope, $rootScope) {
+  .controller("MainController", ['$scope', '$rootScope', 'adminService', function($scope, $rootScope, adminService) {
 
     $rootScope.loggedIn = false;
 
@@ -7,5 +7,13 @@ angular.module("MainCtrl", [])
       console.log(args);
       $rootScope.loggedIn = args.loggedIn;
     });
+
+    $scope.logout = function() {
+      console.log("Clicked");
+      adminService.logOut().then(function() {
+        $rootScope.loggedIn = false;
+        console.log($rootScope.loggedIn);
+      });
+    };
 
   }]);

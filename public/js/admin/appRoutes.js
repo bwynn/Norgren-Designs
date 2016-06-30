@@ -21,6 +21,10 @@ angular.module("AppRoutes", [])
         templateUrl: 'views/login.html',
         controller: 'loginController'
       })
+      .when('/admin/logout', {
+        templateUrl: 'views/login.html',
+        controller: 'loginController'
+      })
       .otherwise({
         templateUrl: 'views/login.html',
         controller: 'loginController'
