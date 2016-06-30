@@ -1,3 +1,11 @@
+<div class="row well" ng-repeat="service in services track by $index">
+  <h3>{{service.title}}</h3>
+  <ul>
+    <li ng-repeat="item in service.items track by $index">{{item}}</li>
+  </ul>
+  <button class="btn btn-default">Edit Service</button>
+  <button class="btn btn-primary" ng-click="deleteService(service._id)">Remove Service</button>
+</div>
 <div class="serviceForm" ng-show="showForm">
   <form class="form" novalidate>
     <div class="form-group" ng-show="!serviceTitle">
@@ -20,12 +28,4 @@
     </div>
   </form>
 </div>
-<button class="btn btn-success" ng-click="toggleForm()" ng-hide="showItemForm">New Service</button>
-<div class="row well" ng-repeat="service in services | orderBy:'-' track by $index">
-  <h3>{{service.title}}</h3>
-  <ul>
-    <li ng-repeat="item in service.items track by $index">{{item}}</li>
-  </ul>
-  <button class="btn btn-default">Edit Service</button>
-  <button class="btn btn-primary" ng-click="deleteService(service._id)">Remove Service</button>
-</div>
+<button class="btn btn-success" ng-click="toggleForm()" ng-hide="showForm">New Service</button>

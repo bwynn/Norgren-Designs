@@ -15,6 +15,21 @@ var session = require('express-session');
 
 // connection
 // =============================================================================
+var options = {
+  server: {
+    socketOptions: {
+      keepAlive: 1,
+      connectTimeoutMS: 30000
+    }
+  },
+  replset: {
+    socketOptions: {
+      keepAlive: 1,
+      connectTimeoutMS: 30000
+    }
+  }
+};
+
 // config files
 var db = require("./config/db");
 
@@ -22,7 +37,7 @@ var db = require("./config/db");
 var port = process.env.port || 8080;
 
 // connect to db
-mongoose.connect(db.database);
+mongoose.connect(db.database, options);
 
 require('./config/passport')(passport);
 
