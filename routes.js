@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
   // Messages Routes ===========================================================
   // this will handle the form data coming from inquiries
   // GET - for admin views
-  app.get('/api/messages', isLoggedIn, admin.getMessages);
+  app.get('/api/messages', admin.getMessages);
 
   // POST - from user input
   app.post('/api/messages', admin.postMessage);

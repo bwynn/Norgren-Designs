@@ -4,9 +4,11 @@ angular.module("AdminMsgCtrl", [])
 
     function getData() {
       Admin.getMessages().then(function(messages) {
-        //console.log(messages);
+        console.log(messages);
         $scope.messages = messages.data;
         $scope.msgCount = $scope.messages.length;
+
+        console.log($scope.messages);
       });
     }
 
