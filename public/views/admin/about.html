@@ -20,12 +20,13 @@
     <label for="image">Upload Image</label>
     <button class="btn btn-success" ng-click="upload()">Find Image</button>
   </div>
+  <img src="{{newImage.url}}" height="200" width="200" class="img" background-position="contain"/>
   <button class="btn btn-primary" ng-click="addEmployee()">Submit</button>
 </form>
 
 <div class="row well" ng-repeat="employee in employees">
   <div class="profileBox">
-    <figure class="portrait" ng-class="employee.class"></figure>
+    <img class="portrait img" src="{{employee.image.url}}">
     <div class="employeeDetails">
       <h4>{{employee.name}}</h4>
       <p>{{employee.title}}</p>
