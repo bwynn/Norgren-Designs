@@ -3,6 +3,7 @@ angular.module('AdminService', [])
   .factory('adminService', ['$http', function($http) {
     return {
       logIn: function(loginData) {
+        console.log(loginData);
         return $http.post('/api/admin/login', loginData);
       },
       logOut: function() {

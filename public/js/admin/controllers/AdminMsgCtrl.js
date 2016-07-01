@@ -1,6 +1,8 @@
 // public/js/admin/controllers/AdminMsgCtrl.js
 angular.module("AdminMsgCtrl", [])
-  .controller('AdminMessagesController', ['$scope', 'Admin', function($scope, Admin) {
+  .controller('AdminMessagesController', ['$scope', 'Admin', '$rootScope', function($scope, Admin, $rootScope) {
+
+    $rootScope.$emit('loginEmit', {loggedIn: true});
 
     function getData() {
       Admin.getMessages().then(function(messages) {

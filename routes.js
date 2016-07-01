@@ -10,13 +10,19 @@ module.exports = function(app, passport) {
     res.json({message: "Welcome to the admin login"});
   });
 
+  // post
+app.post('/api/admin/signup', passport.authenticate('local-signup', {
+  successRedirect: '/admin', // redirect to profile page
+  failureRedirect: '/admin/login'
+}));
+
+  // login
   app.post('/api/admin/login', passport.authenticate('local-login', {
-    successRedirect: '/admin/messages',
-    failureRedirect: '/admin/login',
-    failureFlash: true
-  }), function(req, res) {
-    res.redirect('/api/admin/messages');
-  });
+    successRedirect: '/admin',
+    failureRedirect: '/admin/login'
+  }));
+
+  app.post('/add_admin', admin.addAdmin);
 
   // post login page
 

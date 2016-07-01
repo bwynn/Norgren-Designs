@@ -3,6 +3,25 @@ var Employees = require('../models/employees');
 var Home = require('../models/home');
 var Message = require('../models/messages');
 var Service = require('../models/services');
+var User = require('../models/user_model');
+
+// USER CONTROLLERS
+// =============================================================================
+// POST - /add_admin
+exports.addAdmin = function(req, res) {
+  var adminUser = new User();
+
+  adminUser.email = req.body.email;
+  adminUser.password = req.body.password;
+
+  adminUser.save().then(function(err, user) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(user);
+  });
+};
 
 // MAIN CONTROLLERS
 // =============================================================================

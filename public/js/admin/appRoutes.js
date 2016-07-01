@@ -1,6 +1,10 @@
 angular.module("AppRoutes", [])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+      .when('/admin', {
+        templateUrl: 'views/admin/messages.html',
+        controller: 'AdminMessagesController'
+      })
       .when('/admin/messages', {
         templateUrl: 'views/admin/messages.html',
         controller: 'AdminMessagesController'
@@ -16,6 +20,10 @@ angular.module("AppRoutes", [])
       .when('/admin/services', {
         templateUrl: 'views/admin/services.html',
         controller: 'AdminServiceController'
+      })
+      .when('/admin/signup', {
+        templateUrl: 'views/admin/signup.html',
+        controller: 'adminSignupController'
       })
       .when('/admin/login', {
         templateUrl: 'views/login.html',
