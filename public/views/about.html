@@ -3,7 +3,7 @@
 
     <div class="row" ng-repeat="employee in employees">
       <div class="profileBox">
-        <figure class="portrait" ng-class="employee.class"></figure>
+        <img class="portrait img" ng-class="employee.class" ng-src="{{employee.image.url}}">
         <div class="employeeDetails">
           <h4>{{employee.name}}</h4>
           <p>{{employee.title}}</p>

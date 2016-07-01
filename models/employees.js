@@ -5,7 +5,8 @@ var EmployeeSchema = new Schema({
   name: String,
   title: String,
   bio: String,
-  class: String
+  class: String,
+  image: Schema.Types.Mixed
 });
 
 module.exports = mongoose.model("Employee", EmployeeSchema);

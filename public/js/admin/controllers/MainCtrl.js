@@ -25,7 +25,7 @@ angular.module("MainCtrl", [])
         openTo: 'IMAGE_SEARCH'
       },
       function(Blob) {
-        console.log(JSON.stringify(Blob));
+        //console.log(JSON.stringify(Blob));
         $scope.newImage = Blob;
         $scope.$apply();
       });

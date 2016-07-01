@@ -19,7 +19,8 @@ angular.module("AdminAboutCtrl", [])
         title: upEmp.title,
         class: upEmp.class,
         bio: upEmp.bio,
-        id: upEmp._id
+        id: upEmp._id,
+        image: $scope.newImage
       }).then(function() {
         getData();
       })
@@ -40,12 +41,14 @@ angular.module("AdminAboutCtrl", [])
         name: $scope.name,
         title: $scope.title,
         class: $scope.class,
-        bio: $scope.bio
+        bio: $scope.bio,
+        image: $scope.newImage
       }).then(function() {
         $scope.name = "";
         $scope.title = "";
         $scope.class = "";
         $scope.bio = "";
+        $scope.newImage = null;
         getData();
       });
     };

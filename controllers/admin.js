@@ -85,6 +85,7 @@ exports.addEmployee = function(req, res) {
   employee.title = req.body.title;
   employee.class = req.body.class;
   employee.bio = req.body.bio;
+  employee.image = req.body.image;
 
   employee.save(function(err, employee) {
     if (err) {
@@ -102,7 +103,8 @@ exports.updateEmployee = function(req, res) {
       name: req.body.name,
       class: req.body.class,
       title: req.body.title,
-      bio: req.body.bio
+      bio: req.body.bio,
+      image: req.body.image
     }, function(err, employee) {
       if (err) {
         res.send(err);
