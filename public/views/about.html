@@ -1,15 +1,17 @@
 <section id='aboutPageContent'>
   <div class="page-wrap">
-
-    <div class="row" ng-repeat="employee in employees">
+    <div class="about-heading">
+      <h2>About Norgren Designs</h2>
+    </div>
+    <div class="row employee-profile" ng-repeat="employee in employees">
       <div class="profileBox">
         <img class="portrait img" ng-class="employee.class" ng-src="{{employee.image.url}}">
-        <div class="employeeDetails">
-          <h4>{{employee.name}}</h4>
-          <p>{{employee.title}}</p>
-        </div>
       </div>
-      <p>{{employee.bio}}</p>
+      <div class="employeeDetails">
+        <h2>{{employee.name}}</h2>
+        <h3>{{employee.title}}</h3>
+        <p>{{employee.bio}}</p>
+      </div>
       <span class="row-separator"></span>
     </div>
 

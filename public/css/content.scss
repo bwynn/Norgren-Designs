@@ -32,6 +32,10 @@ div#contentSection {
 		margin: 3em auto 6em;
 		background-color: rgba(252, 252, 248, 0.96);
 		box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+		@include medium {
+			width: 95%;
+		}
+
 	}
 	#homePageContent {
 		min-height: $content-min;
@@ -54,59 +58,69 @@ div#contentSection {
 
 article.in-house-projects h2 {
 	padding-top: 1em;
+	margin: 0;
 }
 
 /* -------------------- ABOUT PAGE ------------------------------------------ */
 
 section#aboutPageContent {
 	min-height: $content-min;
-	.profileBox {
-			width: 23%;
-			max-height: 14em;
-			max-width: 27%;
-			color: #fff;
-			margin: 2em;
-			overflow: hidden;
-			position: relative;
-			z-index: 13;
-			float: left;
-			&:hover {
-				div.employeeDetails {
-					top: -2.8em;
+	.employee-profile {
+		@include flex;
+		.profileBox {
+				max-height: 18em;
+				color: #fff;
+				margin: 2em;
+				overflow: hidden;
+				max-width: 30%;
+				.portrait {
+					background-color: #98BDA0;
+					@include large {
+						display: block;
+						margin: 0 auto;
+					}
+				}
+				@include large {
+					max-width: 100%;
+					width: 100%;
+					display: block;
+				}
+				@include medium {
+					display: block;
+					width: 100%;
+					float: none;
+					margin: 1em auto;
 				}
 			}
 			div.employeeDetails {
-				position: relative;
-				top: -1.7em;
+				max-width: 60%;
 				padding: .3em;
 				box-sizing: border-box;
-				background-color: rgba(0, 0, 0, .5);
-				-webkit-transition: .5s ease-in-out;
-				-moz-transition: .5s ease-in-out;
-				transition: .5s ease-in-out;
+				h2, h3 {
+					text-align: left;
+					margin: 0;
+					padding: 1em 0 0.5em 0;
+				}
 				p {
 					padding: 0;
+					margin: 0;
+				}
+				@include large {
+					max-width: 100%;
+					width: 100%;
+					padding: 1em;
 				}
 			}
-		}
-		figure.portrait {
-			background-color: #98BDA0;
-			background-size: cover;
-			background-position: center;
-			height: 14em;
-			width: 100%;
-			&.erik {
-				background-image: url("../img/erik.jpg");
-			}
-			&.default {
-				background-image: url("../img/default-user.png");
-			}
-		}
+	}
 }
 
 section#aboutPageContent > .page-wrap > div.row > p {
 	width: 60%;
 	padding: 2em .2em;
+	@include medium {
+		width: 100%;
+		padding: 2em;
+	}
 }
 
 section#aboutPageContent > .page-wrap > div.row > span.row-separator {
@@ -148,6 +162,7 @@ section#companyProfile {
 		}
 		h3 {
 			text-align: left;
+			margin: 0;
 		}
 		li {
 			padding-right: 1em;
@@ -155,6 +170,7 @@ section#companyProfile {
 		&.client-design-services {
 			> h2 {
 				width: 100%;
+				margin: 0;
 			}
 			> div.row {
 				width: 50%;

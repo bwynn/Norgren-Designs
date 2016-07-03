@@ -78,6 +78,14 @@ label {
 form {
 	width: 60%;
 	margin: 0 auto;
+	@include medium {
+		width: 85%;
+		button#send {
+			display: block;
+			margin: 1em auto;
+			width: 60%;
+		}
+	}
 }
 
 figure {

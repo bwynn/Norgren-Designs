@@ -13,7 +13,7 @@
         <li><a href='/contact'>Contact</a></li>
       </ul>
     </nav>
-    <button id='mobileNavBtn'>
+    <button id='mobileNavBtn' ng-click="showMobileNav()">
       <svg version="1.1" id="menu-bar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"' +
         'viewBox="0 0 0 0" enable-background="new 0 0 0 0" xml:space="preserve">
       <path class="bar" fill="#222222" d="M36.5,11.7h-33C2.7,11.7,2,11,2,10.2v0c0-0.8,0.7-1.5,1.5-1.5h33c0.8,0,1.5,0.7,1.5,1.5v0C38,11,37.3,11.7,36.5,11.7z"/>
@@ -22,13 +22,14 @@
       </svg>
     </button>
   </div>
-   <div id='mobileNav'>
+   <div id='mobileNav' ng-show="mobileActive">
      <nav>
        <ul>
-         <li><a href='/main' class='active'>Home</a></li>
-         <li><a href='/about'>About</a></li>
-         <li><a href='/services'>Services</a></li>
-         <li><a href='/contact'>Contact</a></li>
+         <li><a href='/main' class='active' ng-click="showMobileNav()">Home</a></li>
+         <li><a href='/about' ng-click="showMobileNav()">About</a></li>
+         <li><a href='/services' ng-click="showMobileNav()">Services</a></li>
+         <li><a href='/contact' ng-click="showMobileNav()">Contact</a></li>
        </ul>
      </nav>
+     <div class="mobile-nav-background"></div>
    </div>

@@ -4,10 +4,18 @@ header#globalHeader {
 	background-color: $white;
 	height: 4.5em;
 	position: relative;
-	z-index: 5;
+	z-index: 11;
+	@include medium {
+		height: 3em;
+	}
 	#logo-wrap {
 		width: 60%;
 		display: inline-block;
+		@include medium {
+			width: 80%;
+			height: inherit;
+			overflow: hidden;
+		}
 		h1 {
 			display: inline-block;
 			text-transform: uppercase;
@@ -17,6 +25,10 @@ header#globalHeader {
 			font-weight: 300;
 			font-size: 1.6em;
 			float: left;
+			@include medium {
+				margin-top: 1em;
+				font-size: 1.3em;
+			}
 		}
 		a.homeBtn {
 			display: block;
@@ -33,6 +45,11 @@ header#globalHeader {
 			width: $header-size;
 			height: $header-size;
 			float: left;
+			@include medium {
+				width: 3em;
+				height: 3em;
+				margin: 0 .4em;
+			}
 			.logo {
 				height: 100%;
 				width: 100%;
@@ -43,12 +60,15 @@ header#globalHeader {
 	#desk-nav {
 		height: inherit;
 		position: relative;
-		z-index: 10;
+		z-index: 12;
 		background-color: $white;
-		nav {
+		> nav {
 			display: inline-block;
 			width: 39%;
 			float: right;
+			@include medium {
+				display: none;
+			}
 			ul {
 				display: -webkit-flex;
 				display: -ms-flexbox;
@@ -73,10 +93,70 @@ header#globalHeader {
 	}
 }
 
-	#mobileNav {
-		display: none;
-	}
-
 	button#mobileNavBtn {
 		display: none;
+		@include medium {
+			display: block;
+	    float: right;
+	    height: 45px;
+	    width: 45px;
+	    margin: .45em;
+	    background-color: inherit;
+	    border: .2em solid #222;
+	    border-radius: .5em;
+	    cursor: pointer;
+	    position: relative;
+	    top: 0;
+			padding: 0;
+			svg#menu-bar {
+				position: relative;
+				height: inherit;
+				width: inherit;
+				top: 0;
+				left: 0px;
+			}
+		}
+	}
+
+	#mobileNav {
+		nav {
+			height: 100vh;
+			width: 100%;
+			position: relative;
+			z-index: 11;
+			top: 0;
+			transition: .4s all ease-in-out;
+			&:ng-hide {
+				transform: translateY(-13em);
+			}
+			ul {
+				list-style-type: none;
+				padding: 0.6em;
+				margin: 0;
+				background-color: $dark-grey;
+				li {
+					padding: .3em .5em;
+					border-bottom: 1px solid $white;
+					a {
+						color: $white;
+						display: block;
+					}
+					&:first-child {
+						padding-top: 1.2em;
+					}
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+		.mobile-nav-background {
+			position: absolute;
+			height: 100vh;
+			top: 0;
+			width: 100%;
+			background-color: $dark-grey;
+			opacity: .5;
+			z-index: 5;
+		}
 	}

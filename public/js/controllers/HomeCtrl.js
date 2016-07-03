@@ -5,10 +5,23 @@ angular.module("HomeCtrl", [])
     // begin model function /getClass/
     // Purpose: this function is run for each array item in the background content
     // section. It pulls a random item out of the background.class array and then
+
+    // set default mobile active state
+    $scope.mobileActive = false;
+
     // removes that item from the array.
     $scope.getClass = function() {
       sort($scope.backgrounds);
     };
+
+    $scope.showMobileNav = function() {
+      if ($scope.mobileActive) {
+        $scope.mobileActive = false;
+      }
+      else {
+        $scope.mobileActive = true;
+      }
+    }
     // end model function /getClass/
   }]);
 

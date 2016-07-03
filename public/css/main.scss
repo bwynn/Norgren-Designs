@@ -20,7 +20,17 @@ $content-min: 450px;
 $header-size: 4em;
 $min-height: 1050px;
 
+// viewports
+$large: 1100px;
+$medium: 800px;
+$small: 500px;
+
 // mixins
+@mixin flex {
+	-webkit-display: flex;
+	display: flex;
+}
+
 @mixin flex-row {
 	display: -webkit-flex;
 	display: flex;
@@ -51,6 +61,24 @@ $min-height: 1050px;
 	only screen and (min-device-pixel-ratio: 1),
 	only screen and (min-resolution: 96dpi),
 	only screen and (min-resolution: 1dppx) {
+		@content;
+	}
+}
+
+@mixin large {
+	@media (max-width: #{$large}) {
+		@content;
+	}
+}
+
+@mixin medium {
+	@media (max-width: #{$medium}) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media (max-width: #{$small}) {
 		@content;
 	}
 }

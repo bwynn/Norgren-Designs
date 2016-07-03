@@ -20,6 +20,13 @@ div.background-array figure {
 	align-self: flex-start;
 	background-size: cover;
 	background-position: center;
+	@include medium {
+		min-width: 49%;
+		width: 50%;
+	}
+	@include small {
+		min-width: 100%;
+	}
 	&.bolt {
 		@include screens {
 			background-image: url("../img/array_bolt.jpg");
