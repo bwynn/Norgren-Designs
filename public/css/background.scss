@@ -26,6 +26,7 @@ div.background-array figure {
 	}
 	@include small {
 		min-width: 100%;
+		min-height: 200px;
 	}
 	&.bolt {
 		@include screens {

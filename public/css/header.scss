@@ -108,6 +108,14 @@ header#globalHeader {
 	    position: relative;
 	    top: 0;
 			padding: 0;
+			&.active {
+				background-color: $dark-grey;
+				svg#menu-bar {
+					.bar {
+						fill: $white;
+					}
+				}
+			}
 			svg#menu-bar {
 				position: relative;
 				height: inherit;
@@ -119,44 +127,68 @@ header#globalHeader {
 	}
 
 	#mobileNav {
-		nav {
-			height: 100vh;
-			width: 100%;
-			position: relative;
-			z-index: 11;
-			top: 0;
-			transition: .4s all ease-in-out;
-			&:ng-hide {
-				transform: translateY(-13em);
-			}
-			ul {
-				list-style-type: none;
-				padding: 0.6em;
-				margin: 0;
-				background-color: $dark-grey;
-				li {
-					padding: .3em .5em;
-					border-bottom: 1px solid $white;
-					a {
-						color: $white;
-						display: block;
+		display: none;
+		@include medium {
+			display: block;
+			&.ng-scope {
+				nav {
+					width: 100%;
+					position: relative;
+					z-index: 11;
+					animation: .3s slideIn;
+					ul {
+						list-style-type: none;
+						padding: 0.6em;
+						margin: 0;
+						background-color: $dark-grey;
+						li {
+							padding: .3em .5em;
+							border-bottom: 1px solid $white;
+							a {
+								color: $white;
+								display: block;
+							}
+							&:first-child {
+								padding-top: 1.2em;
+							}
+							&:last-child {
+								border-bottom: none;
+							}
+						}
 					}
-					&:first-child {
-						padding-top: 1.2em;
-					}
-					&:last-child {
-						border-bottom: none;
+				}
+				&.ng-hide {
+					nav {
+						animation: .3s slideOut;
 					}
 				}
 			}
+			.mobile-nav-background {
+				position: absolute;
+				height: 100vh;
+				top: 0;
+				width: 100%;
+				background-color: $dark-grey;
+				opacity: .5;
+				z-index: 5;
+			}
 		}
-		.mobile-nav-background {
-			position: absolute;
-			height: 100vh;
-			top: 0;
-			width: 100%;
-			background-color: $dark-grey;
-			opacity: .5;
-			z-index: 5;
+	}
+
+	@keyframes slideIn {
+		from {
+			top: -13em;
+		}
+		to {
+			top: 0em;
+		}
+	}
+
+	@keyframes slideOut {
+		from {
+			top: 0em;
+		}
+		to {
+			top: -13em;
 		}
 	}

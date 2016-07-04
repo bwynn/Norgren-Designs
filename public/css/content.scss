@@ -15,7 +15,7 @@ article.client-design-services {
 
 div#contentSection {
 	position: absolute;
-	top: 6em;
+	top: 4em;
 	width: 100%;
 	//overflow: hidden;
 	max-width: 1440px;
@@ -54,6 +54,9 @@ div#contentSection {
 		min-height: 550px;
 		padding-bottom: 1em;
 	}
+	@include medium {
+		top: 2em;
+	}
 }
 
 article.in-house-projects h2 {
@@ -65,6 +68,11 @@ article.in-house-projects h2 {
 
 section#aboutPageContent {
 	min-height: $content-min;
+	.about-heading {
+		h2 {
+			margin: 0;
+		}
+	}
 	.employee-profile {
 		@include flex;
 		.profileBox {
@@ -72,7 +80,7 @@ section#aboutPageContent {
 				color: #fff;
 				margin: 2em;
 				overflow: hidden;
-				max-width: 30%;
+				width: 30%;
 				.portrait {
 					background-color: #98BDA0;
 					@include large {
@@ -89,17 +97,22 @@ section#aboutPageContent {
 					display: block;
 					width: 100%;
 					float: none;
-					margin: 1em auto;
+					margin: 0em auto 1em;
 				}
 			}
 			div.employeeDetails {
-				max-width: 60%;
+				width: 60%;
 				padding: .3em;
 				box-sizing: border-box;
 				h2, h3 {
 					text-align: left;
 					margin: 0;
-					padding: 1em 0 0.5em 0;
+					padding: .5em 0;
+				}
+				h2 {
+					&:first-child {
+						padding-top: 0;
+					}
 				}
 				p {
 					padding: 0;
@@ -174,6 +187,9 @@ section#companyProfile {
 			}
 			> div.row {
 				width: 50%;
+				@include large {
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -253,7 +269,34 @@ button#send[disabled="disabled"] {
 	color: #333;
 }
 
-#contactPageContent div.formError {
-	color: maroon;
-	font-weight: bold;
+#contactPageContent {
+	.thank-you-msg {
+		width: 100%;
+		min-height: 550px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 15;
+		background-color: $white;
+		p {
+			padding: 2em;
+			margin-top: 5em;
+			text-align: center;
+		}
+		button {
+			padding: .3em .5em;
+			background-color: #377F5E;
+			color: $white;
+			border: none;
+			cursor: pointer;
+			display: block;
+			margin: 0 auto;
+			width: 85%;
+			font-size: 1.5em;
+		}
+	}
+	div.formError {
+	 color: maroon;
+	 font-weight: bold;
+	}
 }

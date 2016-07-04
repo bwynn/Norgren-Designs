@@ -3,6 +3,8 @@ angular.module("ContactCtrl", [])
   .controller("ContactController", ['$scope', 'Admin', '$location', function($scope, Admin, $location) {
     //console.log("what errors?!");
 
+    $scope.thankYouMsg = false;
+
     $scope.addUser = function() {
 
       Admin.submitMessage({
@@ -11,8 +13,14 @@ angular.module("ContactCtrl", [])
         message: $scope.message
       }).then(function() {
         // state message
-        $location.url('/main');
+        $scope.thankYouMsg = true;
       });
-
     };
+
+    // show this message to users after submitting their contact form
+    $scope.closeThankYou = function() {
+      $scope.thankYouMsg = false;
+      $location.url('/main');
+    };
+
   }]);

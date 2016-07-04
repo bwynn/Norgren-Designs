@@ -81,6 +81,10 @@ form {
         margin: 1em auto;
         width: 60%; } }
 
+@media (max-width: 800px) {
+  section p, section li {
+    font-size: 0.8em; } }
+
 figure {
   margin: 0; }
 
@@ -193,6 +197,10 @@ button#mobileNavBtn {
       position: relative;
       top: 0;
       padding: 0; }
+      button#mobileNavBtn.active {
+        background-color: #222; }
+        button#mobileNavBtn.active svg#menu-bar .bar {
+          fill: #FCFCF8; }
       button#mobileNavBtn svg#menu-bar {
         position: relative;
         height: inherit;
@@ -200,39 +208,52 @@ button#mobileNavBtn {
         top: 0;
         left: 0px; } }
 
-#mobileNav nav {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  z-index: 11;
-  top: 0;
-  transition: .4s all ease-in-out; }
-  #mobileNav nav:ng-hide {
-    transform: translateY(-13em); }
-  #mobileNav nav ul {
-    list-style-type: none;
-    padding: 0.6em;
-    margin: 0;
-    background-color: #222; }
-    #mobileNav nav ul li {
-      padding: .3em .5em;
-      border-bottom: 1px solid #FCFCF8; }
-      #mobileNav nav ul li a {
-        color: #FCFCF8;
-        display: block; }
-      #mobileNav nav ul li:first-child {
-        padding-top: 1.2em; }
-      #mobileNav nav ul li:last-child {
-        border-bottom: none; }
-#mobileNav .mobile-nav-background {
-  position: absolute;
-  height: 100vh;
-  top: 0;
-  width: 100%;
-  background-color: #222;
-  opacity: .5;
-  z-index: 5; }
+#mobileNav {
+  display: none; }
+  @media (max-width: 800px) {
+    #mobileNav {
+      display: block; }
+      #mobileNav.ng-scope nav {
+        width: 100%;
+        position: relative;
+        z-index: 11;
+        animation: .3s slideIn; }
+        #mobileNav.ng-scope nav ul {
+          list-style-type: none;
+          padding: 0.6em;
+          margin: 0;
+          background-color: #222; }
+          #mobileNav.ng-scope nav ul li {
+            padding: .3em .5em;
+            border-bottom: 1px solid #FCFCF8; }
+            #mobileNav.ng-scope nav ul li a {
+              color: #FCFCF8;
+              display: block; }
+            #mobileNav.ng-scope nav ul li:first-child {
+              padding-top: 1.2em; }
+            #mobileNav.ng-scope nav ul li:last-child {
+              border-bottom: none; }
+      #mobileNav.ng-scope.ng-hide nav {
+        animation: .3s slideOut; }
+      #mobileNav .mobile-nav-background {
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        width: 100%;
+        background-color: #222;
+        opacity: .5;
+        z-index: 5; } }
 
+@keyframes slideIn {
+  from {
+    top: -13em; }
+  to {
+    top: 0em; } }
+@keyframes slideOut {
+  from {
+    top: 0em; }
+  to {
+    top: -13em; } }
 /* ------------------  Content Elements ------------------------------  */
 div.row,
 article.client-design-services {
@@ -247,7 +268,7 @@ article.client-design-services {
 
 div#contentSection {
   position: absolute;
-  top: 6em;
+  top: 4em;
   width: 100%;
   max-width: 1440px;
   min-height: 500px;
@@ -277,6 +298,9 @@ div#contentSection {
   div#contentSection #contactPageContent {
     min-height: 550px;
     padding-bottom: 1em; }
+  @media (max-width: 800px) {
+    div#contentSection {
+      top: 2em; } }
 
 article.in-house-projects h2 {
   padding-top: 1em;
@@ -285,6 +309,8 @@ article.in-house-projects h2 {
 /* -------------------- ABOUT PAGE ------------------------------------------ */
 section#aboutPageContent {
   min-height: 450px; }
+  section#aboutPageContent .about-heading h2 {
+    margin: 0; }
   section#aboutPageContent .employee-profile {
     -webkit-display: flex;
     display: flex; }
@@ -293,7 +319,7 @@ section#aboutPageContent {
       color: #fff;
       margin: 2em;
       overflow: hidden;
-      max-width: 30%; }
+      width: 30%; }
       section#aboutPageContent .employee-profile .profileBox .portrait {
         background-color: #98BDA0; }
         @media (max-width: 1100px) {
@@ -310,15 +336,17 @@ section#aboutPageContent {
           display: block;
           width: 100%;
           float: none;
-          margin: 1em auto; } }
+          margin: 0em auto 1em; } }
     section#aboutPageContent .employee-profile div.employeeDetails {
-      max-width: 60%;
+      width: 60%;
       padding: .3em;
       box-sizing: border-box; }
       section#aboutPageContent .employee-profile div.employeeDetails h2, section#aboutPageContent .employee-profile div.employeeDetails h3 {
         text-align: left;
         margin: 0;
-        padding: 1em 0 0.5em 0; }
+        padding: .5em 0; }
+      section#aboutPageContent .employee-profile div.employeeDetails h2:first-child {
+        padding-top: 0; }
       section#aboutPageContent .employee-profile div.employeeDetails p {
         padding: 0;
         margin: 0; }
@@ -373,6 +401,9 @@ section#companyProfile > article.client-design-services > h2 {
   margin: 0; }
 section#companyProfile > article.client-design-services > div.row {
   width: 50%; }
+  @media (max-width: 1100px) {
+    section#companyProfile > article.client-design-services > div.row {
+      width: 100%; } }
 
 /* ------------------  Contact Container ---------------------------------- */
 #contactContainer {
@@ -442,6 +473,28 @@ button#send[disabled="disabled"] {
   background-color: #98BDA0;
   color: #333; }
 
+#contactPageContent .thank-you-msg {
+  width: 100%;
+  min-height: 550px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  background-color: #FCFCF8; }
+  #contactPageContent .thank-you-msg p {
+    padding: 2em;
+    margin-top: 5em;
+    text-align: center; }
+  #contactPageContent .thank-you-msg button {
+    padding: .3em .5em;
+    background-color: #377F5E;
+    color: #FCFCF8;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 85%;
+    font-size: 1.5em; }
 #contactPageContent div.formError {
   color: maroon;
   font-weight: bold; }
@@ -477,7 +530,8 @@ div.background-array figure {
       width: 50%; } }
   @media (max-width: 500px) {
     div.background-array figure {
-      min-width: 100%; } }
+      min-width: 100%;
+      min-height: 200px; } }
   @media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
     div.background-array figure.bolt {
       background-image: url("../img/array_bolt.jpg"); } }

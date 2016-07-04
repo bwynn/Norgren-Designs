@@ -88,6 +88,12 @@ form {
 	}
 }
 
+section p, section li {
+	@include medium {
+		font-size: 0.8em;
+	}
+}
+
 figure {
 	margin: 0;
 }

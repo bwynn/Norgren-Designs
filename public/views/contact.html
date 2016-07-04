@@ -29,4 +29,10 @@
       <!-- class="inactive" js function to switch manual validation states -->
     </form>
   </div>
+  <div class="thank-you-msg" ng-show="thankYouMsg">
+    <div class="msg-container">
+      <p>Thanks {{name}} for your inquiry. We'll be in touch shortly.</p>
+    </div>
+    <button class="btn" ng-click="closeThankYou()">Close</button>
+  </div>
 </section>
