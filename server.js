@@ -37,7 +37,7 @@ var db = require("./config/db");
 var port = process.env.PORT || 8080;
 
 // connect to db
-mongoose.connect(process.env.PROD_MONGODB || db.database, options);
+mongoose.connect(process.env.MONGOLAB_WHITE || db.database, options);
 
 require('./config/passport')(passport);
 
