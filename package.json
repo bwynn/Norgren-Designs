@@ -12,6 +12,10 @@
     "passport-local": "latest",
     "bcrypt-nodejs": "latest",
     "connect-flash": "latest",
-    "express-session": "latest"
+    "express-session": "latest",
+    "nodemailer": "latest"
+  },
+  "engines": {
+    "node": "0.12.2"
   }
 }

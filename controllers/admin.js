@@ -4,6 +4,8 @@ var Home = require('../models/home');
 var Message = require('../models/messages');
 var Service = require('../models/services');
 var User = require('../models/user_model');
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport();
 
 // USER CONTROLLERS
 // =============================================================================
@@ -230,12 +232,26 @@ exports.postMessage = function(req, res) {
   msg.email = req.body.email;
   msg.message = req.body.message;
 
+  var mailOptions = {
+    from: "admin@norgrendesign.com",
+    to: msg.email,
+    subject: "Norgren Design | Thanks for reaching out",
+    text: "Thanks for getting in touch with us, " + msg.name + ".\n We'll be in touch shortly."
+  };
+
   msg.save(function(err, message) {
     if (err) {
       res.send(err);
     }
 
     res.json(message);
+  }).then(function() {
+    transporter.sendMail(mailOptions, function(err, data) {
+      if (err) {
+        res.send(err);
+      }
+      console.log(data);
+    });
   });
 };
 

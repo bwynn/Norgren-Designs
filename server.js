@@ -34,10 +34,10 @@ var options = {
 var db = require("./config/db");
 
 // set port
-var port = process.env.port || 8080;
+var port = process.env.PORT || 8080;
 
 // connect to db
-mongoose.connect(db.database, options);
+mongoose.connect(process.env.MONGOLAB_URI || db.database, options);
 
 require('./config/passport')(passport);
 
