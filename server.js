@@ -36,6 +36,8 @@ var db = require("./config/db");
 // set port
 var port = process.env.PORT || 8080;
 
+console.log(process.env.MONGODB_URI);
+
 // connect to db
 mongoose.connect(process.env.MONGODB_URI || db.database, options);
 mongoose.createConnection(process.env.MONGODB_URI);
