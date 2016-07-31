@@ -38,6 +38,7 @@ var port = process.env.PORT || 8080;
 
 // connect to db
 mongoose.connect(process.env.MONGODB_URI || db.database, options);
+mongoose.createConnection(process.env.MONGODB_URI);
 
 require('./config/passport')(passport);
 
