@@ -1,0 +1,50 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   './services/common',
+1 verbose cli   '--save' ]
+2 info using npm@3.10.3
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData ./services/common
+9 silly fetchOtherPackageData ./services/common
+10 silly cache add args [ './services/common', null ]
+11 verbose cache add spec ./services/common
+12 silly cache add parsed spec { raw: './services/common',
+12 silly cache add   scope: null,
+12 silly cache add   escapedName: null,
+12 silly cache add   name: null,
+12 silly cache add   rawSpec: './services/common',
+12 silly cache add   spec: '/Users/bwynn/Norgren-Designs/services/common',
+12 silly cache add   type: 'local' }
+13 error addLocal Could not install /Users/bwynn/Norgren-Designs/services/common
+14 silly fetchPackageMetaData Error: ENOENT, open '/Users/bwynn/Norgren-Designs/services/common'
+14 silly fetchPackageMetaData     at Error (native)
+14 silly fetchPackageMetaData  error for ./services/common { [Error: ENOENT, open '/Users/bwynn/Norgren-Designs/services/common']
+14 silly fetchPackageMetaData   errno: -2,
+14 silly fetchPackageMetaData   code: 'ENOENT',
+14 silly fetchPackageMetaData   path: '/Users/bwynn/Norgren-Designs/services/common' }
+15 silly rollbackFailedOptional Starting
+16 silly rollbackFailedOptional Finishing
+17 silly runTopLevelLifecycles Starting
+18 silly runTopLevelLifecycles Finishing
+19 silly install printInstalled
+20 verbose stack Error: ENOENT, open '/Users/bwynn/Norgren-Designs/services/common'
+20 verbose stack     at Error (native)
+21 verbose cwd /Users/bwynn/Norgren-Designs
+22 error Darwin 15.6.0
+23 error argv "node" "/usr/local/bin/npm" "install" "./services/common" "--save"
+24 error node v0.12.2
+25 error npm  v3.10.3
+26 error path /Users/bwynn/Norgren-Designs/services/common
+27 error code ENOENT
+28 error errno -2
+29 error enoent ENOENT, open '/Users/bwynn/Norgren-Designs/services/common'
+30 error enoent ENOENT, open '/Users/bwynn/Norgren-Designs/services/common'
+30 error enoent This is most likely not a problem with npm itself
+30 error enoent and is related to npm not being able to find a file.
+31 verbose exit [ -2, true ]
