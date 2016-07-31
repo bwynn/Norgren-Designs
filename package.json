@@ -9,6 +9,7 @@
     "express": "latest",
     "express-session": "latest",
     "method-override": "latest",
+    "mongodb": "^2.2.5",
     "mongoose": "latest",
     "morgan": "latest",
     "nodemailer": "latest",
