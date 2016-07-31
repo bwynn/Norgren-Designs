@@ -11,6 +11,7 @@ var morgan = require('morgan');
 var passport = require('passport');
 var flash = require('connect-flash');
 var session = require('express-session');
+var mongodb = require('mongodb');
 
 
 // connection
@@ -40,7 +41,7 @@ console.log(process.env.MONGODB_URI);
 
 // connect to db
 mongoose.connect(process.env.MONGODB_URI || db.database, options);
-mongoose.createConnection(process.env.MONGODB_URI);
+//mongoose.createConnection(process.env.MONGODB_URI);
 
 require('./config/passport')(passport);
 
