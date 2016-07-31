@@ -13,6 +13,7 @@
     "mongoose": "latest",
     "morgan": "latest",
     "mpath": "^0.2.1",
+    "ms": "^0.7.1",
     "nodemailer": "latest",
     "passport": "latest",
     "passport-local": "latest",
