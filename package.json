@@ -1,19 +1,20 @@
 {
   "name": "norgren-designs",
   "main": "server.js",
-  "dependencies" : {
-    "express": "latest",
-    "mongoose": "latest",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
     "body-parser": "latest",
+    "bson": "^0.5.2",
+    "connect-flash": "latest",
+    "express": "latest",
+    "express-session": "latest",
     "method-override": "latest",
-    "path": "latest",
+    "mongoose": "latest",
     "morgan": "latest",
+    "nodemailer": "latest",
     "passport": "latest",
     "passport-local": "latest",
-    "bcrypt-nodejs": "latest",
-    "connect-flash": "latest",
-    "express-session": "latest",
-    "nodemailer": "latest"
+    "path": "latest"
   },
   "engines": {
     "node": "0.12.2"
