@@ -12,6 +12,7 @@
     "mongodb": "^2.2.5",
     "mongoose": "latest",
     "morgan": "latest",
+    "mpath": "^0.2.1",
     "nodemailer": "latest",
     "passport": "latest",
     "passport-local": "latest",
