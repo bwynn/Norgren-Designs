@@ -16,7 +16,8 @@
     "passport": "latest",
     "passport-local": "latest",
     "path": "latest",
-    "regexp-clone": "0.0.1"
+    "regexp-clone": "0.0.1",
+    "sliced": "^1.0.1"
   },
   "engines": {
     "node": "0.12.2"
