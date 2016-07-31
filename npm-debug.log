@@ -1,9 +1,5 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'services/common',
-1 verbose cli   '--save' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'services/common' ]
 2 info using npm@3.10.3
 3 info using node@v0.12.2
 4 verbose node symlink /usr/local/bin/node
@@ -117,7 +113,7 @@
 39 verbose stack     at Pipe.close (net.js:485:12)
 40 verbose cwd /Users/bwynn/Norgren-Designs
 41 error Darwin 15.6.0
-42 error argv "node" "/usr/local/bin/npm" "install" "services/common" "--save"
+42 error argv "node" "/usr/local/bin/npm" "install" "services/common"
 43 error node v0.12.2
 44 error npm  v3.10.3
 45 error code 128
