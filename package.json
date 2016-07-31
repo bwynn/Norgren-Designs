@@ -8,6 +8,7 @@
     "connect-flash": "latest",
     "express": "latest",
     "express-session": "latest",
+    "kareem": "^1.1.3",
     "method-override": "latest",
     "mongodb": "^2.2.5",
     "mongoose": "latest",
