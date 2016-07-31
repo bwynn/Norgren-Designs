@@ -1,0 +1,133 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'services/common',
+1 verbose cli   '--save' ]
+2 info using npm@3.10.3
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData services/common
+9 silly fetchOtherPackageData services/common
+10 silly cache add args [ 'services/common', null ]
+11 verbose cache add spec services/common
+12 silly cache add parsed spec { raw: 'services/common',
+12 silly cache add   scope: null,
+12 silly cache add   escapedName: null,
+12 silly cache add   name: null,
+12 silly cache add   rawSpec: 'services/common',
+12 silly cache add   spec: 'github:services/common',
+12 silly cache add   type: 'hosted',
+12 silly cache add   hosted:
+12 silly cache add    { type: 'github',
+12 silly cache add      ssh: 'git@github.com:services/common.git',
+12 silly cache add      sshUrl: 'git+ssh://git@github.com/services/common.git',
+12 silly cache add      httpsUrl: 'git+https://github.com/services/common.git',
+12 silly cache add      gitUrl: 'git://github.com/services/common.git',
+12 silly cache add      shortcut: 'github:services/common',
+12 silly cache add      directUrl: 'https://raw.githubusercontent.com/services/common/master/package.json' } }
+13 verbose addRemoteGit caching services/common
+14 verbose addRemoteGit services/common is a repository hosted by github
+15 silly tryGitProto attempting to clone git://github.com/services/common.git
+16 silly tryClone cloning services/common via git://github.com/services/common.git
+17 verbose tryClone git-github-com-services-common-git-28899940 not in flight; caching
+18 verbose correctMkdir /Users/bwynn/.npm/_git-remotes correctMkdir not in flight; initializing
+19 info git [ 'clone',
+19 info git   '--template=/Users/bwynn/.npm/_git-remotes/_templates',
+19 info git   '--mirror',
+19 info git   'git://github.com/services/common.git',
+19 info git   '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-28899940' ]
+20 verbose git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git://github.com/services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-28899940: Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-28899940'...
+20 verbose git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git://github.com/services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-28899940: fatal: remote error:
+20 verbose git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git://github.com/services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-28899940:   Repository not found.
+21 silly tryHTTPS attempting to clone git+https://github.com/services/common.git
+22 silly tryClone cloning services/common via git+https://github.com/services/common.git
+23 verbose tryClone git-https-github-com-services-common-git-65f8b3c3 not in flight; caching
+24 verbose correctMkdir /Users/bwynn/.npm/_git-remotes correctMkdir not in flight; initializing
+25 info git [ 'clone',
+25 info git   '--template=/Users/bwynn/.npm/_git-remotes/_templates',
+25 info git   '--mirror',
+25 info git   'https://github.com/services/common.git',
+25 info git   '/Users/bwynn/.npm/_git-remotes/git-https-github-com-services-common-git-65f8b3c3' ]
+26 verbose git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror https://github.com/services/common.git /Users/bwynn/.npm/_git-remotes/git-https-github-com-services-common-git-65f8b3c3: Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-https-github-com-services-common-git-65f8b3c3'...
+26 verbose git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror https://github.com/services/common.git /Users/bwynn/.npm/_git-remotes/git-https-github-com-services-common-git-65f8b3c3: remote: Repository not found.
+26 verbose git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror https://github.com/services/common.git /Users/bwynn/.npm/_git-remotes/git-https-github-com-services-common-git-65f8b3c3: fatal: repository 'https://github.com/services/common.git/' not found
+27 silly trySSH attempting to clone git@github.com:services/common.git
+28 silly tryClone cloning services/common via git@github.com:services/common.git
+29 verbose tryClone git-github-com-services-common-git-6bb15410 not in flight; caching
+30 verbose correctMkdir /Users/bwynn/.npm/_git-remotes correctMkdir not in flight; initializing
+31 info git [ 'clone',
+31 info git   '--template=/Users/bwynn/.npm/_git-remotes/_templates',
+31 info git   '--mirror',
+31 info git   'git@github.com:services/common.git',
+31 info git   '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410' ]
+32 error git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410: Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410'...
+32 error git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410: Permission denied (publickey).
+32 error git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410: fatal: Could not read from remote repository.
+32 error git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410:
+32 error git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410: Please make sure you have the correct access rights
+32 error git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410: and the repository exists.
+33 silly fetchPackageMetaData Error: Command failed: git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410
+33 silly fetchPackageMetaData Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410'...
+33 silly fetchPackageMetaData Permission denied (publickey).
+33 silly fetchPackageMetaData fatal: Could not read from remote repository.
+33 silly fetchPackageMetaData
+33 silly fetchPackageMetaData Please make sure you have the correct access rights
+33 silly fetchPackageMetaData and the repository exists.
+33 silly fetchPackageMetaData
+33 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:751:12)
+33 silly fetchPackageMetaData     at ChildProcess.emit (events.js:110:17)
+33 silly fetchPackageMetaData     at maybeClose (child_process.js:1015:16)
+33 silly fetchPackageMetaData     at Socket.<anonymous> (child_process.js:1183:11)
+33 silly fetchPackageMetaData     at Socket.emit (events.js:107:17)
+33 silly fetchPackageMetaData     at Pipe.close (net.js:485:12)
+33 silly fetchPackageMetaData  error for services/common { [Error: Command failed: git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410
+33 silly fetchPackageMetaData Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410'...
+33 silly fetchPackageMetaData Permission denied (publickey).
+33 silly fetchPackageMetaData fatal: Could not read from remote repository.
+33 silly fetchPackageMetaData
+33 silly fetchPackageMetaData Please make sure you have the correct access rights
+33 silly fetchPackageMetaData and the repository exists.
+33 silly fetchPackageMetaData ]
+33 silly fetchPackageMetaData   killed: false,
+33 silly fetchPackageMetaData   code: 128,
+33 silly fetchPackageMetaData   signal: null,
+33 silly fetchPackageMetaData   cmd: 'git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410' }
+34 silly rollbackFailedOptional Starting
+35 silly rollbackFailedOptional Finishing
+36 silly runTopLevelLifecycles Starting
+37 silly runTopLevelLifecycles Finishing
+38 silly install printInstalled
+39 verbose stack Error: Command failed: git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410
+39 verbose stack Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410'...
+39 verbose stack Permission denied (publickey).
+39 verbose stack fatal: Could not read from remote repository.
+39 verbose stack
+39 verbose stack Please make sure you have the correct access rights
+39 verbose stack and the repository exists.
+39 verbose stack
+39 verbose stack     at ChildProcess.exithandler (child_process.js:751:12)
+39 verbose stack     at ChildProcess.emit (events.js:110:17)
+39 verbose stack     at maybeClose (child_process.js:1015:16)
+39 verbose stack     at Socket.<anonymous> (child_process.js:1183:11)
+39 verbose stack     at Socket.emit (events.js:107:17)
+39 verbose stack     at Pipe.close (net.js:485:12)
+40 verbose cwd /Users/bwynn/Norgren-Designs
+41 error Darwin 15.6.0
+42 error argv "node" "/usr/local/bin/npm" "install" "services/common" "--save"
+43 error node v0.12.2
+44 error npm  v3.10.3
+45 error code 128
+46 error Command failed: git clone --template=/Users/bwynn/.npm/_git-remotes/_templates --mirror git@github.com:services/common.git /Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410
+46 error Cloning into bare repository '/Users/bwynn/.npm/_git-remotes/git-github-com-services-common-git-6bb15410'...
+46 error Permission denied (publickey).
+46 error fatal: Could not read from remote repository.
+46 error
+46 error Please make sure you have the correct access rights
+46 error and the repository exists.
+47 error If you need help, you may report this error at:
+47 error     <https://github.com/npm/npm/issues>
+48 verbose exit [ 1, true ]
