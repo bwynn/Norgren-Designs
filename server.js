@@ -40,7 +40,7 @@ var port = process.env.PORT || 8080;
 console.log(process.env.MONGODB_URI);
 
 // connect to db
-mongoose.connect(process.env.MONGODB_URI || db.database, options);
+mongoose.connect('mongodb://heroku_lxdl6mj6:gmv2uui3ntcm3qm09euqofnjl6@ds015942.mlab.com:15942/heroku_lxdl6mj6' || db.database, options);
 
 require('./config/passport')(passport);
 
