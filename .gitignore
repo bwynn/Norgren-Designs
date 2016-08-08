@@ -1,6 +1,7 @@
 /node_modules
 /resources
 .env
+.norgrendesigns.war
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
