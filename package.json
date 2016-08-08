@@ -30,6 +30,7 @@
     "proxy-addr": "^1.1.2",
     "qs": "^6.2.1",
     "send": "^0.14.1",
+    "type-is": "^1.6.13",
     "utils-merge": "^1.0.0"
   },
   "engines": {
