@@ -8,6 +8,7 @@
     "connect-flash": "latest",
     "express": "latest",
     "express-session": "latest",
+    "finalhandler": "^0.5.0",
     "merge-descriptors": "^1.0.1",
     "method-override": "latest",
     "mongoose": "latest",
