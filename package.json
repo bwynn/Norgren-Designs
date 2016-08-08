@@ -26,6 +26,7 @@
     "passport-local": "latest",
     "path": "latest",
     "path-to-regexp": "^1.5.3",
+    "proxy-addr": "^1.1.2",
     "qs": "^6.2.1",
     "send": "^0.14.1",
     "utils-merge": "^1.0.0"
