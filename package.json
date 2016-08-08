@@ -16,6 +16,7 @@
     "express": "latest",
     "express-session": "latest",
     "finalhandler": "^0.5.0",
+    "fresh": "^0.3.0",
     "merge-descriptors": "^1.0.1",
     "method-override": "latest",
     "methods": "^1.1.2",
