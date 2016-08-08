@@ -6,6 +6,7 @@
     "body-parser": "latest",
     "bson": "^0.5.2",
     "connect-flash": "latest",
+    "debug": "^2.2.0",
     "express": "latest",
     "express-session": "latest",
     "finalhandler": "^0.5.0",
