@@ -20,7 +20,8 @@
     "passport": "latest",
     "passport-local": "latest",
     "path": "latest",
-    "path-to-regexp": "^1.5.3"
+    "path-to-regexp": "^1.5.3",
+    "utils-merge": "^1.0.0"
   },
   "engines": {
     "node": "0.12.2"
