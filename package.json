@@ -7,6 +7,7 @@
     "body-parser": "latest",
     "bson": "^0.5.2",
     "connect-flash": "latest",
+    "content-disposition": "^0.5.1",
     "debug": "^2.2.0",
     "depd": "^1.1.0",
     "express": "latest",
