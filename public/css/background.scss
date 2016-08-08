@@ -5,6 +5,7 @@ div.background-array {
 	position: relative;
 	top: -4px;
 	background-color: #333;
+	overflow-x: hidden;
 	@include flex-row;
 	@include align-center;
 }

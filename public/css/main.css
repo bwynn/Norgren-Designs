@@ -506,6 +506,7 @@ div.background-array {
   position: relative;
   top: -4px;
   background-color: #333;
+  overflow-x: hidden;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
