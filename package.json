@@ -2,6 +2,7 @@
   "name": "norgren-designs",
   "main": "server.js",
   "dependencies": {
+    "accepts": "^1.3.3",
     "array-flatten": "^2.1.0",
     "bcrypt-nodejs": "latest",
     "body-parser": "latest",
