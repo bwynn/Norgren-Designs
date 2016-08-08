@@ -38,7 +38,8 @@
     "range-parser": "^1.2.0",
     "send": "^0.14.1",
     "type-is": "^1.6.13",
-    "utils-merge": "^1.0.0"
+    "utils-merge": "^1.0.0",
+    "vary": "^1.1.0"
   },
   "engines": {
     "node": "0.12.2"
